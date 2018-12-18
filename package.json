@@ -3,12 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cli-color": "^1.4.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
+    "morgan": "^1.9.1",
+    "polished": "^2.3.1",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.2",
+    "video-react": "^0.13.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "prod:server": "node server.js",
+    "dev:server": "nodemon server.js",
+    "dev:client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,5 +38,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.9.2",
+    "nodemon": "^1.18.7",
+    "react-scripts": "^2.1.1"
+  },
+  "proxy": "http://localhost:3030"
 }
