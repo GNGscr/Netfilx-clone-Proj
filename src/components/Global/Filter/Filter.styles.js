@@ -24,7 +24,7 @@ export const FilterIcon = styled.img`
     @media all and (min-width: 900px) {
         display: flex;
         /* background-color: rgb(20, 20, 20); */
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
         width: 35px; 
     }
 `;
@@ -47,7 +47,7 @@ export const FilterInput = styled.input`
         padding-left: 10px;
         transition: opacity .1s linear;
         opacity: ${props => props.bgclr};
-        color: rgb(20, 20, 20);
+        color: white;
 }
 `;
 export const FilterInputMobile = styled.input`
