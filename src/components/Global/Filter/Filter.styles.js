@@ -10,14 +10,6 @@ export const FilterClass = styled.div`
 
     }
 `;
-// export const FilterInputWrapper = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     @media all and (min-width: 477px) {}
-//     @media all and (min-width: 900px) {
-//     }
-// `;
 export const FilterIcon = styled.img`
     display: none;
     @media all and (min-width: 477px) {}
@@ -26,6 +18,8 @@ export const FilterIcon = styled.img`
         /* background-color: rgb(20, 20, 20); */
         /* background-color: #f0f0f0; */
         width: 35px; 
+        height: 35px;
+        cursor: pointer;
     }
 `;
 export const FilterInput = styled.input`
