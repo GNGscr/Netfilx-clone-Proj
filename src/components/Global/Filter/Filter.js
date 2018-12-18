@@ -7,7 +7,7 @@ export default class Filter extends Component {
 
     state = {
         InputOn: false,        
-        navbgclr: 'opacity: 1'
+        navbgclr: 'opacity: 0'
     }
 
     update_list(e) {
@@ -39,11 +39,10 @@ export default class Filter extends Component {
             })
         }
     }
-
     render() {
         return <FilterClass>
-                    <FilterInput type="text" placeholder="Titles, people, genres" onChange={(e) => this.update_list(e)}/>
-                    <FilterIcon bgclr={this.state.navbgclr} onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
+                    <FilterInput bgclr={this.state.navbgclr} type="text" placeholder="Titles, people, genres" onChange={(e) => this.update_list(e)}/>
+                    <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" onChange={(e) => this.update_list(e)}/>
                </FilterClass>
     }

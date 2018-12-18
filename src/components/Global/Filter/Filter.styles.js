@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FilterClass = styled.div`
     display: flex;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     @media all and (min-width: 477px) {
 
     }
@@ -24,8 +24,6 @@ export const FilterIcon = styled.img`
     @media all and (min-width: 900px) {
         display: flex;
         /* background-color: rgb(20, 20, 20); */
-        transition: opacity .1s linear;
-        opacity: ${props => props.bgclr};
         background-color: #f0f0f0;
         width: 35px; 
     }
@@ -47,7 +45,9 @@ export const FilterInput = styled.input`
         background-color: rgb(20, 20, 20);
         padding: 4px;
         padding-left: 10px;
-        color: #fff;
+        transition: opacity .1s linear;
+        opacity: ${props => props.bgclr};
+        color: rgb(20, 20, 20);
 }
 `;
 export const FilterInputMobile = styled.input`
