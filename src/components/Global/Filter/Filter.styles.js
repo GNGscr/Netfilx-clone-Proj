@@ -10,15 +10,15 @@ export const FilterClass = styled.div`
 
     }
 `;
-export const FilterInputWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @media all and (min-width: 477px) {}
-    @media all and (min-width: 900px) {
-    }
-`;
-export const FilterIcon1 = styled.img`
+// export const FilterInputWrapper = styled.div`
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     @media all and (min-width: 477px) {}
+//     @media all and (min-width: 900px) {
+//     }
+// `;
+export const FilterIcon = styled.img`
     display: none;
     @media all and (min-width: 477px) {}
     @media all and (min-width: 900px) {
@@ -30,19 +30,6 @@ export const FilterIcon1 = styled.img`
         width: 35px; 
     }
 `;
-export const FilterIcon2 = styled.img`
-    display: none;
-    @media all and (min-width: 477px) {}
-    @media all and (min-width: 900px) {
-        display: flex;
-        /* background-color: rgb(20, 20, 20); */
-        transition: opacity .1s linear;
-        opacity: ${props => props.bgclr2};
-        background-color: rgba(255, 0, 0, 0);
-        width: 35px; 
-    }
-`;
-
 export const FilterInput = styled.input`
     display: none;
     @media all and (min-width: 477px) {

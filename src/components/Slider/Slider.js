@@ -113,7 +113,7 @@ class Slider extends Component {
       <Wrapper>
         <PageHead>Netflix Originals</PageHead>
         <Sliderer>
-          <SliderMask ref="slidermask" draggable="true">
+          <SliderMask ref="slidermask">
             {
               Shows.map( (e, i) => {
                 return (
