@@ -1,17 +1,3 @@
-// import React, { Component } from 'react';
-
-// export default class MovieItem extends Component {
-//   state = {
-
-//   }
-//   render() {
-//     return (
-//     <video controls autoPlay height="420" width="620" poster="https://occ-0-1390-2774.1.nflxso.net/art/b22b1/6ba4d7d1ac9eca044cc84278f18b8cd3057b22b1.webp">   
-//     <source src="https://www.youtube.com/embed/0vHziRrCYqA" type="video/webm" />
-//     </video>
-//     )
-//   }
-// }
 import React, { Component } from 'react'
 import ReactPlayer from 'react-player'
  

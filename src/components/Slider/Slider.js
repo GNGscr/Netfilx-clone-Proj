@@ -62,12 +62,13 @@ class Slider extends Component {
 
   componentWillMount() {
     this.updateSliderState()
-    
     window.addEventListener('resize', this.updateDimensions);
   }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions)
   }
+
   updateDimensions() {
     this.setState({
       width: window.innerWidth
@@ -76,10 +77,8 @@ class Slider extends Component {
   }
 
   updateSliderState() {
-
     let windowWidth = window.innerWidth
-
-
+    
     let showItems = 2
     if (windowWidth > 1400) {
       showItems = 6
@@ -101,6 +100,7 @@ class Slider extends Component {
 
     // })
   }
+  
   rightArrowClick() {
     const slidermask = this.refs.slidermask;
     slidermask.style.transition = '700ms'
