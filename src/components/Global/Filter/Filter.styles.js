@@ -16,7 +16,7 @@ export const FilterIcon = styled.img`
     @media all and (min-width: 900px) {
         display: flex;
         /* background-color: rgb(20, 20, 20); */
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
         width: 35px; 
         height: 35px;
         cursor: pointer;
