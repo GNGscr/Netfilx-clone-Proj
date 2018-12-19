@@ -239,6 +239,7 @@ export const NetfilxSans = styled.div`
     display: flex;
     text-decoration: none;
     color: #ccc;
+    transition: .3s ease-in-out;
     &:visited {
         text-decoration: none;
         border: 1px solid red;
