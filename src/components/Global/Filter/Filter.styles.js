@@ -19,6 +19,7 @@ export const FilterIcon = styled.img`
         background-color: #f0f0f0;
         width: 35px; 
         height: 35px;
+        margin-left: 10px;
         cursor: pointer;
     }
 `;

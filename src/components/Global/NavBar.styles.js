@@ -191,8 +191,8 @@ export const Profiles = styled.div`
     justify-content: center;
     align-items: center;
     /* background-color: grey; */
-    width: 52px;
-    height: 32px;
+    width: 55px;
+    height: 35px;
     margin-right: 20px;
     @media all and (min-width: 477px) {
 
@@ -273,8 +273,8 @@ export const AccountDropdownButton = styled.img`
         margin-right: -10px;
         margin-left: 20px;
         background-color: white;
-        height: 30px;
-        width: 30px;
+        height: 35px;
+        width: 35px;
         /* border: 1px solid rgb(20, 20, 20); */
 }
 `;
@@ -293,8 +293,8 @@ export const IMG = styled.img`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 32px;
-        height: 32px;
+        width: 35px;
+        height: 35px;
         /* background-color: white; */
 }
 `;
