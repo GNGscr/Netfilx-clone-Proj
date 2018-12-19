@@ -115,15 +115,20 @@ export const LogoAndTextDiv = styled.div`
 `;
 export const Hero = styled.img`
     width: 100vw;
-    height: 220px;
-    @media all and (min-width: 477px) {
-        width: 100vw;
-        height: 40vh;
-}
-    @media all and (min-width: 900px) {
+    height: 50vw;
+    @media all and (min-width: 500px) {
+        height: 52vw;
+    }
+    @media all and (min-width: 800px) {
+        height: 53vw;
+    }
+    @media all and (min-width: 1100px) {
+        height: 54vw;
+    }
+    @media all and (min-width: 1400px) {
         position: relative;
         margin-top: 0px;
         width: 100vw;
-        height: 810px;
+        height: 55vw;
     }
     `;
