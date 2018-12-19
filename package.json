@@ -19,8 +19,7 @@
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.1.2",
-    "video-react": "^0.13.1"
+    "styled-components": "^4.1.2"
   },
   "scripts": {
     "prod:server": "node server.js",
