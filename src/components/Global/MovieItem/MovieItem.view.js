@@ -1,23 +1,42 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-export default class MovieItem extends Component {
-  state = {
+// export default class MovieItem extends Component {
+//   state = {
 
-  }
-  render() {
-    return <video controls
-    src="https://www.youtube.com/embed/0vHziRrCYqA"
-    poster="https://occ-0-1390-2774.1.nflxso.net/art/b22b1/6ba4d7d1ac9eca044cc84278f18b8cd3057b22b1.webp"
-    width="620">
+//   }
+//   render() {
+//     return (
+//     <video controls autoPlay height="420" width="620" poster="https://occ-0-1390-2774.1.nflxso.net/art/b22b1/6ba4d7d1ac9eca044cc84278f18b8cd3057b22b1.webp">   
+//     <source src="https://www.youtube.com/embed/0vHziRrCYqA" type="video/webm" />
+//     </video>
+//     )
+//   }
+// }
+import React, { Component } from 'react'
+import ReactPlayer from 'react-player'
+ 
+const imgUrl ='https://occ-0-1390-2774.1.nflxso.net/art/b22b1/6ba4d7d1ac9eca044cc84278f18b8cd3057b22b1.webp';
 
-Sorry, your browser doesn't support embedded videos, 
-but don't worry, you can <a href="https://archive.org/details/BigBuckBunny_124">download it</a> 
-and watch it with your favorite video player!
+const divStyle = {
+  color: 'blue',
+  backgroundImage: 'url(' + imgUrl + ')'
+};
 
-</video>
+class MovieItem extends Component {
+  render () {
+    return <ReactPlayer 
+              url='https://www.youtube.com/embed/0vHziRrCYqA' 
+              style={divStyle} 
+              height="360px" 
+              width="640px" 
+              playing
+              config 
+              volume='0.3' 
+              // onEnded 
+            />
   }
 }
-
+export default MovieItem;
 
 
 
