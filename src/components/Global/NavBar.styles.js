@@ -238,7 +238,7 @@ export const NetfilxSans = styled.div`
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     display: flex;
     text-decoration: none;
-    color: #fff;
+    color: #ccc;
     &:visited {
         text-decoration: none;
         border: 1px solid red;
@@ -249,8 +249,11 @@ export const NetfilxSans = styled.div`
 }
     @media all and (min-width: 900px) {
         font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-        color: white;
+        color: #fff;
         text-decoration: none;
+        &:hover {
+            color: #ccc;
+        }
 }
 `;
 export const AccountDropdownButton = styled.img`
