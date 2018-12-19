@@ -94,7 +94,6 @@ export const SliderMask = styled.div`
     white-space: nowrap;
     padding: 0 5px;
     margin-left: 15px;
-    /* overflow-x: hidden; */
     @media all and (min-width: 477px) {
         
     }
