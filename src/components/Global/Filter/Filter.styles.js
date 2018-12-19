@@ -50,6 +50,7 @@ export const FilterInputMobile = styled.input`
     width: 114px;
     outline: none;
     border-radius: 0px;
+    margin-right: 3vw;
     font-size: 16px;
     border: #ccc 1px solid;
     transition: border .3s;

@@ -225,15 +225,17 @@ export const LOGO = styled.img`
         /* border: 1px solid white; */
 }
 `;
-export const NotificationsMenu = styled.img`
-    display: none;
-    @media all and (min-width: 477px) {
+// export const NotificationsMenu = styled.img`
+//     display: none;
+//     background-color: white;
+//     @media all and (min-width: 477px) {
 
-}
-    @media all and (min-width: 900px) {
-        margin-right: 30px;
-}
-`;
+// }
+//     @media all and (min-width: 900px) {
+//         margin-right: 30px;
+        
+// }
+// `;
 export const NetfilxSans = styled.div`
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     display: flex;
@@ -258,7 +260,7 @@ export const NetfilxSans = styled.div`
 }
 `;
 export const AccountDropdownButton = styled.img`
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     @media all and (min-width: 477px) {
@@ -268,7 +270,11 @@ export const AccountDropdownButton = styled.img`
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 30px;
+        margin-right: -10px;
+        margin-left: 20px;
+        background-color: white;
+        height: 30px;
+        width: 30px;
         /* border: 1px solid rgb(20, 20, 20); */
 }
 `;
