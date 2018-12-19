@@ -32,7 +32,7 @@ class MovieItem extends Component {
               playing
               config 
               volume='0.3' 
-              // onEnded 
+              onEnded 
             />
   }
 }
