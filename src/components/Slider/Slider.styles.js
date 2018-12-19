@@ -73,7 +73,7 @@ export const PageHead = styled.h1`
 `;
 export const Sliderer = styled.div`
     display: flex;
-    margin-left: 15px;
+    margin-left: 0px;
     padding: 8px 0;
     z-index: 4;
     position: relative;
@@ -93,6 +93,7 @@ export const SliderMask = styled.div`
     /* background-color: green; */
     white-space: nowrap;
     padding: 0 5px;
+    margin-left: 15px;
     /* overflow-x: hidden; */
     @media all and (min-width: 477px) {
         
@@ -100,6 +101,7 @@ export const SliderMask = styled.div`
     @media all and (min-width: 900px) {
     white-space: nowrap;
     padding: 0 60px;
+    margin-left: 0px;
         &:hover{
             cursor: pointer;
         }
@@ -154,57 +156,94 @@ export const LeftArrow = styled.div`
     top: 8px;
     /* background-color: red; */
     background: linear-gradient(to left, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
-    width: 6%;
-    height: calc(99% - 18px);
-    left: -15px;
+    width: 5.5%;
+    height: calc(99% - 17px);
     z-index: 4;
-    @media all and (min-width: 900px) {
-    top: 9px;
-    width: 4%;
-    height: calc(99% - 20px);
-    left: 0px;
+
+    @media all and (min-width: 500px) {
+        width: 3.5%;
+        height: calc(99% - 17px);
+    }
+    @media all and (min-width: 800px) {
+        height: calc(99% - 17px);
+        width: 5.9%;
+    }
+    @media all and (min-width: 1100px) {
+        width: 5%;
+    }
+    @media all and (min-width: 1400px) {
+        width: 4%;
+        height: calc(99% -20px);
     }
 `;
 export const RightArrow = styled.div`
     position: absolute;
-    top: 9.5px;
+    top: 8px;
+    /* background: red; */
     background: linear-gradient(to right, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
-    width: 6%;
-    height: calc(99% - 46px);
+    width: 5.5%;
+    height: calc(99% - 17px);
     right: 0px;
     z-index: 4;
-    @media all and (min-width: 900px) {
-    top: 9px;
-    width: 4%;
-    height: calc(99% - 20px);
-    right: 0px;
+
+    @media all and (min-width: 500px) {
+        width: 3.5%;
+        height: calc(99% - 17px);
+    }
+    @media all and (min-width: 800px) {
+        height: calc(99% - 17px);
+        width: 5.9%;
+    }
+    @media all and (min-width: 1100px) {
+        width: 5%;
+    }
+    @media all and (min-width: 1400px) {
+        width: 4.2%;
+        height: calc(99% -20px);
+        right: -2px;
     }
 `;
 export const LeftArrowIMG = styled.img`
-    display: flex;
-    align-items: center;
-    justify-content: center;
     /* color: white; */
-    /* margin-top: 10vw;
-    margin-left: 1px; */
+    margin-top: 10vw;
+    margin-left: 1px;
     width: calc(99% - 3px);
-    @media all and (min-width: 900px){
-    /* margin-top: 3vw;
-    margin-left: -5px; */
-    width: calc(99% - 15px);
+
+    @media all and (min-width: 500px) {
+        width: calc(100% - 5px);
+        margin-top: 7vw;
+    }
+    @media all and (min-width: 800px) {
+        width: calc(100% - 6px);
+        margin-top: 3vw;
+    }
+    @media all and (min-width: 1100px) {
+        width: calc(100% -10px);
+    }
+    @media all and (min-width: 1400px) {
+        width: calc(100% - 15px);
+        margin-top: 2.75vw;
     }
 `;
 export const RightArrowIMG = styled.img`
     /* color: white; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-top: 10vw;
-    margin-right: 0px; */
+    margin-top: 10vw;
+    margin-right: 0px;
     width: calc(99% - 3px);
-    @media all and (min-width: 900px){
-    /* margin-top: 3vw;
-    margin-right: -5px; */
-    width: calc(99% - 15px);
+
+    @media all and (min-width: 500px) {
+        width: calc(100% - 5px);
+        margin-top: 7vw;
+    }
+    @media all and (min-width: 800px) {
+        width: calc(100% - 6px);
+        margin-top: 3vw;
+    }
+    @media all and (min-width: 1100px) {
+        width: calc(100% -10px);
+    }
+    @media all and (min-width: 1400px) {
+        width: calc(100% - 15px);
+        margin-top: 2.75vw;
     }
 `;

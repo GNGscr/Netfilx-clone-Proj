@@ -94,13 +94,13 @@ class Slider extends Component {
   leftArrowClick() {
     const slidermask = this.refs.slidermask;
     slidermask.style.transition = '700ms'
-    slidermask.style.transform = `translateX(${this.state.width}px)`
+    slidermask.style.transform = `translateX(0px)`
     console.log('left')
     // this.setState({
 
     // })
   }
-  
+
   rightArrowClick() {
     const slidermask = this.refs.slidermask;
     slidermask.style.transition = '700ms'
