@@ -54,15 +54,25 @@ class Slider extends Component {
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);
     this.handleOnRightArrowClick = this.rightArrowClick.bind(this);
     this.state = {
+      moving: false,
+      mv: 0,
+      startId: 0,
       showItems: 1,
-      width: window.innerWidth
+      totalItems: 0,
+      // SliderItems = []
     };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
+  componentDidMount() {
+    this.updateSliderState()
+    this.setState({
+      totalItems: Shows.length
+    })
+  }
 
   componentWillMount() {
-    this.updateSliderState()
     window.addEventListener('resize', this.updateDimensions);
+    this.updateSliderState()
   }
 
   componentWillUnmount() {
@@ -76,9 +86,50 @@ class Slider extends Component {
     console.log(this.state.width);
   }
 
+  updateSliderItems(baseShowItem = this.state.showItems) {
+    let { totalItems, startId } = this.state;
+
+    // left + center + right
+    // [1] + [4] + [4] + [4] + [1]
+    // [5] + [4] + [5]
+
+    let centerDataId = []
+    for(let i = 0; i < baseShowItem; i++) {
+      let x = startId + i
+      if(x > totalItems) {
+        centerDataId.push(x)
+      } else {
+        centerDataId.push(x - totalItems)
+      }
+    }
+    let leftDataId = []
+    for(let i = 0; i < baseShowItem; i++) {
+      let x = startId - i -1
+      if(x >= 0) {
+        leftDataId.push(x)
+      } else {
+        leftDataId.push(totalItems + x)
+      }
+    }
+    leftDataId.reverse()
+
+    let rightDataId = []
+    for(let i = 0; i < baseShowItem +1; i++) {
+      let x = startId + baseShowItem + i
+      if(x < totalItems - baseShowItem + baseShowItem) {
+        rightDataId.push(x)
+      } else {
+        rightDataId.push(x - totalItems)
+      }
+    }
+    console.log('left', leftDataId)
+    console.log('center', centerDataId)
+    console.log('right', rightDataId)
+  }
+
   updateSliderState() {
+
     let windowWidth = window.innerWidth
-    
     let showItems = 2
     if (windowWidth > 1400) {
       showItems = 6
@@ -89,23 +140,42 @@ class Slider extends Component {
     } else if (windowWidth > 500) {
       showItems = 3
     } 
+    let mv = 32/showItems
+    this.setState({
+      showItems, mv
+    })
   }
 
   leftArrowClick() {
-    const slidermask = this.refs.slidermask;
-    slidermask.style.transition = '700ms'
-    slidermask.style.transform = `translateX(${this.state.width}px)`
+    // const slidermask = this.refs.slidermask;
+    // slidermask.style.transition = '700ms'
+    // slidermask.style.transform = `translateX(${this.state.width}px)`
     console.log('left')
-    // this.setState({
-
-    // })
+    const { showItems, startId, totalItems, mv } = this.state;
+    let reducePrev = startId + showItems
+    let resetStartId = 0
+    if (reducePrev < 0) {
+      resetStartId = totalItems + reducePrev
+    } else {
+      resetStartId = reducePrev
+    }
+    this.updateSliderItems()
   }
 
   rightArrowClick() {
-    const slidermask = this.refs.slidermask;
-    slidermask.style.transition = '700ms'
-    slidermask.style.transform = `translateX(-${this.state.width}px)`
+    // const slidermask = this.refs.slidermask;
+    // slidermask.style.transition = '700ms'
+    // slidermask.style.transform = `translateX(-${this.state.width}px)`
     console.log('right')
+    const { showItems, startId, totalItems, mv } = this.state;
+    let plusNext = startId + showItems
+    let resetStartId = 0
+    if (plusNext >= totalItems) {
+      resetStartId = plusNext - totalItems
+    } else {
+      resetStartId = plusNext
+    }
+    this.updateSliderItems()
   }
 
   render() {
