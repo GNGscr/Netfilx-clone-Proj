@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
+import fetch from 'isomorphic-fetch';
 // import NavBar from '../Global/NavBar'
 // import LogoAndText from './Logo_and_text/Logo_and_text';
 
@@ -54,6 +55,9 @@ class Slider extends Component {
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);
     this.handleOnRightArrowClick = this.rightArrowClick.bind(this);
     this.state = {
+      original_list:[],
+      displayed_list:[],
+      profile_data: {},
       moving: false,
       mv: 0,
       startId: 0,
@@ -64,15 +68,33 @@ class Slider extends Component {
     this.updateDimensions = this.updateDimensions.bind(this);
   }
   componentDidMount() {
-    this.updateSliderState()
-    this.setState({
-      totalItems: Shows.length
-    })
+        fetch('../../static/MOCK_DATA.json')
+        .then( response => {
+            if(response.ok) {
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then( data => {
+            console.table(data);
+            console.log(`${data.length} items loaded`);
+            this.setState({
+                original_list:data,
+                displayed_list: data,
+                profile_data: data[0]
+            });
+        })
+        .catch( error => {
+            console.error(`fetch operation failed: ${error.message}`);
+        });
   }
 
   componentWillMount() {
     window.addEventListener('resize', this.updateDimensions);
     this.updateSliderState()
+    this.setState({
+      totalItems: Shows.length
+    })
   }
 
   componentWillUnmount() {
@@ -91,7 +113,7 @@ class Slider extends Component {
 
     // left + center + right
     // [1] + [4] + [4] + [4] + [1]
-    // [5] + [4] + [5]
+    //       [5] + [4] + [5]
 
     let centerDataId = []
     for(let i = 0; i < baseShowItem; i++) {
