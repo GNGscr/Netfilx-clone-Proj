@@ -7,7 +7,7 @@ import '../../styled/App.css';
 // import Links from '../Global/Links';
 import {
   Wrapper, PageHead, Sliderer, SliderMask, SliderItem,
-  SliderItemInner, IMG, LeftArrow, RightArrow,
+  SliderItemInner, IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG
 } from './Slider.styles'
 // import ListItem from '../ListItem/ListItem.view'
@@ -107,7 +107,7 @@ class Slider extends Component {
     if(this.state.data === []) {
       return (
         <>
-        <p>loading......</p>
+        <P>loading......</P>
         </>
       )
     } else {

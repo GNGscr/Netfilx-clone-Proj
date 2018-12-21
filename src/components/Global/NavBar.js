@@ -21,15 +21,13 @@ export default class MainHeader extends React.Component {
     }
     componentDidMount(){
         window.addEventListener('scroll', () => {
-            console.log(window.scrollY);
+            // console.log(window.scrollY);
             if (window.scrollY > 3) {
-                // console.log('works')
                 this.setState({
                     navbgclr: 1,
                     clrOpen: true
                 })
             } else {
-                // console.log('doesnt work')
                 this.setState({
                     navbgclr: 0,
                     clrOpen: false

@@ -202,3 +202,10 @@ export const RightArrowIMG = styled.img`
         margin-top: 2.75vw;
     }
 `;
+export const P = styled.p`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 32px;
+`;
