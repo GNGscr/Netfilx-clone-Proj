@@ -68,10 +68,10 @@ class Slider extends Component {
   }
 
   leftArrowClick() {
-    const sliderItem = this.refs.sliderItem;
-    let windowWidth = window.innerWidth
-    console.log(windowWidth)
-    sliderItem.style.transform = `translateX(${windowWidth}px)`
+    // const sliderItem = this.refs.sliderItem;
+    // let windowWidth = window.innerWidth
+    // console.log(windowWidth)
+    // sliderItem.style.transform = `translateX(${windowWidth}px)`
     console.log('left')
     let item = {};
     let items = [];
@@ -85,10 +85,9 @@ class Slider extends Component {
   }
 
   rightArrowClick() {
-    const sliderItem = this.refs.sliderItem;
-    // console.log(sliderItem)
-    let windowWidth = window.innerWidth
-    sliderItem.style.transform = `translateX(-${windowWidth}px)`
+    // const sliderItem = this.refs.sliderItem;
+    // console.dir(sliderItem)
+    // sliderItem.style.transform = `translateX(-400px)`
     console.log('right')
 
     let item = {};
@@ -119,7 +118,7 @@ class Slider extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                // console.log(e)
+                console.log(e)
                 return (
                   <SliderItem key={i} ref="sliderItem">
                     <SliderItemInner >
