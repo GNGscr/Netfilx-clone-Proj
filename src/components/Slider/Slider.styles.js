@@ -43,6 +43,8 @@ export const SliderMask = styled.div`
     /* transition: right .3s ease-in-out;
     right: ${props => props.rytBtn}; */
     /* background-color: green; */
+    
+    /* border: 5px solid blue; */
     white-space: nowrap;
     padding: 0 5px;
     margin-left: 15px;
@@ -59,6 +61,8 @@ export const SliderMask = styled.div`
     }
 `;
 export const SliderItem = styled.div`
+    display: absolute;
+    transition: all 2s ease-in;
     display: inline-flex;
     width: calc(95%/2);
     position: relative;

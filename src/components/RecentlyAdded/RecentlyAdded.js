@@ -21,10 +21,10 @@ class RecentlyAdded extends Component {
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/eb6d0/6f8b62fa1a805b0bbea4c02170e9239e592eb6d0.webp" alt=""/>
           <LogoAndText />
           <Slider/>
+          {/* <Slider/>
           <Slider/>
           <Slider/>
-          <Slider/>
-          <Slider/>
+          <Slider/> */}
           <Footer />
       </AppDiv>
     );
