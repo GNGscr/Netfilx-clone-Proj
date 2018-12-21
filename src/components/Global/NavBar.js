@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MainHeaderDiv, LeftNavBar, RightNavBar, LI, Button, Profiles, LOGO, Hamburger,LIMOBILE,
-     NotificationsMenu, NetfilxSans, AccountDropdownButton, IMG, NavControllers, NavList, BcgrNav
+import { MainHeaderDiv, LeftNavBar, RightNavBar, LI, Profiles, LOGO, Hamburger,LIMOBILE,
+     NetfilxSans, AccountDropdownButton, IMG, NavControllers, NavList, BcgrNav
     } from './NavBar.styles';
 // import { keyframes } from 'styled-components';
 import Filter from './Filter/Filter';

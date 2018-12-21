@@ -18,15 +18,15 @@ class LandingPage extends Component {
                 <HeadOne>Who's watching?</HeadOne>
                 <LanderBtn>
                 <Anker href="">
-                    <ImageProfile><UserImg src="https://occ-0-1390-2774.1.nflxso.net/art/326d2/7f22331395c9669f63f6e97b9b3fcb0a9cc326d2.png" alt="" /></ImageProfile>
+                    <ImageProfile><UserImg src="https://occ-0-1855-300.1.nflxso.net/art/5f7d6/cecf37546877d182b9ec6b9c356352a0dc75f7d6.png" alt="" /></ImageProfile>
                     Him
                 </Anker>
                 <Anker href="">
-                    <ImageProfile><UserImg src="https://occ-0-1390-2774.1.nflxso.net/art/8900c/9181bb80f90e31a8ff813a4476e761881518900c.png" alt="" /></ImageProfile>
+                    <ImageProfile><UserImg src="https://occ-0-1855-300.1.nflxso.net/art/4cdd3/12e92b07158f302dca3c027af2a608f5d364cdd3.png" alt="" /></ImageProfile>
                     Her
                 </Anker>
                 <Anker href="">
-                    <ImageProfile><UserImg src="https://occ-0-1390-2774.1.nflxso.net/art/8900c/9181bb80f90e31a8ff813a4476e761881518900c.png" alt="" /></ImageProfile>
+                    <ImageProfile><UserImg src="https://occ-0-1855-300.1.nflxso.net/art/4cdd3/12e92b07158f302dca3c027af2a608f5d364cdd3.png" alt="" /></ImageProfile>
                     Add Profile
                 </Anker>
                 </LanderBtn>
