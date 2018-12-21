@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
-// import NavBar from '../Global/NavBar'
-// import LogoAndText from './Logo_and_text/Logo_and_text';
-
-// import NavBar from '../Global/NavBar';
-// import Links from '../Global/Links';
 import {
   Wrapper, PageHead, Sliderer, SliderMask, SliderItem,
   SliderItemInner, IMG, LeftArrow, RightArrow, P,
