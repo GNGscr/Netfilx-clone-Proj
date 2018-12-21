@@ -61,7 +61,7 @@ export const SliderMask = styled.div`
     }
 `;
 export const SliderItem = styled.div`
-    display: absolute;
+    position: absolute;
     transition: all 2s ease-in;
     display: inline-flex;
     width: calc(95%/2);

@@ -63,10 +63,10 @@ class Slider extends Component {
   }
 
   leftArrowClick() {
-    // const sliderItem = this.refs.sliderItem;
-    // let windowWidth = window.innerWidth
-    // console.log(windowWidth)
-    // sliderItem.style.transform = `translateX(${windowWidth}px)`
+    let windowWidth = window.innerWidth
+    console.log(windowWidth)
+    const sliderItem = this.refs.sliderItem;
+    sliderItem.style.transform = `translateX(-${windowWidth}px)`
     console.log('left')
     let item = {};
     let items = [];
