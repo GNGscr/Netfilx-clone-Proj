@@ -195,7 +195,7 @@ class Slider extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                // console.log(e)
+                console.log(e)
                 return (
                   <SliderItem key={i} ref="sliderItem">
                     <SliderItemInner >
