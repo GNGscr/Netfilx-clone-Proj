@@ -129,18 +129,18 @@ class Slider extends Component {
       this.short_fade_in();
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.long_fade_out, 2000);
-      let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
-      let xright = this.state.data.offset.left < 70
+      // let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
+      // let xright = this.state.data.offset.left < 70
 
-      let dir
-      
-      if (xright) {
-        dir = '-25%'
-      } else if (xleft) {
-        dir = '25%'
-      } else {
-        dir = '0'
-      }
+      // let dir
+
+      // if (xright) {
+      //   dir = '-25%'
+      // } else if (xleft) {
+      //   dir = '25%'
+      // } else {
+      //   dir = '0'
+      // }
   }
   mouseLeave = e => {
       clearTimeout(this.timeout);
