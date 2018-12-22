@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
+// import react from 'react';
 import {
   Wrapper, PageHead, Sliderer, SliderMask, SliderItem,
   SliderItemInner, IMG, LeftArrow, RightArrow, P,
-  RightArrowIMG, LeftArrowIMG
+  RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
+  // Title, Details, Descrition, Summary, CirclesBox,
+  // Circle, Play, Box, scale_delay, scale_ease, wire_grey
 } from './Slider.styles'
 // import ListItem from '../ListItem/ListItem.view'
+// import styled, { keyframes } from 'styled-components';
+// import { lighten } from 'polished';
 
+// ** ========= Consts ========= **
+
+// const box_bg = lighten(0.3, 'limegreen');
+// const scale_duration = "400ms";
+// const scale_delay = "150ms";
+// const scale_ease = "cubic-bezier(0.63, 0.04, 0.49, 0.99)";
+// const wire_grey = '#999';
+
+// const FADE_IN = keyframes`
+//  0% {opacity: 0;}
+//  100% {opacity: 1;}
+// `;
+// const FADE_OUT = keyframes`
+//  0% {opacity: 1;}
+//  100% {opacity: 0;}
+// `;
 
 
 class Slider extends Component {
@@ -18,7 +39,9 @@ class Slider extends Component {
     this.state = {
       showItems: 1,
       width: window.innerWidth,
-      data: [] 
+      data: [],
+      fade_duration: scale_duration,
+      fade_anim: null
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -26,7 +49,9 @@ class Slider extends Component {
   async componentDidMount() {
     const res = await fetch('./MOCK_DATA.json')
     const data = await res.json();
-    this.setState({ data })
+    this.setState({ 
+      data 
+    })
   }
 
   componentWillMount() {
@@ -94,6 +119,64 @@ class Slider extends Component {
       data: [...this.state.data, ...items]
     })
   }
+
+  // ** ============== Slide Events =============== **
+
+  timeout = null;
+  move_timeout = null;
+
+  mouseEnter = e => {
+      this.short_fade_in();
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.long_fade_out, 2000);
+      let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
+      let xright = this.state.data.offset.left < 70
+
+      let dir
+      
+      if (xright) {
+        dir = '-25%'
+      } else if (xleft) {
+        dir = '25%'
+      } else {
+        dir = '0'
+      }
+  }
+  mouseLeave = e => {
+      clearTimeout(this.timeout);
+      clearTimeout(this.move_timeout);
+      this.move_timeout = null;
+      this.short_fade_out();
+  }
+  mouseMove = e => {
+      if(!this.move_timeout) {
+          this.short_fade_in();
+          this.move_timeout = setTimeout(() => {
+              this.move_timeout = null;
+              clearTimeout(this.timeout);
+              this.timeout = setTimeout(this.long_fade_out, 2000);
+          }, 300);
+      }
+  };
+
+  short_fade_in = () => {
+      this.setState({
+          fade_duration: '550ms',
+          fade_anim: FADE_IN
+      });
+  };
+  short_fade_out = () => {
+      this.setState({
+          fade_duration: '400ms',
+          fade_anim: FADE_OUT
+      });
+  };
+  long_fade_out = () => {
+      this.setState({
+          fade_duration: '4000ms',
+          fade_anim: FADE_OUT
+      });
+  };
   
 
   render() {
@@ -112,11 +195,37 @@ class Slider extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                console.log(e)
+                // console.log(e)
                 return (
                   <SliderItem key={i} ref="sliderItem">
                     <SliderItemInner >
                       <IMG src={e.poster} />
+                                  {/* <Box
+                        onMouseEnter={this.mouseEnter}
+                        onMouseLeave={this.mouseLeave}
+                        onMouseMove={this.mouseMove}
+                        >
+                            <IMG src={e.poster}/>
+                            <Summary
+                                anim={this.state.fade_anim}
+                                duration={this.state.fade_duration}
+                            >
+                                <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                                <Title src={e.title} />
+                                <Details src={e.details} />
+                                <Descrition src={e.descrition} />
+                            </Summary>
+                            <CirclesBox
+                                anim={this.state.fade_anim}
+                                duration={this.state.fade_duration}
+                            >
+                                <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle>
+                                <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
+                                <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
+                                <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
+                                <Circle><IMG src='https://img.icons8.com/ios/48/000000/plus-math-filled.png'/></Circle>
+                            </CirclesBox>
+                        </Box> */}
                     </SliderItemInner>
                   </SliderItem>
                 )
