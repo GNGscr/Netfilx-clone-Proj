@@ -10,27 +10,6 @@ import {
   // scale_ease, wire_grey ,scale_delay
 } from './Slider.styles'
 import { setTimeout } from 'timers';
-// import ListItem from '../ListItem/ListItem.view'
-// import styled, { keyframes } from 'styled-components';
-// import { lighten } from 'polished';
-
-// ** ========= Consts ========= **
-
-// const box_bg = lighten(0.3, 'limegreen');
-// const scale_duration = "400ms";
-// const scale_delay = "150ms";
-// const scale_ease = "cubic-bezier(0.63, 0.04, 0.49, 0.99)";
-// const wire_grey = '#999';
-
-// const FADE_IN = keyframes`
-//  0% {opacity: 0;}
-//  100% {opacity: 1;}
-// `;
-// const FADE_OUT = keyframes`
-//  0% {opacity: 1;}
-//  100% {opacity: 0;}
-// `;
-
 
 class Slider extends Component {
 
@@ -94,7 +73,7 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     console.log(windowWidth)
     const slider = this.refs.slider;
-    slider.style.transform = `translateX(${windowWidth}px)`
+    slider.style.transform = `translateX(${windowWidth-115}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
@@ -118,7 +97,7 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     // console.dir(sliderItem)
-    slider.style.transform = `translateX(-${windowWidth}px)`
+    slider.style.transform = `translateX(-${windowWidth-115}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
@@ -139,7 +118,7 @@ class Slider extends Component {
     }, 700);
   }
 
-  // ** ============== Slide Events =============== **
+  // * * ============== Slide Events =============== * *
 
   timeout = null;
   move_timeout = null;

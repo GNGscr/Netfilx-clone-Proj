@@ -56,7 +56,7 @@ export const SliderMask = styled.div`
     @media all and (min-width: 900px) {
     white-space: nowrap;
     padding: 0 60px;
-    margin-left: -117vw;
+    margin-left: -107.5vw;
         &:hover{
             cursor: pointer;
         }
@@ -80,7 +80,7 @@ export const SliderItem = styled.div`
         width: calc(100vw/5);
     }
     @media all and (min-width: 1400px) {
-        width: calc(100vw/6);
+        width: calc(92vw/6);
     }
 `;
 
