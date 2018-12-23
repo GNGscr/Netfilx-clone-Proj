@@ -3,11 +3,12 @@ import '../../styled/App.css';
 // import react from 'react';
 import {
   Wrapper, PageHead, Sliderer, SliderMask, SliderItem,
-  SliderItemInner, IMG, LeftArrow, RightArrow, P,
+  IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  // Title, Details, Descrition, Summary, CirclesBox,
-  // Circle, Play, Box, scale_delay, scale_ease, wire_grey
+  Title, Details, Descrition, Summary, CirclesBox,
+  Circle, Play, Box, scale_delay, scale_ease, wire_grey
 } from './Slider.styles'
+import { setTimeout } from 'timers';
 // import ListItem from '../ListItem/ListItem.view'
 // import styled, { keyframes } from 'styled-components';
 // import { lighten } from 'polished';
@@ -89,28 +90,34 @@ class Slider extends Component {
   }
 
   leftArrowClick() {
-    // let windowWidth = window.innerWidth
-    // console.log(windowWidth)
-    // const sliderItem = this.refs.sliderItem;
-    // sliderItem.style.transform = `translateX(${windowWidth - 120}px)`
-    // sliderItem.style.transition = '700ms'
+    let windowWidth = window.innerWidth
+    console.log(windowWidth)
+    const slider = this.refs.slider;
+    slider.style.transform = `translateX(${windowWidth - 120}px)`
+    slider.style.transition = '700ms'
+    setTimeout(() => {
+      slider.style.transform = `translateX(0px)`
+      slider.style.transition = '0ms'    
+    }, 700);
     console.log('left')
-    let item = {};
-    let items = [];
-    for(let i = 0; i < this.state.showItems; i++) {
-      item = this.state.data.pop();  
-      items.unshift(item)
-    }
-    this.setState({
-      data: [...items, ...this.state.data]
-    })    
+    setTimeout(()=> {
+      let item = {};
+      let items = [];
+      for(let i = 0; i < this.state.showItems; i++) {
+        item = this.state.data.pop();  
+        items.unshift(item)
+      }
+      this.setState({
+        data: [...items, ...this.state.data]
+      })    
+    }, 700)
   }
 
   rightArrowClick() {
     let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     // console.dir(sliderItem)
-    slider.style.transform = `translateX(-${windowWidth - 120}px)`
+    slider.style.transform = `translateX(-${windowWidth}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
@@ -209,9 +216,8 @@ class Slider extends Component {
                 console.log(e)
                 return (
                   <SliderItem key={i} ref="sliderItem">
-                    <SliderItemInner >
-                      <IMG src={e.poster} />
-                                  {/* <Box
+                      {/* <IMG src={e.poster} /> */}
+                                  <Box
                         onMouseEnter={this.mouseEnter}
                         onMouseLeave={this.mouseLeave}
                         onMouseMove={this.mouseMove}
@@ -222,22 +228,21 @@ class Slider extends Component {
                                 duration={this.state.fade_duration}
                             >
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                                <Title src={e.title} />
-                                <Details src={e.details} />
-                                <Descrition src={e.descrition} />
+                                <Title>{e.title}</Title>
+                                <Details>{e.details}</Details>
+                                <Descrition>{e.description}</Descrition>
                             </Summary>
                             <CirclesBox
                                 anim={this.state.fade_anim}
                                 duration={this.state.fade_duration}
                             >
-                                <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle>
+                                {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
                                 <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios/48/000000/plus-math-filled.png'/></Circle>
                             </CirclesBox>
-                        </Box> */}
-                    </SliderItemInner>
+                        </Box>
                   </SliderItem>
                 )
               })

@@ -15,7 +15,7 @@ export const AppDiv = styled.div`
     height: 210px;
     display: flex;
     flex-direction: column;
-    height: 240vh;
+    height: 280vh;
     @media all and (min-width: 477px) {
 
 }
@@ -43,7 +43,7 @@ export const HeadSix = styled.h6`
         color: white;
         font-size: 24px;
         margin: 0px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 `;
 export const P = styled.p`
@@ -54,8 +54,11 @@ export const P = styled.p`
     @media all and (min-width: 900px) {
         /* color: rgb(20, 20,20); */
         margin: 0;
+        margin-left:.2vw;
+        line-height: 1.8vw;
+        letter-spacing: 1;
         color: white;
-        font-size: 20px;
+        font-size: 21px;
         text-align: left;
     }
 `;
@@ -74,12 +77,15 @@ export const Buttons = styled.div`
         cursor: pointer;
     }
 `;
-export const Button = styled.button`
+export const Button = styled.div`
     
     @media all and (min-width: 477px) {
 
 }
     @media all and (min-width: 900px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: rgba(51,51,51,.4);
         /* background-color: rgba(54, 53, 53, 0.482); */
         color: #fff;
@@ -118,7 +124,7 @@ export const LogoAndTextDiv = styled.div`
 }
     @media all and (min-width: 900px) {
         position: absolute;
-        width: 500px;
+        width: 38vw;
         height: 550px;
         display: flex;
         flex-direction: column;
@@ -131,6 +137,7 @@ export const Hero = styled.img`
     width: 100vw;
     height: 50vw;
     z-index: -5;
+    background-image: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);
     @media all and (min-width: 500px) {
         height: 52vw;
     }
@@ -145,7 +152,7 @@ export const Hero = styled.img`
         margin-top: 0px;
         width: 100vw;
         height: 56.5vw;
-        background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
+        /* background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
     }
     `;
     export const SliderSection = styled.div`

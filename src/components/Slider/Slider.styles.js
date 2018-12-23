@@ -10,12 +10,12 @@ export const Wrapper = styled.div`
 `;
 export const PageHead = styled.h1`
     padding: 0px 0 0 0;
-    min-height: 44px;
+    min-height: 40px;
     display: flex;
-    font-size: 18px;
-    font-weight: bold;
-    color: #999;
-    margin: 0 12%;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ccc;
+    margin: 0 6%;
     z-index: 5;
     @media all and (min-width: 477px) {
 
@@ -45,8 +45,8 @@ export const SliderMask = styled.div`
     /* transition: right .3s ease-in-out;
     right: ${props => props.rytBtn}; */
     /* background-color: green; */
-    
-    /* border: 5px solid blue; */
+    position: relative;
+    /* border:1px solid blue; */
     white-space: nowrap;
     padding: 0 5px;
     margin-left: 15px;
@@ -63,45 +63,47 @@ export const SliderMask = styled.div`
     }
 `;
 export const SliderItem = styled.div`
-    position: calc(absolute);
+    /* position: absolute; */
     transition: all 2s ease-in;
     display: inline-flex;
-    width: calc(95%/2);
+    width: calc(95vw/2);
+    /* border: 1px solid red; */
     /* z-index: 1; */
 
     @media all and (min-width: 500px) {
-        width: calc(100%/3);
+        width: calc(100vw/3);
     }
     @media all and (min-width: 800px) {
-        width: calc(100%/4);
+        width: calc(100vw/4);
     }
     @media all and (min-width: 1100px) {
-        width: calc(100%/5);
+        width: calc(100vw/5);
     }
     @media all and (min-width: 1400px) {
-        width: calc(100%/6);
+        width: calc(100vw/6);
     }
 `;
 
-export const SliderItemInner = styled.div`
-    margin: 0 2px;
-    border-radius: 2px;
-    position: relative;
-    background: rgb(20,20,20);
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    @media all and (min-width: 1260px) {
-        width: 100%;
-        height: 100%;
-    }
-`;
+// export const SliderItemInner = styled.div`
+//     margin: 0 2px;
+//     border-radius: 2px;
+//     position: relative;
+//     background: rgb(20,20,20);
+//     width: 100%;
+//     height: 100%;
+//     background-size: 100%;
+//     background-repeat: no-repeat;
+//     @media all and (min-width: 1260px) {
+//         width: 100%;
+//         height: 100%;
+//     }
+// `;
 export const IMG = styled.img`
-    background-size: 100;
+    /* background-size: 100; */
+    background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
-    width: 104%;
+    width: 100%;
     @media all and (min-width: 1260px) {
         height: 100%;
         width: 100%; 
@@ -140,7 +142,7 @@ export const RightArrow = styled.div`
     width: 5.5%;
     height: calc(99% - 17px);
     right: 0px;
-    z-index: 4;
+    z-index: 14;
 
     @media all and (min-width: 500px) {
         width: 3.5%;
@@ -233,20 +235,22 @@ export const Title = styled.div`
     font-size: 11px;
     width: 60px;
     height: 14px;
-`;
+    `;
 export const Details = styled.div`
     /* background-color: ${wire_grey}; */
     color: white;
+    margin-left: -20px;
     font-size: 8px;
     width: 120px;
     height: 8px;
 `;
 export const Descrition = styled.div`
     /* background-color: ${wire_grey}; */
+    /* overflow: hidden; */
     color: white;
     font-size: 7px;
-    width: 160px;
-    height:15px;
+    max-width: 160px;
+    min-height: 25px;
 `;
 export const Summary = styled.div`
     /* border: grey dashed 1px; */
@@ -284,6 +288,8 @@ export const Circle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
 `;
 export const Play = styled(Circle)`
     /* border: 1px solid #fff; */
@@ -307,7 +313,7 @@ export const Box = styled.div`
     z-index: 10;
 
     &:hover {
-        transform: scale3d(1.6, 1.6, 1);
+        transform: scale3d(1.5, 1.5, 1.5);
 
     }
 `;

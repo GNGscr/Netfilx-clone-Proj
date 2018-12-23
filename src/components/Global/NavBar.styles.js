@@ -17,11 +17,11 @@ export const MainHeaderDiv = styled.header`
     @media all and (min-width: 900px) {
         margin-top: 0px;
         background-color: rgba(20, 20, 20, 0);
-        height: 85px;
+        height: 68px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        font-size: 15px;
+        font-size: 14px;
         color: white;
         /* border: 1px solid orange; */
 }
@@ -39,7 +39,7 @@ export const BcgrNav = styled.div`
 
         }
         @media all and (min-width: 900px) {
-        height: 85px;
+        height: 68px;
         background-color: rgba(20, 20, 20);
         /* background-color: rgba(20, 20, 20);
         transition: opacity .3s ease-in-out;
@@ -104,7 +104,7 @@ export const NavList = styled.ul`
     }
     @media all and (min-width: 900px) {
         position:static;
-        margin-left: 0;
+        margin-left: -22px;
         width: 430px;
         margin-top: 15px;
         flex-direction: row;
@@ -220,8 +220,8 @@ export const LOGO = styled.img`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 120px;
-        height: 34px;
+        width: 92.5px;
+        height: 31px;
         /* border: 1px solid white; */
 }
 `;
