@@ -56,7 +56,7 @@ export const SliderMask = styled.div`
     @media all and (min-width: 900px) {
     white-space: nowrap;
     padding: 0 60px;
-    margin-left: 0px;
+    margin-left: -117vw;
         &:hover{
             cursor: pointer;
         }
@@ -116,7 +116,7 @@ export const LeftArrow = styled.div`
     background: linear-gradient(to left, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
     width: 5.5%;
     height: calc(99% - 17px);
-    z-index: 4;
+    z-index: 14;
 
     @media all and (min-width: 500px) {
         width: 3.5%;

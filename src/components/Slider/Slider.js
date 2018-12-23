@@ -6,7 +6,8 @@ import {
   IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
   Title, Details, Descrition, Summary, CirclesBox,
-  Circle, Play, Box, scale_delay, scale_ease, wire_grey
+  Circle, Play, Box 
+  // scale_ease, wire_grey ,scale_delay
 } from './Slider.styles'
 import { setTimeout } from 'timers';
 // import ListItem from '../ListItem/ListItem.view'
@@ -93,7 +94,7 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     console.log(windowWidth)
     const slider = this.refs.slider;
-    slider.style.transform = `translateX(${windowWidth - 120}px)`
+    slider.style.transform = `translateX(${windowWidth}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
