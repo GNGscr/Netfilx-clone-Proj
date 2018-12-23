@@ -7,7 +7,7 @@ import NavBar from '../Global/NavBar';
 import Links from '../Global/Links';
 import Slider from '../Slider/Slider';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero } from './SearchPage.styles';
+import { AppDiv, Hero, SliderSection, FooterSection } from './SearchPage.styles';
 
 
 
@@ -25,14 +25,18 @@ class App extends Component {
     return (
       <AppDiv>
           <NavBar><Links /></NavBar>
-          <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/6271d/c582052a42712d62ecc28b5919116d3742e6271d.webp" alt=""></Hero>
+          <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero>
           <LogoAndText />
-          <Slider/>
-          <Slider/>
-          <Slider/>
-          <Slider/>
-          <Slider/>
-          <Footer />
+            <SliderSection>
+              <Slider/>
+              <Slider/>
+              <Slider/>
+              <Slider/>
+              <Slider/>
+            </SliderSection>
+            <FooterSection>
+              <Footer />
+            </FooterSection>
       </AppDiv>
     );
   }

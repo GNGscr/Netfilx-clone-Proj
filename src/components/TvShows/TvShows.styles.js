@@ -115,6 +115,7 @@ export const LogoAndTextDiv = styled.div`
 export const Hero = styled.img`
     width: 100vw;
     height: 220px;
+    z-index: -5;
     @media all and (min-width: 477px) {
         width: 100vw;
         height: 40vh;

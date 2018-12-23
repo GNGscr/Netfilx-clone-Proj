@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     } 
 `;
 export const PageHead = styled.h1`
-    padding: 15px 0 15px 0;
+    padding: 0px 0 0 0;
     min-height: 44px;
     display: flex;
     font-size: 18px;
@@ -35,6 +35,7 @@ export const Sliderer = styled.div`
     /* background-color: red; */
     @media all and (min-width: 900px) {
         margin-left: 0;
+        margin-bottom: 3.3vw;
     }
     /* @media all and (min-width: 900px) {
         
