@@ -73,7 +73,7 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     console.log(windowWidth)
     const slider = this.refs.slider;
-    slider.style.transform = `translateX(${windowWidth-115}px)`
+    slider.style.transform = `translateX(${windowWidth-115.5}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
@@ -97,7 +97,7 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     // console.dir(sliderItem)
-    slider.style.transform = `translateX(-${windowWidth-115}px)`
+    slider.style.transform = `translateX(-${windowWidth-115.5}px)`
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`

@@ -50,10 +50,16 @@ export const SliderMask = styled.div`
     white-space: nowrap;
     padding: 0 5px;
     margin-left: 15px;
-    @media all and (min-width: 477px) {
-        
+    @media all and (min-width: 500px) {
+        margin-left: -107.5vw;
     }
-    @media all and (min-width: 900px) {
+    @media all and (min-width: 800px) {
+        margin-left: -107.5vw;
+    }
+    @media all and (min-width: 1100px) {
+        margin-left: -121.5vw;
+    }
+    @media all and (min-width: 1400px) {
     white-space: nowrap;
     padding: 0 60px;
     margin-left: -107.5vw;
@@ -77,7 +83,7 @@ export const SliderItem = styled.div`
         width: calc(100vw/4);
     }
     @media all and (min-width: 1100px) {
-        width: calc(100vw/5);
+        width: calc(90vw/5);
     }
     @media all and (min-width: 1400px) {
         width: calc(92vw/6);
