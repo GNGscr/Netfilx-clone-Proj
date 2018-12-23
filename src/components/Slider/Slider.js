@@ -41,7 +41,8 @@ class Slider extends Component {
       width: window.innerWidth,
       data: [],
       fade_duration: scale_duration,
-      fade_anim: null
+      fade_anim: null,
+      slider: 0
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -88,10 +89,11 @@ class Slider extends Component {
   }
 
   leftArrowClick() {
-    let windowWidth = window.innerWidth
-    console.log(windowWidth)
-    const sliderItem = this.refs.sliderItem;
-    sliderItem.style.transform = `translateX(-${windowWidth}px)`
+    // let windowWidth = window.innerWidth
+    // console.log(windowWidth)
+    // const sliderItem = this.refs.sliderItem;
+    // sliderItem.style.transform = `translateX(${windowWidth - 120}px)`
+    // sliderItem.style.transition = '700ms'
     console.log('left')
     let item = {};
     let items = [];
@@ -101,23 +103,32 @@ class Slider extends Component {
     }
     this.setState({
       data: [...items, ...this.state.data]
-    })
+    })    
   }
 
   rightArrowClick() {
-    // const sliderItem = this.refs.sliderItem;
+    let windowWidth = window.innerWidth
+    const slider = this.refs.slider;
     // console.dir(sliderItem)
-    // sliderItem.style.transform = `translateX(-400px)`
+    slider.style.transform = `translateX(-${windowWidth - 120}px)`
+    slider.style.transition = '700ms'
+    setTimeout(() => {
+      slider.style.transform = `translateX(0px)`
+      slider.style.transition = '0ms'    
+    }, 700);
+
     console.log('right')
-    let item = {};
-    let items = [];
-    for(let i = 0; i < this.state.showItems; i++) {
-      item = this.state.data.shift();  
-      items.push(item)
-    }
-    this.setState({
-      data: [...this.state.data, ...items]
-    })
+    setTimeout(() => {
+      let item = {};
+      let items = [];
+      for(let i = 0; i < this.state.showItems; i++) {
+        item = this.state.data.shift();  
+        items.push(item)
+      }
+      this.setState({
+        data: [...this.state.data, ...items]
+      })    
+    }, 700);
   }
 
   // ** ============== Slide Events =============== **

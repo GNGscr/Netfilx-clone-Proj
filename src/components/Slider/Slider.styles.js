@@ -66,7 +66,7 @@ export const SliderItem = styled.div`
     transition: all 2s ease-in;
     display: inline-flex;
     width: calc(95%/2);
-    z-index: 1;
+    /* z-index: 1; */
 
     @media all and (min-width: 500px) {
         width: calc(100%/3);
