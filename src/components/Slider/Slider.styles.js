@@ -312,7 +312,7 @@ export const Box = styled.div`
     height: 9vw;
     object-fit: fill;
     /* object-position: center; */
-    border: #14141490 1px solid;
+    border: #14141498 1px solid;
     cursor: pointer;
     transform-origin: center;
     transition: transform ${scale_duration} ${scale_ease} ${scale_delay};
