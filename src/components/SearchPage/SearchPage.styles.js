@@ -157,7 +157,7 @@ export const Hero = styled.img`
     `;
     export const SliderSection = styled.div`
         position: absolute;
-        margin-top: 42.3vw;
+        margin-top: 42vw;
     `;
     export const FooterSection = styled.footer`
     position: absolute;
@@ -165,4 +165,15 @@ export const Hero = styled.img`
         display: flex;
         margin-left: 125px;
         /* background-color: red; */
+    `;
+    export const Hone = styled.h1`
+        /* background-color: red; */
+        display: flex;
+        justify-content: flex-start;
+        height: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #ccc;
+        padding: 0 4.1vw;
+        margin-bottom: .6vw;
     `;

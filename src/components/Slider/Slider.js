@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../styled/App.css';
 // import react from 'react';
 import {
-  Wrapper, PageHead, Sliderer, SliderMask, SliderItem,
+  Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
   Title, Details, Descrition, Summary, CirclesBox,
@@ -127,6 +127,7 @@ class Slider extends Component {
       this.short_fade_in();
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.long_fade_out, 2000);
+      console.log()
       // let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
       // let xright = this.state.data.offset.left < 70
 
@@ -159,7 +160,7 @@ class Slider extends Component {
 
   short_fade_in = () => {
       this.setState({
-          fade_duration: '550ms',
+          fade_duration: '250ms',
           fade_anim: FADE_IN
       });
   };
@@ -188,8 +189,7 @@ class Slider extends Component {
     } else {
     return (
       <Wrapper>
-        <PageHead>Netflix Originals</PageHead>
-        <Sliderer>
+        <PageHead />
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
@@ -230,7 +230,7 @@ class Slider extends Component {
           </SliderMask>
           <LeftArrow onClick={this.handleOnLeftArrowClick}><LeftArrowIMG src="https://img.icons8.com/ios/96/000000/back-filled.png" /></LeftArrow>
           <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="https://img.icons8.com/ios/96/000000/forward-filled.png" /></RightArrow>
-        </Sliderer>
+
       </Wrapper>
     );
     
@@ -239,3 +239,7 @@ class Slider extends Component {
 }
 
 export default Slider;
+
+// nav shadow https://assets.nflxext.com/en_us/akira/jawBone/nav-shadow.png
+// weeds big https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABf0nJdIBtgLdHwx2zoKdt3d59TeGIvgX_wjn0D6TYhV2-Ay42KRNYzk-Y_BTOuPp4el8AUjVT4jz2xmtDYAqfAmrgtK4OB7CqaYhPXshMx2R4_ptPLWdZAtfjlORcGvLGOWrhZLKnSI.webp
+// stranger things https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABU3yfQ5VYfhr38dBd1t1sOz_rZ1OhAHDWl79d53Cvu6R8a_aQTXRqK04m1XzFDP8CYElk3k6uzRwXA7dFhQRvEw93LQDXX0d0NM9tY7fX270gJ0H56ATPk7COBLrpdclmRPqw6wIiw.jpg
