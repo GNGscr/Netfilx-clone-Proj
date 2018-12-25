@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const FilterClass = styled.div`
     display: flex;
+    position: relative;
     /* background-color: #f0f0f0; */
     @media all and (min-width: 477px) {
 
@@ -66,4 +67,48 @@ export const FilterInputMobile = styled.input`
     @media all and (min-width: 900px) {
         display: none;
 }
+`;
+export const ContentBox = styled.div`
+    position: absolute;
+    display: flex;
+    /* opacity: 0; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vw;
+    width: 22vw;
+    margin-top: 3.6vw;
+    background-color: rgb(20,20,20);
+    color: #ccc;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* background-color: rgb(20,20,20); */
+`;
+export const Filtered = styled.div`
+    margin: .08vw;
+    top: 2.5vw;
+    position: relative;
+    display: flex;
+    padding: 2vw 0;
+    padding-left: .5vw;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 .2rem .8rem DimGrey;
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.8);
+    width: 90%;
+`;
+
+export const IMG = styled.img`
+    height: 2.3vw;
+    width: 3.8vw;
+    margin-right: .5vw;
+`;
+export const FilterHeader = styled.h2`
+    margin-left: 0vw;
+    margin-top: 127vw;
+    color: grey;
+    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: .7
 `;

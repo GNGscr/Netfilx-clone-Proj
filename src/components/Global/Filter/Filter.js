@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+// import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 
-import {FilterClass, FilterIcon , FilterInput, FilterInputMobile} from './Filter.styles'
+import {FilterClass, FilterIcon , FilterInput, FilterInputMobile, ContentBox, Filtered, IMG, FilterHeader} from './Filter.styles'
 
 export default class Filter extends Component {
 
@@ -21,9 +22,12 @@ export default class Filter extends Component {
         const res = await fetch('./MOCK_DATA.json')
         const data = await res.json();
         this.setState({ 
-          data
+            data,
+            original_list:data,
+            displayed_list: data,
+            profile_data: data[0]
         })
-        console.log(data.length)
+        // console.log(data.length)
       }
 
     // update_list_state(filtered_list){
@@ -74,21 +78,32 @@ export default class Filter extends Component {
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" onChange={(e) => this.update_list(e)}/>
                
-                    {/* <div className="content-box">
-                    <Profile {...this.state.profile_data}/>
-                    <List list_data={this.state.displayed_list}
-                        pick={(item)=> this.update_profile(item)}/>
-                    </div> */}
+                        <ContentBox>
+                            <FilterHeader>{this.state.data.length} Items found</FilterHeader>
+                            {
+                                this.state.data.map((e, i) => {
+                                    return (
+                                       <Filtered>
+                                        <IMG src={e.poster} alt="" />
+                                       {e.title}
+                                       </Filtered>
+                                    )
+                                })
+                            }
+                            </ContentBox>
+                    {/* <FilterBox>
+                    </FilterBox> */}
                </FilterClass>
     }
 }
-
+// {this.state.original_list}
+// on_filter={(fl)=>this.update_list_state(fl)}
 // Filter.PropTypes = {
-//         on_filter: PropTypes.func.isRequired,
-//         list_data: PropTypes.arrayOf(PropTypes.shape({
-//             id: PropTypes.number.isRequired,
-//             first_name: PropTypes.string.isRequired,
-//             last_name: PropTypes.string.isRequired,
-//             avatar: PropTypes.string.isRequired
-//         })).isRequired
-// }
+    //         on_filter: PropTypes.func.isRequired,
+    //         list_data: PropTypes.arrayOf(PropTypes.shape({
+        //             id: PropTypes.number.isRequired,
+        //             first_name: PropTypes.string.isRequired,
+        //             last_name: PropTypes.string.isRequired,
+        //             avatar: PropTypes.string.isRequired
+        //         })).isRequired
+        // }
