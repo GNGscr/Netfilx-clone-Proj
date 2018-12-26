@@ -80,7 +80,7 @@ export default class Filter extends Component {
     render() {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
-                    <FilterInput ref="slideit" bgclr={this.state.navbgclr} type="text" placeholder="Search TV Shows, Movies"  list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                    <FilterInput ref="slideit" bgclr={this.state.navbgclr} type="text" placeholder="TV Shows, Movies"  list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
