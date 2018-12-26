@@ -19,11 +19,6 @@ class App extends Component {
   state = {
     msg: "temp msg"
   }
-  // async componentDidMount(){
-  //     const response = await fetch('/api/hello')
-  //     const data = await response.text()
-  //     this.setState({msg:data});
-  // }
   render() {
     return (
       <AppDiv>
@@ -55,12 +50,6 @@ class App extends Component {
 export default App;
 
 
-
-// background-image: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);
-
-// const font1_medium = "https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v2/NetflixSans-Medium-Opt.woff2"
-// const font2_regular = "https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v2/NetflixSans-Regular-Opt.woff2"
-// const font3_icon_v1_93 = "https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.woff"
 
 
 

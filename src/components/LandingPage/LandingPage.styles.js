@@ -31,8 +31,8 @@ export const Anker = styled.a`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 218px;
-    width: 70px;
+    height: 18vw;
+    width: 17.5vw;
     margin: 15px;
     color: rgba(128, 128, 128);
     font-size: 12px;
@@ -52,8 +52,8 @@ export const ImageProfile = styled.div`
     align-items: center;
     border: 3px solid rgba(128, 128, 128);
     background-color: rgba(20, 20, 20);
-    height: 20vw;
-    width: 20vw;
+    height: 10vw;
+    width: 10vw;
     margin-bottom: 20px;
 
     &:hover {
@@ -63,12 +63,12 @@ export const ImageProfile = styled.div`
         height: 10vw;
         width: 10vw;
         margin: 3vw;
-        background-color: blue;
+        background-color: rgba(20, 20, 20);
     }
 `;
 export const UserImg = styled.img`
-    height: 20vw;
-    width: 20vw;
+    height: 100%;
+    width: 100%;
 
     /* @media all and (min-width: 500px) {
         width: calc(100%/3);
