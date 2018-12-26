@@ -142,22 +142,12 @@ class Slider extends Component {
   move_timeout = null;
 
   mouseEnter = e => {
+    console.log('y id is: target: ',e.currentTarget)
+    console.log('my id is: ',e.currentTarget.dataset.id)
       this.short_fade_in();
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.long_fade_out, 2000);
       console.log()
-      // let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
-      // let xright = this.state.data.offset.left < 70
-
-      // let dir
-
-      // if (xright) {
-      //   dir = '-25%'
-      // } else if (xleft) {
-      //   dir = '25%'
-      // } else {
-      //   dir = '0'
-      // }
   }
   mouseLeave = e => {
       clearTimeout(this.timeout);
@@ -211,15 +201,15 @@ class Slider extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                console.log(e)
+                //console.log(e)
                 return (
-                  <SliderItem key={i} ref="sliderItem">
+                  <SliderItem key={i} ref={`sliderItem-${e.id}`} >
                       {/* <IMG src={e.poster} /> */}
-                                  <Box
-                        onMouseEnter={this.mouseEnter}
-                        onMouseLeave={this.mouseLeave}
-                        onMouseMove={this.mouseMove}
-                        >
+                                  <Box data-id={e.id}
+                                      onMouseEnter={this.mouseEnter}
+                                      onMouseLeave={this.mouseLeave}
+                                      onMouseMove={this.mouseMove}
+                                      >
                             <IMG src={e.poster}/>
                             <Summary
                                 anim={this.state.fade_anim}

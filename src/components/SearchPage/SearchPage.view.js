@@ -13,8 +13,6 @@ import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './SearchPage.styles';
 
 
-
-
 class App extends Component {
   state = {
     msg: "temp msg"
