@@ -23,7 +23,7 @@ export default class Filter extends Component {
     }
 
     async componentDidMount() {
-        const res = await fetch('./MOCK_DATA.json')
+        const res = await fetch('./MOCK_DATAfull.json')
         const data = await res.json();
         this.setState({ 
             data,

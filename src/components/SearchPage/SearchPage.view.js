@@ -6,6 +6,8 @@ import LogoAndText from './Logo_and_text/Logo_and_text';
 import NavBar from '../Global/NavBar';
 import Links from '../Global/Links';
 import Slider from '../Slider/Slider';
+import SliderTvShows from '../SliderTvShows/SliderTvShows';
+import SliderMovies from '../SliderMovies/SliderMovies';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './SearchPage.styles';
 
@@ -30,15 +32,15 @@ class App extends Component {
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
-              <Hone>Netflix Originals</Hone>
-              <Slider/>
-              <Hone>New Realses</Hone>
-              <Slider/>
-              <Hone>Trending Now</Hone>
-              <Slider/>
+              <Hone>TV Shows</Hone>
+              <SliderTvShows/>
+              <Hone>Movies</Hone>
+              <SliderMovies/>
               <Hone>Popular on Netflix</Hone>
               <Slider/>
               <Hone>My List</Hone>
+              <SliderTvShows/>
+              <Hone>Netflix Originals</Hone>
               <Slider/>
             </SliderSection>
             <FooterSection>

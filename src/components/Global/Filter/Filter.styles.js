@@ -92,7 +92,7 @@ export const ContentBox = styled.div`
 `;
 export const Filtered = styled.div`
     margin: .08vw;
-    top: -1vw;
+    top: -2vw;
     position: relative;
     display: flex;
     padding: 2vw 0;
@@ -113,7 +113,7 @@ export const IMG = styled.img`
 `;
 export const FilterHeader = styled.h2`
     margin-left: 0vw;
-    margin-top: 135vw;
+    margin-top: 367vw;
     color: grey;
     font-weight: 400;
     font-size: 1.2rem;
@@ -121,6 +121,6 @@ export const FilterHeader = styled.h2`
 `;
 export const Carret = styled.h3`
     font-size: 32px;
-    color: grey;
+    color: rgba(128, 128, 128, 0.8);
     font-weight: 300;
 `;
