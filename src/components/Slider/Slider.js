@@ -73,7 +73,16 @@ class Slider extends Component {
     let windowWidth = window.innerWidth
     console.log(windowWidth)
     const slider = this.refs.slider;
-    slider.style.transform = `translateX(${windowWidth-115.5}px)`
+    slider.style.transform = `translateX(${this.state.width -42}px)`
+    if(this.state.width > 1400) {
+      slider.style.transform = `translateX(${this.state.width-115.5}px)`
+    } else if (this.state.width > 1100) {
+      slider.style.transform = `translateX(${this.state.width-122}px)`
+    } else if (this.state.width > 800) {
+      slider.style.transform = `translateX(${this.state.width -114}px)`
+    } else if (this.state.width > 500) {
+      slider.style.transform = `translateX(${this.state.width -49}px)`
+    }
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`
@@ -94,10 +103,19 @@ class Slider extends Component {
   }
 
   rightArrowClick() {
-    let windowWidth = window.innerWidth
+    // let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     // console.dir(sliderItem)
-    slider.style.transform = `translateX(-${windowWidth-115.5}px)`
+    slider.style.transform = `translateX(-${this.state.width -42}px)`
+    if(this.state.width > 1400) {
+      slider.style.transform = `translateX(-${this.state.width-115.5}px)`
+    } else if (this.state.width > 1100) {
+      slider.style.transform = `translateX(-${this.state.width-122}px)`
+    } else if (this.state.width > 800) {
+      slider.style.transform = `translateX(-${this.state.width -114}px)`
+    } else if (this.state.width > 500) {
+      slider.style.transform = `translateX(-${this.state.width -49}px)`
+    }
     slider.style.transition = '700ms'
     setTimeout(() => {
       slider.style.transform = `translateX(0px)`

@@ -31,6 +31,7 @@ export const BcgrNav = styled.div`
     height: 50px;
     width: 100vw;
     position: fixed;
+    opacity: 0;
     background-color: rgba(20, 20, 20, 0.7);
     transition: opacity .3s ease-in-out;
     opacity: ${props => props.bgclr};

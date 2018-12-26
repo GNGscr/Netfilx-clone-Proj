@@ -7,7 +7,7 @@ import NavBar from '../Global/NavBar';
 import Links from '../Global/Links';
 import Slider from '../Slider/Slider';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone } from './SearchPage.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './SearchPage.styles';
 
 
 
@@ -26,6 +26,7 @@ class App extends Component {
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
+          <HeroMask />
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>

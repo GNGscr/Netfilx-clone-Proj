@@ -35,12 +35,15 @@ export const FilterInput = styled.input`
         width: 200px;
         outline: none;
         font-size: 16px;
+        opacity: 0;
         border-radius: 0px;
         border: #ccc 1px solid;
         transition: border .3s;
         background-color: rgb(20, 20, 20);
         padding: 4px;
         padding-left: 10px;
+        /* margin-right: -250px; */
+        overflow-x: hidden;
         transition: opacity .1s linear;
         opacity: ${props => props.bgclr};
         color: white;
@@ -71,7 +74,7 @@ export const FilterInputMobile = styled.input`
 export const ContentBox = styled.div`
     position: absolute;
     display: flex;
-    /* opacity: 0; */
+    opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -82,11 +85,14 @@ export const ContentBox = styled.div`
     color: #ccc;
     overflow-x: hidden;
     overflow-y: scroll;
+    transition: opacity 1s ease-in-out;
+    transition-delay: .5s;
+    opacity: ${props => props.cntctbx};
     /* background-color: rgb(20,20,20); */
 `;
 export const Filtered = styled.div`
     margin: .08vw;
-    top: 2.5vw;
+    top: -1vw;
     position: relative;
     display: flex;
     padding: 2vw 0;
@@ -97,6 +103,7 @@ export const Filtered = styled.div`
     font-size: 18px;
     border: 1px solid rgba(128, 128, 128, 0.8);
     width: 90%;
+    cursor: pointer;
 `;
 
 export const IMG = styled.img`
@@ -106,9 +113,14 @@ export const IMG = styled.img`
 `;
 export const FilterHeader = styled.h2`
     margin-left: 0vw;
-    margin-top: 127vw;
+    margin-top: 135vw;
     color: grey;
     font-weight: 400;
     font-size: 1.2rem;
-    opacity: .7
+    opacity: .7;
+`;
+export const Carret = styled.h3`
+    font-size: 32px;
+    color: grey;
+    font-weight: 300;
 `;

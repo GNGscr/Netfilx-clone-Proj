@@ -137,7 +137,9 @@ export const Hero = styled.img`
     width: 100vw;
     height: 50vw;
     z-index: -5;
-    background-image: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);
+    position: relative;
+    /* background-color: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%); */
+    /* background-clip: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
     @media all and (min-width: 500px) {
         height: 52vw;
     }
@@ -148,11 +150,33 @@ export const Hero = styled.img`
         height: 54vw;
     }
     @media all and (min-width: 1400px) {
-        position: relative;
         margin-top: 0px;
         width: 100vw;
         height: 56.5vw;
-        /* background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
+    }
+    `;
+export const HeroMask = styled.div`
+    width: 100vw;
+    height: 50vw;
+    margin-top: 0vw;
+    z-index: -3;
+    position: absolute;
+    /* background-color: red; */
+    background: linear-gradient(to bottom,rgba(20,20,20,0.3) 0,rgba(20,20,20,.10) 15%,rgba(20,20,20,0) 29%,rgba(20,20,20,.18) 54%,#141414 88%,#141414 100%);
+    /* background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
+    @media all and (min-width: 500px) {
+        height: 52vw;
+    }
+    @media all and (min-width: 800px) {
+        height: 53vw;
+    }
+    @media all and (min-width: 1100px) {
+        height: 54vw;
+    }
+    @media all and (min-width: 1400px) {
+        margin-top: 0px;
+        width: 100vw;
+        height: 56.5vw;
     }
     `;
     export const SliderSection = styled.div`

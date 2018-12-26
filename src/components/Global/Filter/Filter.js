@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
+// import Filtering from './Filtering'
 
-import {FilterClass, FilterIcon , FilterInput, FilterInputMobile, ContentBox, Filtered, IMG, FilterHeader} from './Filter.styles'
+import {FilterClass, FilterIcon , FilterInput, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
 
 export default class Filter extends Component {
 
     state = {
         InputOn: false,        
         navbgclr: 'opacity: 0',
+        cntctbox: 'opacity: 0',
         data: [],
-        list_data: [],
-        filter_list: [],
+        original_list: [],
+        // list_data: [],
+        displayed_list: []
+        // filtered_list: [],
 
         // original_list:data,
         // displayed_list: data,
@@ -25,17 +29,18 @@ export default class Filter extends Component {
             data,
             original_list:data,
             displayed_list: data,
-            profile_data: data[0]
+            // list_data: data,
+            // filtered_list: data
         })
         // console.log(data.length)
       }
 
-    // update_list_state(filtered_list){
-    //     console.log('update_list_state',filtered_list.length)
-    //     this.setState({
-    //         displayed_list: filtered_list
-    //     })
-    // }
+    update_list_state(filtered_list){
+        console.log('update_list_state',filtered_list.length)
+        this.setState({
+            displayed_list: filtered_list
+        })
+    }
     // update_profile(item){
     //     console.log('update_profile',item)
     //     this.setState({
@@ -43,30 +48,31 @@ export default class Filter extends Component {
     //     })
     // }
 
-    update_list(e) {
-        console.log(e.target.value)
-        const { list_data, on_filter } = this.props;
-        let txt = e.target.value;
-        let filter_list = list_data.filter( item =>
-            item.first_name.toLowerCase().includes(txt.toLowerCase())
-        )
-        on_filter(filter_list)
-    }
-
+    // update_list(event) {
+    //     console.log(event.target.value)
+    //     const { list_data, on_filter } = this.props;
+    //     let txt = event.target.value;
+    //     let filtered_list = list_data.filter( item =>
+    //         item.first_name.toLowerCase().includes(txt.toLowerCase())
+    //     )
+    //     on_filter(filtered_list)
+    // }
     toggleInput = () => {
-        console.log('responsive')
-        // const iconopacity = this.refs.iconopacity;
-        // iconopacity.style.transition = 'opacity(0)';
+        // console.log('responsive')
+        // const slideit = this.refs.slideit; 
+        // slideit.style.transform = 'translateX(-250px)'
         if (this.state.InputOn) {
             // console.log('works')
             this.setState({
                 navbgclr: 0,
+                cntctbox: 0,
                 InputOn: false
             })
         } else {
             // console.log('doesnt work')
             this.setState({
                 navbgclr: 1,
+                cntctbox: 1,
                 InputOn: true
             })
         }
@@ -74,18 +80,19 @@ export default class Filter extends Component {
     render() {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
-                    <FilterInput bgclr={this.state.navbgclr} type="text" placeholder="Titles, people, genres" onChange={(e) => this.update_list(e)}/>
+                    <FilterInput ref="slideit" bgclr={this.state.navbgclr} type="text" placeholder="Movies, TV Shows,"  list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
-                    <FilterInputMobile type="text" placeholder="Search" onChange={(e) => this.update_list(e)}/>
+                    <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
-                        <ContentBox>
+                        <ContentBox cntctbx={this.state.cntctbox}>
                             <FilterHeader>{this.state.data.length} Items found</FilterHeader>
+                            <Carret>^</Carret>
                             {
-                                this.state.data.map((e, i) => {
+                                this.state.displayed_list.map((e, i) => {
                                     return (
                                        <Filtered>
                                         <IMG src={e.poster} alt="" />
-                                       {e.title}
+                                            {e.title}
                                        </Filtered>
                                     )
                                 })
