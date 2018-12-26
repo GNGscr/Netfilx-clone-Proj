@@ -8,6 +8,7 @@ import Links from '../Global/Links';
 import Slider from '../Slider/Slider';
 import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
+import SliderComedy from '../SliderComedy/SliderComedy';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './SearchPage.styles';
 
@@ -38,8 +39,8 @@ class App extends Component {
               <SliderMovies/>
               <Hone>Popular on Netflix</Hone>
               <Slider/>
-              <Hone>My List</Hone>
-              <SliderTvShows/>
+              <Hone>Comedies:</Hone>
+              <SliderComedy/>
               <Hone>Netflix Originals</Hone>
               <Slider/>
             </SliderSection>
