@@ -142,7 +142,7 @@ class Slider extends Component {
   move_timeout = null;
 
   mouseEnter = e => {
-    console.log('y id is: target: ',e.currentTarget)
+    console.log('my id is: target: ',e.currentTarget)
     console.log('my id is: ',e.currentTarget.dataset.id)
       this.short_fade_in();
       clearTimeout(this.timeout);
@@ -187,7 +187,7 @@ class Slider extends Component {
   
 
   render() {
-    console.log(this.state.data)
+    // console.log(this.state.data)
     if(this.state.data === []) {
       return (
         <>

@@ -197,7 +197,7 @@ class SliderTvShows extends Component {
   
 
   render() {
-    console.log(this.state.data)
+    // console.log(this.state.data)
     if(this.state.data === []) {
       return (
         <>
@@ -211,7 +211,7 @@ class SliderTvShows extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                console.log(e)
+                // console.log(e)
                 return (
                   <SliderItem key={i} ref="sliderItem">
                       {/* <IMG src={e.poster} /> */}
