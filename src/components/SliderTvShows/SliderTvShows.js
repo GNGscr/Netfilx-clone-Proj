@@ -159,14 +159,10 @@ class SliderTvShows extends Component {
           let tworer = (onerer +++ 1)
           console.log('The id thats after next is: ' + tworer)
 
-    // let two = oner-1
-
     let one = e.currentTarget.previousElementSibling
     // console.log(one)
     one.style.transform = `translateX(-7.5vw)`
     one.style.transition = '500ms'
-    // two.style.transform = `translateX(-7.5vw)`
-    // two.style.transition = '500ms'
 
     let two = e.currentTarget.nextElementSibling
     // console.log(two)
