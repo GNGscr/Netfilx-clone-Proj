@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
-// import react from 'react';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  Title, Details, Descrition, Summary, CirclesBox,
+  Title, Details, Description, Summary, CirclesBox,
   Circle, Play, Box 
-  // scale_ease, wire_grey ,scale_delay
 } from './Slider.styles'
 import { setTimeout } from 'timers';
 
@@ -48,7 +46,7 @@ class Slider extends Component {
     this.setState({
       width: window.innerWidth
     });
-    console.log(this.state.width);
+    // console.log(this.state.width);
   }
 
   updateSliderState() {
@@ -70,8 +68,8 @@ class Slider extends Component {
   }
 
   leftArrowClick() {
-    let windowWidth = window.innerWidth
-    console.log(windowWidth)
+    // let windowWidth = window.innerWidth
+    // console.log(windowWidth)
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -42}px)`
     if(this.state.width > 1400) {
@@ -142,7 +140,7 @@ class Slider extends Component {
   move_timeout = null;
 
   mouseEnter = e => {
-    console.log('my id is: target: ',e.currentTarget)
+    // console.log('my id is: target: ',e.currentTarget)
     console.log('my id is: ',e.currentTarget.dataset.id)
       this.short_fade_in();
       clearTimeout(this.timeout);
@@ -203,13 +201,13 @@ class Slider extends Component {
               this.state.data.map((e, i) => {
                 //console.log(e)
                 return (
-                  <SliderItem key={i} ref={`sliderItem-${e.id}`} >
-                      {/* <IMG src={e.poster} /> */}
-                                  <Box data-id={e.id}
-                                      onMouseEnter={this.mouseEnter}
-                                      onMouseLeave={this.mouseLeave}
-                                      onMouseMove={this.mouseMove}
-                                      >
+                  <SliderItem key={i} ref={`sliderItem-${e.id}`}
+                  onMouseEnter={this.mouseEnter}
+                  onMouseLeave={this.mouseLeave}
+                  onMouseMove={this.mouseMove}
+                  data-id={e.id}
+                  >
+                          <Box>
                             <IMG src={e.poster}/>
                             <Summary
                                 anim={this.state.fade_anim}
@@ -218,7 +216,7 @@ class Slider extends Component {
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                                 <Title>{e.title}</Title>
                                 <Details>{e.details}</Details>
-                                <Descrition>{e.description}</Descrition>
+                                <Description>{e.description}</Description>
                             </Summary>
                             <CirclesBox
                                 anim={this.state.fade_anim}

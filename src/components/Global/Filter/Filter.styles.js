@@ -24,7 +24,7 @@ export const FilterIcon = styled.img`
         cursor: pointer;
     }
 `;
-export const FilterInput = styled.input`
+export const Inputer = styled.input`
     display: none;
     @media all and (min-width: 477px) {
 
@@ -35,7 +35,7 @@ export const FilterInput = styled.input`
         width: 200px;
         outline: none;
         font-size: 16px;
-        opacity: 0;
+        /* opacity: 0; */
         border-radius: 0px;
         border: #ccc 1px solid;
         transition: border .3s;
@@ -73,7 +73,7 @@ export const FilterInputMobile = styled.input`
 `;
 export const ContentBox = styled.div`
     position: absolute;
-    display: flex;
+    display: none;
     opacity: 0;
     flex-direction: column;
     justify-content: center;

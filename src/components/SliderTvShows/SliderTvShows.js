@@ -5,7 +5,7 @@ import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  Title, Details, Descrition, Summary, CirclesBox,
+  Title, Details, Description, Summary, CirclesBox,
   Circle, Play, Box 
   // scale_ease, wire_grey ,scale_delay
 } from './SliderTvShows.styles'
@@ -48,7 +48,7 @@ class SliderTvShows extends Component {
     this.setState({
       width: window.innerWidth
     });
-    console.log(this.state.width);
+    // console.log(this.state.width);
   }
 
   updateSliderState() {
@@ -70,8 +70,8 @@ class SliderTvShows extends Component {
   }
 
   leftArrowClick() {
-    let windowWidth = window.innerWidth
-    console.log(windowWidth)
+    // let windowWidth = window.innerWidth
+    // console.log(windowWidth)
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -42}px)`
     if(this.state.width > 1400) {
@@ -135,31 +135,118 @@ class SliderTvShows extends Component {
       })    
     }, 700);
   }
+  // ---------------------------------------------------------------
+  // * * ==================== Slide Events ===================== * *
+  // ---------------------------------------------------------------
 
-  // * * ============== Slide Events =============== * *
 
   timeout = null;
   move_timeout = null;
 
   mouseEnter = e => {
+    // console.log('my id is: target: ',e.currentTarget)
+    // console.log('my id is: ',e.currentTarget.dataset.id)
+    // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
+    // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
+    
+    let oner = e.currentTarget.previousElementSibling.dataset.id
+    let twor = oner-1
+    console.log('The id thats before the previous is: ' + twor)
+    console.log('The previous id is: ' + oner)
+    console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
+    let onerer = e.currentTarget.nextElementSibling.dataset.id
+          console.log('The next id is: ' + onerer)
+          let tworer = (onerer +++ 1)
+          console.log('The id thats after next is: ' + tworer)
+
+    // let two = oner-1
+
+    let one = e.currentTarget.previousElementSibling
+    // console.log(one)
+    one.style.transform = `translateX(-7.5vw)`
+    one.style.transition = '500ms'
+    // two.style.transform = `translateX(-7.5vw)`
+    // two.style.transition = '500ms'
+
+    let two = e.currentTarget.nextElementSibling
+    // console.log(two)
+    two.style.transform = `translateX(7.5vw)`
+    two.style.transition = '500ms'
+
+    // let two = one.previousElementSibling.dataset.id
+    // let three = two.previousElementSibling.dataset.id
+    // let four = three.previousElementSibling.dataset.id
+    // let five = four.previousElementSibling.dataset.id
+    // let six = five.previousElementSibling.dataset.id
+    // let last = six.previousElementSibling.dataset.id
+    // console.log('my previos elements are: ', one,two,three,four,five,six,last)
+    // const slider = this.refs.slider
+    const sliderItem = this.refs.sliderItem
+    // e.currentTarget.style.transform = `translateX(-40px)`
+    e.currentTarget.style.transform = `scale(2)`
+    e.currentTarget.style.transition = '500ms'
+    // console.log(e.currentTarget.parentElement)
+    
+      // if(e.target.id < e.currentTarget.dataset.id) {
+      //   console.log('lower then current', e.target.id)
+      // } else {
+      //   console.log('else')
+    //   // }
+
+    // e.currentTarget.parentElement.style.
+
+    // if(e.target.id < e.currentTarget){
+    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
+    // } else if (e.target.id < e.currentTarget) {
+    //   console.log('lower then current', e.target.id)
+    // } else if (e.target.id === e.currentTarget){
+    //   console.log('same')
+    // } else {
+    //   console.log('else')
+    // }
+    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
+
+    // e.currentTarget.style.margin = '0 3.75vw'
+    // console.log(slider)
+    // if(slider.e.currentTarget.dataset.id > e.currentTarget.dataset.id) {
+    //   slider.style.transform = `translateX(-100px)`
+    // }
+    // let counter = [];
+    // for(let i = 0; i < e.currentTarget.parentElement; i++) {
+    //   counter.push(i)
+      
+    //   // slider.splice(3, 1);
+    //   slider.style.transform = `translateX(-300px)`
+    //   slider.style.transition = '500ms'
+    //   e.currentTarget.dataset.id.style.transform = `translateX(-200px)`
+    // }
+    // console.log(counter)
+
+    // for(let j = slider; e.currentTarget.dataset.id > j; j++) {
+    //   let counterer = [];
+    //   counterer.push(j)
+    //   console.log(counterer)
+    //   // slider.style.transform = `translateX(-100px)`
+    // }
+
       this.short_fade_in();
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.long_fade_out, 2000);
-      console.log()
-      // let xleft = (this.state.width() - (this.state.data.offset().left) + this.state.data.outerWidth()) < 70
-      // let xright = this.state.data.offset.left < 70
-
-      // let dir
-
-      // if (xright) {
-      //   dir = '-25%'
-      // } else if (xleft) {
-      //   dir = '25%'
-      // } else {
-      //   dir = '0'
-      // }
+      // console.log()
   }
   mouseLeave = e => {
+    e.currentTarget.style.transform = `scale(1)`
+    e.currentTarget.style.transition = '500ms'
+    // e.currentTarget.style.margin = '0'
+    let one = e.currentTarget.previousElementSibling
+    // console.log(one)
+    one.style.transform = `translateX(0px)`
+    one.style.transition = '500ms'
+    let two = e.currentTarget.nextElementSibling
+    // console.log(two)
+    two.style.transform = `translateX(0px)`
+    two.style.transition = '500ms'
+
       clearTimeout(this.timeout);
       clearTimeout(this.move_timeout);
       this.move_timeout = null;
@@ -213,13 +300,13 @@ class SliderTvShows extends Component {
               this.state.data.map((e, i) => {
                 // console.log(e)
                 return (
-                  <SliderItem key={i} ref="sliderItem">
-                      {/* <IMG src={e.poster} /> */}
-                                  <Box
+                  <SliderItem key={i} ref={`sliderItem-${e.id}`}
                         onMouseEnter={this.mouseEnter}
                         onMouseLeave={this.mouseLeave}
                         onMouseMove={this.mouseMove}
-                        >
+                        data-id={e.id}
+                  >
+                        <Box>
                             <IMG src={e.poster}/>
                             <Summary
                                 anim={this.state.fade_anim}
@@ -228,7 +315,7 @@ class SliderTvShows extends Component {
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                                 <Title>{e.title}</Title>
                                 <Details>{e.details}</Details>
-                                <Descrition>{e.description}</Descrition>
+                                {/* <Description>{e.description}</Description> */}
                             </Summary>
                             <CirclesBox
                                 anim={this.state.fade_anim}

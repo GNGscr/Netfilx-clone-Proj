@@ -60,6 +60,7 @@ export const SliderMask = styled.div`
     white-space: nowrap;
     padding: 0 15px;
     margin-left: -322vw;
+    z-index: 4;
     @media all and (min-width: 500px) {
         padding: 0 30px;
         margin-left: -229.5vw;
@@ -87,7 +88,16 @@ export const SliderItem = styled.div`
     display: inline-flex;
     width: calc(89vw/2);
     /* border: 1px solid red; */
-    /* z-index: 1; */
+    z-index: 6;
+    cursor: pointer;
+    /* transform-origin: center;
+    transition: all .5s ease-in-out; */
+    &:hover {
+        /* margin-right: 7.5vw;
+        margin-left: 7.5vw; */
+        /* transform: scale(2);
+        z-index:1500; */
+    }
 
     @media all and (min-width: 500px) {
         width: calc(93vw/3);
@@ -102,23 +112,7 @@ export const SliderItem = styled.div`
         width: calc(92vw/6);
     }
 `;
-
-// export const SliderItemInner = styled.div`
-//     margin: 0 2px;
-//     border-radius: 2px;
-//     position: relative;
-//     background: rgb(20,20,20);
-//     width: 100%;
-//     height: 100%;
-//     background-size: 100%;
-//     background-repeat: no-repeat;
-//     @media all and (min-width: 1260px) {
-//         width: 100%;
-//         height: 100%;
-//     }
-// `;
 export const IMG = styled.img`
-    /* background-size: 100; */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -223,11 +217,10 @@ export const RightArrowIMG = styled.img`
     }
 `;
 export const P = styled.p`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    /* align-items: center; */
     color: #fff;
-    font-size: 32px;
+    font-size: .5rem;
 `;
 
 // ** ============ Slide ============ **
@@ -248,39 +241,53 @@ export const FADE_OUT = keyframes`
 
 export const Title = styled.div`
     /* background-color: ${wire_grey}; */
+    /* margin-left: -4px;
+    position: absolute; */
+    display: flex;
+    justify-content: flex-start;
     color: white;
-    font-size: 11px;
-    width: 60px;
-    height: 14px;
+    font-size: 9px;
+    /* width: 60px;
+    height: 14px; */
     `;
 export const Details = styled.div`
     /* background-color: ${wire_grey}; */
+    /* position: absolute;
+    margin-left: -4px; */
+    display: flex;
+    justify-content: flex-start;
     color: white;
-    margin-left: -20px;
     font-size: 8px;
     width: 120px;
     height: 8px;
 `;
-export const Descrition = styled.div`
-    /* background-color: ${wire_grey}; */
-    /* overflow: hidden; */
-    color: white;
+export const Description = styled.div`
+    background-color: ${wire_grey};
+    /* position: absolute; */
     display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    color: white;
+    margin-top: .5vw;
+
     flex-wrap: wrap;
-    font-size: 7px;
-    max-width: 160px;
-    min-height: 25px;
+    font-size: 6px;
+    width: 160px;
+    min-height: 35px;
 `;
 export const Summary = styled.div`
-    /* border: grey dashed 1px; */
+    border: grey dashed 1px;
     position: absolute;
     right: 1.2rem;
     bottom: 1.2rem;
-    margin-right: 40px;
-    height: 80px;
+    margin-right: 20px;
+    margin-left: 10px;
+    height: 6vw;
+    width: 11vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* overflow: hidden; */
     opacity: 0;
     animation: ${p => p.anim} ${p => p.duration} forwards;
 `;
@@ -297,6 +304,7 @@ export const CirclesBox = styled.div`
     animation: ${p => p.anim} ${p => p.duration} forwards;
 `;
 export const Circle = styled.div`
+    /* position: absolute; */
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -318,6 +326,7 @@ export const Play = styled(Circle)`
 export const Box = styled.div`
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -326,15 +335,8 @@ export const Box = styled.div`
     object-fit: fill;
     /* object-position: center; */
     border: #14141498 1px solid;
-    cursor: pointer;
-    transform-origin: center;
-    transition: transform ${scale_duration} ${scale_ease} ${scale_delay};
-    z-index: 10;
+    z-index: 15;
 
-    &:hover {
-        transform: scale(2);
-        /* z-index: 15; */
-    }
     @media all and (min-width: 500px) {
         width: 30.7vw; 
         height: 17vw; 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
-// import Filtering from './Filtering'
+import Filtering from './Filtering'
 
-import {FilterClass, FilterIcon , FilterInput, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
+import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
 
 export default class Filter extends Component {
 
@@ -58,9 +58,7 @@ export default class Filter extends Component {
     //     on_filter(filtered_list)
     // }
     toggleInput = () => {
-        // console.log('responsive')
-        // const slideit = this.refs.slideit; 
-        // slideit.style.transform = 'translateX(-250px)'
+
         if (this.state.InputOn) {
             // console.log('works')
             this.setState({
@@ -80,12 +78,12 @@ export default class Filter extends Component {
     render() {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
-                    <FilterInput ref="slideit" bgclr={this.state.navbgclr} type="text" placeholder="TV Shows, Movies"  list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                    <Filtering bgclr={this.state.navbgclr} list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
                         <ContentBox cntctbx={this.state.cntctbox}>
-                            <FilterHeader>{this.state.data.length} Items found</FilterHeader>
+                            <FilterHeader>{this.state.displayed_list.length} Items found</FilterHeader>
                             <Carret>^</Carret>
                             {
                                 this.state.displayed_list.map((e, i) => {

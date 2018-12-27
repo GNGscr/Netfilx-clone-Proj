@@ -138,8 +138,6 @@ export const Hero = styled.img`
     height: 50vw;
     z-index: -5;
     position: relative;
-    /* background-color: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%); */
-    /* background-clip: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
     @media all and (min-width: 500px) {
         height: 52vw;
     }
@@ -162,8 +160,7 @@ export const HeroMask = styled.div`
     z-index: -3;
     position: absolute;
     /* background-color: red; */
-    background: linear-gradient(to bottom,rgba(20,20,20,0.3) 0,rgba(20,20,20,.10) 15%,rgba(20,20,20,0) 29%,rgba(20,20,20,.18) 54%,#141414 88%,#141414 100%);
-    /* background: linear-gradient(to bottom, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) ); */
+    background: linear-gradient(to bottom,rgba(20,20,20,0.6) 0,rgba(20,20,20,.15) 20%,rgba(20,20,20,0) 29%,rgba(20,20,20,.18) 58%,#141414 88%,#141414 100%);
     @media all and (min-width: 500px) {
         height: 52vw;
     }
