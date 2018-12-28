@@ -88,7 +88,7 @@ export default class Filter extends Component {
                             {
                                 this.state.displayed_list.map((e, i) => {
                                     return (
-                                       <Filtered>
+                                       <Filtered key={i}>
                                         <IMG src={e.poster} alt="" />
                                             {e.title}
                                        </Filtered>
