@@ -51,7 +51,8 @@ export const ImageProfile = styled.div`
     justify-content: center;
     align-items: center;
     border: 3px solid rgba(128, 128, 128);
-    background-color: rgba(20, 20, 20);
+    background-color: grey;
+    /* background-color: rgba(20, 20, 20); */
     height: 10vw;
     width: 10vw;
     margin-bottom: 20px;
@@ -63,7 +64,8 @@ export const ImageProfile = styled.div`
         height: 10vw;
         width: 10vw;
         margin: 3vw;
-        background-color: rgba(20, 20, 20);
+        background-color: grey;
+        /* background-color: rgba(20, 20, 20); */
     }
 `;
 export const UserImg = styled.img`

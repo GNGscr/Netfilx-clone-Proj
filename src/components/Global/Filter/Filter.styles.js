@@ -76,7 +76,7 @@ export const ContentBox = styled.div`
     display: none;
     opacity: 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 30vw;
     width: 22vw;
@@ -113,7 +113,7 @@ export const IMG = styled.img`
 `;
 export const FilterHeader = styled.h2`
     margin-left: 0vw;
-    margin-top: 367vw;
+    margin-top: 2vw;
     color: grey;
     font-weight: 400;
     font-size: 1.2rem;

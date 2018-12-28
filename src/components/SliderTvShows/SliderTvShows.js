@@ -3,13 +3,14 @@ import '../../styled/App.css';
 // import react from 'react';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
-  IMG, LeftArrow, RightArrow, P,
+  IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  Title, Details, Description, Summary, CirclesBox,
-  Circle, Play, Box 
+  Title, Details, Description, Summary, CirclesBox 
   // scale_ease, wire_grey ,scale_delay
 } from './SliderTvShows.styles'
 import { setTimeout } from 'timers';
+
+
 
 class SliderTvShows extends Component {
 
@@ -17,6 +18,7 @@ class SliderTvShows extends Component {
     super(props);
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);
     this.handleOnRightArrowClick = this.rightArrowClick.bind(this);
+
     this.state = {
       showItems: 1,
       width: window.innerWidth,
@@ -53,7 +55,6 @@ class SliderTvShows extends Component {
 
   updateSliderState() {
     // let windowWidth = window.innerWidth
-
     let showItems = 2
     if (this.state.width > 1400) {
       showItems = 6
@@ -69,9 +70,12 @@ class SliderTvShows extends Component {
     })
   }
 
+
   // --------------------------------------------------------------------------------
   // * * ==================== Scrolling left & right clicks ===================== * *
   // --------------------------------------------------------------------------------
+
+
 
   leftArrowClick() {
     // let windowWidth = window.innerWidth
@@ -139,6 +143,8 @@ class SliderTvShows extends Component {
       })    
     }, 700);
   }
+
+
   // ----------------------------------------------------------------------------
   // * * ==================== Mouse Enter & Leave Events ==================== * *
   // ----------------------------------------------------------------------------
@@ -263,6 +269,9 @@ class SliderTvShows extends Component {
       }
   };
 
+  // ===================== Faders ======================
+
+  
   short_fade_in = () => {
       this.setState({
           fade_duration: '250ms',
