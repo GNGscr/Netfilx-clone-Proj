@@ -52,22 +52,26 @@ class SliderTvShows extends Component {
   }
 
   updateSliderState() {
-    let windowWidth = window.innerWidth
+    // let windowWidth = window.innerWidth
 
     let showItems = 2
-    if (windowWidth > 1400) {
+    if (this.state.width > 1400) {
       showItems = 6
-    } else if (windowWidth > 1100) {
+    } else if (this.state.width > 1100) {
       showItems = 5
-    } else if (windowWidth > 800) {
+    } else if (this.state.width > 800) {
       showItems = 4
-    } else if (windowWidth > 500) {
+    } else if (this.state.width > 500) {
       showItems = 3
     }
     this.setState({
       showItems
     })
   }
+
+  // --------------------------------------------------------------------------------
+  // * * ==================== Scrolling left & right clicks ===================== * *
+  // --------------------------------------------------------------------------------
 
   leftArrowClick() {
     // let windowWidth = window.innerWidth
@@ -135,9 +139,9 @@ class SliderTvShows extends Component {
       })    
     }, 700);
   }
-  // ---------------------------------------------------------------
-  // * * ==================== Slide Events ===================== * *
-  // ---------------------------------------------------------------
+  // ----------------------------------------------------------------------------
+  // * * ==================== Mouse Enter & Leave Events ==================== * *
+  // ----------------------------------------------------------------------------
 
 
   timeout = null;
