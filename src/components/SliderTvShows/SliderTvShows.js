@@ -10,6 +10,8 @@ import {
   // scale_ease, wire_grey ,scale_delay
 } from './SliderTvShows.styles'
 import { setTimeout } from 'timers';
+// import { TweenLite, Expo, Power0, Power1 } from "gsap";
+
 
 
 
@@ -55,7 +57,6 @@ class SliderTvShows extends Component {
   }
 
   updateSliderState() {
-    // let windowWidth = window.innerWidth
     let showItems = 2
     if (this.state.width > 1400) {
       showItems = 6
@@ -80,7 +81,6 @@ class SliderTvShows extends Component {
 
   leftArrowClick() {
     // let windowWidth = window.innerWidth
-    // console.log(windowWidth)
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -42}px)`
     if(this.state.width > 1400) {
@@ -155,6 +155,9 @@ class SliderTvShows extends Component {
   move_timeout = null;
 
   mouseEnter = e => {
+    e.currentTarget.style.transform = `scale(2)`
+    e.currentTarget.style.transition = '500ms'
+
     // console.log('my id is: target: ',e.currentTarget)
     // console.log('my id is: ',e.currentTarget.dataset.id)
     // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
@@ -169,74 +172,57 @@ class SliderTvShows extends Component {
     console.log('The next id is: ' + onerer)
     let tworer = (onerer +++ 1)
     console.log('The id thats after next is: ' + tworer)
-
-    let one = e.currentTarget.previousElementSibling
-    // console.log(one)
-    one.style.transform = `translateX(-7.5vw)`
-    one.style.transition = '500ms'
-
-    let two = e.currentTarget.nextElementSibling
-    // console.log(two)
-    two.style.transform = `translateX(7.5vw)`
-    two.style.transition = '500ms'
-
-    // let two = one.previousElementSibling.dataset.id
-    // let three = two.previousElementSibling.dataset.id
-    // let four = three.previousElementSibling.dataset.id
-    // let five = four.previousElementSibling.dataset.id
-    // let six = five.previousElementSibling.dataset.id
-    // let last = six.previousElementSibling.dataset.id
-    // console.log('my previos elements are: ', one,two,three,four,five,six,last)
-    // const slider = this.refs.slider
-
-    // const sliderItem = this.refs.sliderItem
-
-    // e.currentTarget.style.transform = `translateX(-40px)`
-    e.currentTarget.style.transform = `scale(2)`
-    e.currentTarget.style.transition = '500ms'
-    // console.log(e.currentTarget.parentElement)
     
-      // if(e.target.id < e.currentTarget.dataset.id) {
-      //   console.log('lower then current', e.target.id)
-      // } else {
-      //   console.log('else')
-    //   // }
+    let prev = e.currentTarget.previousElementSibling
+    // console.log(prev)
+    prev.style.transform = `translateX(-7.5vw)`
+    prev.style.transition = '500ms'
+    let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
+        console.log(prev_two)
+    prev_two.style.transform = `translateX(-7.5vw)`
+    prev_two.style.transition = '500ms'
+    let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_three)
+    prev_three.style.transform = `translateX(-7.5vw)`
+    prev_three.style.transition = '500ms'
+    let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_four)
+    prev_four.style.transform = `translateX(-7.5vw)`
+    prev_four.style.transition = '500ms'
+    let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_five)
+    prev_five.style.transform = `translateX(-7.5vw)`
+    prev_five.style.transition = '500ms'
+    let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_six)
+    prev_six.style.transform = `translateX(-7.5vw)`
+    prev_six.style.transition = '500ms'
 
-    // e.currentTarget.parentElement.style.
-
-    // if(e.target.id < e.currentTarget){
-    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
-    // } else if (e.target.id < e.currentTarget) {
-    //   console.log('lower then current', e.target.id)
-    // } else if (e.target.id === e.currentTarget){
-    //   console.log('same')
-    // } else {
-    //   console.log('else')
-    // }
-    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
-
-    // e.currentTarget.style.margin = '0 3.75vw'
-    // console.log(slider)
-    // if(slider.e.currentTarget.dataset.id > e.currentTarget.dataset.id) {
-    //   slider.style.transform = `translateX(-100px)`
-    // }
-    // let counter = [];
-    // for(let i = 0; i < e.currentTarget.parentElement; i++) {
-    //   counter.push(i)
-      
-    //   // slider.splice(3, 1);
-    //   slider.style.transform = `translateX(-300px)`
-    //   slider.style.transition = '500ms'
-    //   e.currentTarget.dataset.id.style.transform = `translateX(-200px)`
-    // }
-    // console.log(counter)
-
-    // for(let j = slider; e.currentTarget.dataset.id > j; j++) {
-    //   let counterer = [];
-    //   counterer.push(j)
-    //   console.log(counterer)
-    //   // slider.style.transform = `translateX(-100px)`
-    // }
+    let next = e.currentTarget.nextElementSibling
+    // console.log(next)
+    next.style.transform = `translateX(7.5vw)`
+    next.style.transition = '500ms'
+    let next_two = e.currentTarget.nextElementSibling.nextElementSibling
+    console.log(next_two)
+    next_two.style.transform = `translateX(7.5vw)`
+    next_two.style.transition = '500ms'
+    let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_three)
+    next_three.style.transform = `translateX(7.5vw)`
+    next_three.style.transition = '500ms'
+    let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_four)
+    next_four.style.transform = `translateX(7.5vw)`
+    next_four.style.transition = '500ms'
+    let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_five)
+    next_five.style.transform = `translateX(7.5vw)`
+    next_five.style.transition = '500ms'
+    let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_six)
+    next_six.style.transform = `translateX(7.5vw)`
+    next_six.style.transition = '500ms'
+    
 
       this.short_fade_in();
       clearTimeout(this.timeout);
@@ -247,14 +233,57 @@ class SliderTvShows extends Component {
     e.currentTarget.style.transform = `scale(1)`
     e.currentTarget.style.transition = '500ms'
     // e.currentTarget.style.margin = '0'
-    let one = e.currentTarget.previousElementSibling
-    // console.log(one)
-    one.style.transform = `translateX(0px)`
-    one.style.transition = '500ms'
-    let two = e.currentTarget.nextElementSibling
-    // console.log(two)
-    two.style.transform = `translateX(0px)`
-    two.style.transition = '500ms'
+
+    let prev = e.currentTarget.previousElementSibling
+    // console.log(prev)
+    prev.style.transform = `translateX(0px)`
+    prev.style.transition = '500ms'
+    let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
+    // console.log(prev_two)
+    prev_two.style.transform = `translateX(0px)`
+    prev_two.style.transition = '500ms'
+    let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_three)
+    prev_three.style.transform = `translateX(0px)`
+    prev_three.style.transition = '500ms'
+    let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_four)
+    prev_four.style.transform = `translateX(0px)`
+    prev_four.style.transition = '500ms'
+    let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_five)
+    prev_five.style.transform = `translateX(0px)`
+    prev_five.style.transition = '500ms'
+    let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_six)
+    prev_six.style.transform = `translateX(0px)`
+    prev_six.style.transition = '500ms'
+
+
+    let next = e.currentTarget.nextElementSibling
+    // console.log(next)
+    next.style.transform = `translateX(0px)`
+    next.style.transition = '500ms'
+    let next_two = e.currentTarget.nextElementSibling.nextElementSibling
+    // console.log(next_two)
+    next_two.style.transform = `translateX(0px)`
+    next_two.style.transition = '500ms'
+    let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_three)
+    next_three.style.transform = `translateX(0px)`
+    next_three.style.transition = '500ms'
+    let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_four)
+    next_four.style.transform = `translateX(0px)`
+    next_four.style.transition = '500ms'
+    let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_five)
+    next_five.style.transform = `translateX(0px)`
+    next_five.style.transition = '500ms'
+    let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_six)
+    next_six.style.transform = `translateX(0px)`
+    next_six.style.transition = '500ms'
 
       clearTimeout(this.timeout);
       clearTimeout(this.move_timeout);
@@ -294,7 +323,6 @@ class SliderTvShows extends Component {
       });
   };
   
-
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -360,3 +388,94 @@ export default SliderTvShows;
 // nav shadow https://assets.nflxext.com/en_us/akira/jawBone/nav-shadow.png
 // weeds big https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABf0nJdIBtgLdHwx2zoKdt3d59TeGIvgX_wjn0D6TYhV2-Ay42KRNYzk-Y_BTOuPp4el8AUjVT4jz2xmtDYAqfAmrgtK4OB7CqaYhPXshMx2R4_ptPLWdZAtfjlORcGvLGOWrhZLKnSI.webp
 // stranger things https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABU3yfQ5VYfhr38dBd1t1sOz_rZ1OhAHDWl79d53Cvu6R8a_aQTXRqK04m1XzFDP8CYElk3k6uzRwXA7dFhQRvEw93LQDXX0d0NM9tY7fX270gJ0H56ATPk7COBLrpdclmRPqw6wIiw.jpg
+
+
+    // const rect = e.currentTarget.getBoundingClientRect()
+    // const targetX = rect.x - window.innerWidth / 100 * 7.5;
+
+    // console.log('MY X IS: ' + rect.x)
+    // console.log('MY target X IS: ' + targetX);
+    // console.log('rect: ', rect)
+
+    // let hovered_id = e.currentTarget.dataset.id;
+    // let prev_itmes = []
+    // let next_itmes = []
+    // for(let i = 1; i <= 36; i++) {
+    //   if(i< hovered_id){
+
+    //     const slider_item  = this.refs['sliderItem-'+i];
+    //     const rect = slider_item.getBoundingClientRect()
+    //     const targetX = rect.x - window.innerWidth / 100 * 7.5;
+
+    //     TweenLite.to(slider_item, 0.5, { x: targetX})
+
+    //   } else if (i> hovered_id){
+    
+    //     const slider_item  = this.refs['sliderItem-'+i];
+    //     const rect = slider_item.getBoundingClientRect()
+    //     const targetX = rect.x + window.innerWidth / 100 * 7.5;
+
+    //     TweenLite.to(slider_item, 0.5, { x: targetX})
+    //   }
+    // }
+
+    
+    // TweenLite.to(e.currentTarget, 0.5, {scale: 2})
+  
+
+
+    // let two = one.previousElementSibling.dataset.id
+    // let three = two.previousElementSibling.dataset.id
+    // let four = three.previousElementSibling.dataset.id
+    // let five = four.previousElementSibling.dataset.id
+    // let six = five.previousElementSibling.dataset.id
+    // let last = six.previousElementSibling.dataset.id
+    // console.log('my previos elements are: ', one,two,three,four,five,six,last)
+    // const slider = this.refs.slider
+
+    // const sliderItem = this.refs.sliderItem
+
+    // e.currentTarget.style.transform = `translateX(-40px)`
+    // console.log(e.currentTarget.parentElement)
+    
+      // if(e.target.id < e.currentTarget.dataset.id) {
+      //   console.log('lower then current', e.target.id)
+      // } else {
+      //   console.log('else')
+    //   // }
+
+    // e.currentTarget.parentElement.style.
+
+    // if(e.target.id < e.currentTarget){
+    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
+    // } else if (e.target.id < e.currentTarget) {
+    //   console.log('lower then current', e.target.id)
+    // } else if (e.target.id === e.currentTarget){
+    //   console.log('same')
+    // } else {
+    //   console.log('else')
+    // }
+    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
+
+    // e.currentTarget.style.margin = '0 3.75vw'
+    // console.log(slider)
+    // if(slider.e.currentTarget.dataset.id > e.currentTarget.dataset.id) {
+    //   slider.style.transform = `translateX(-100px)`
+    // }
+    // let counter = [];
+    // for(let i = 0; i < e.currentTarget.parentElement; i++) {
+    //   counter.push(i)
+      
+    //   // slider.splice(3, 1);
+    //   slider.style.transform = `translateX(-300px)`
+    //   slider.style.transition = '500ms'
+    //   e.currentTarget.dataset.id.style.transform = `translateX(-200px)`
+    // }
+    // console.log(counter)
+
+    // for(let j = slider; e.currentTarget.dataset.id > j; j++) {
+    //   let counterer = [];
+    //   counterer.push(j)
+    //   console.log(counterer)
+    //   // slider.style.transform = `translateX(-100px)`
+    // }
