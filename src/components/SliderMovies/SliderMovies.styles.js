@@ -60,6 +60,7 @@ export const SliderMask = styled.div`
     white-space: nowrap;
     padding: 0 15px;
     margin-left: -322vw;
+    z-index: 4;
     @media all and (min-width: 500px) {
         padding: 0 30px;
         margin-left: -229.5vw;
@@ -87,14 +88,15 @@ export const SliderItem = styled.div`
     display: inline-flex;
     width: calc(89vw/2);
     /* border: 1px solid red; */
-    /* z-index: 1; */
+    z-index: 6;
     cursor: pointer;
-    transform-origin: center;
-    transition: all .5s ease-in-out;
+    /* transform-origin: center;
+    transition: all .5s ease-in-out; */
     &:hover {
-        margin: 0 7.5vw auto;
-        transform: scale(2);
-        /* z-index: 15; */
+        /* margin-right: 7.5vw;
+        margin-left: 7.5vw; */
+        /* transform: scale(2);
+        z-index:1500; */
     }
 
     @media all and (min-width: 500px) {
@@ -111,7 +113,6 @@ export const SliderItem = styled.div`
     }
 `;
 export const IMG = styled.img`
-    /* background-size: 100; */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -216,11 +217,10 @@ export const RightArrowIMG = styled.img`
     }
 `;
 export const P = styled.p`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    /* align-items: center; */
     color: #fff;
-    font-size: 22px;
+    font-size: .5rem;
 `;
 
 // ** ============ Slide ============ **
@@ -241,15 +241,21 @@ export const FADE_OUT = keyframes`
 
 export const Title = styled.div`
     /* background-color: ${wire_grey}; */
-    margin-left: -4px;
-
+    /* margin-left: -4px;
+    position: absolute; */
+    display: flex;
+    justify-content: flex-start;
     color: white;
     font-size: 9px;
-    width: 60px;
-    height: 14px;
+    /* width: 60px;
+    height: 14px; */
     `;
 export const Details = styled.div`
     /* background-color: ${wire_grey}; */
+    /* position: absolute;
+    margin-left: -4px; */
+    display: flex;
+    justify-content: flex-start;
     color: white;
     font-size: 8px;
     width: 120px;
@@ -257,11 +263,14 @@ export const Details = styled.div`
 `;
 export const Description = styled.div`
     background-color: ${wire_grey};
+    /* position: absolute; */
+    display: flex;
+    justify-content: flex-start;
     overflow: hidden;
     color: white;
     margin-top: .5vw;
-    display: flex;
-    flex-wrap: nowrap;
+
+    flex-wrap: wrap;
     font-size: 6px;
     width: 160px;
     min-height: 35px;
@@ -273,7 +282,8 @@ export const Summary = styled.div`
     bottom: 1.2rem;
     margin-right: 20px;
     margin-left: 10px;
-    height: 90px;
+    height: 6vw;
+    width: 11vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -294,6 +304,7 @@ export const CirclesBox = styled.div`
     animation: ${p => p.anim} ${p => p.duration} forwards;
 `;
 export const Circle = styled.div`
+    /* position: absolute; */
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -324,7 +335,7 @@ export const Box = styled.div`
     object-fit: fill;
     /* object-position: center; */
     border: #14141498 1px solid;
-    z-index: 10;
+    z-index: 15;
 
     @media all and (min-width: 500px) {
         width: 30.7vw; 

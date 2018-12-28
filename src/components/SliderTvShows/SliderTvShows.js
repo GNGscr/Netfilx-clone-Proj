@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
+
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,

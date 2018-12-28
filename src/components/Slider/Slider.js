@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
+
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
-  IMG, LeftArrow, RightArrow, P,
+  IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  Title, Details, Description, Summary, CirclesBox,
-  Circle, Play, Box 
+  Title, Details, Summary, CirclesBox, 
+  // Description
+  // scale_ease, wire_grey ,scale_delay
 } from './Slider.styles'
 import { setTimeout } from 'timers';
+// import { TweenLite, Expo, Power0, Power1 } from "gsap";
+
+
+
 
 class Slider extends Component {
 
@@ -15,6 +21,7 @@ class Slider extends Component {
     super(props);
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);
     this.handleOnRightArrowClick = this.rightArrowClick.bind(this);
+
     this.state = {
       showItems: 1,
       width: window.innerWidth,
@@ -27,7 +34,7 @@ class Slider extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATA.json')
+    const res = await fetch('./MOCK_DATAtvShows.json')
     const data = await res.json();
     this.setState({ 
       data 
@@ -50,16 +57,14 @@ class Slider extends Component {
   }
 
   updateSliderState() {
-    let windowWidth = window.innerWidth
-
     let showItems = 2
-    if (windowWidth > 1400) {
+    if (this.state.width > 1400) {
       showItems = 6
-    } else if (windowWidth > 1100) {
+    } else if (this.state.width > 1100) {
       showItems = 5
-    } else if (windowWidth > 800) {
+    } else if (this.state.width > 800) {
       showItems = 4
-    } else if (windowWidth > 500) {
+    } else if (this.state.width > 500) {
       showItems = 3
     }
     this.setState({
@@ -67,9 +72,15 @@ class Slider extends Component {
     })
   }
 
+
+  // --------------------------------------------------------------------------------
+  // * * ==================== Scrolling left & right clicks ===================== * *
+  // --------------------------------------------------------------------------------
+
+
+
   leftArrowClick() {
     // let windowWidth = window.innerWidth
-    // console.log(windowWidth)
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -42}px)`
     if(this.state.width > 1400) {
@@ -134,20 +145,146 @@ class Slider extends Component {
     }, 700);
   }
 
-  // * * ============== Slide Events =============== * *
+
+  // ----------------------------------------------------------------------------
+  // * * ==================== Mouse Enter & Leave Events ==================== * *
+  // ----------------------------------------------------------------------------
+
 
   timeout = null;
   move_timeout = null;
 
   mouseEnter = e => {
+    e.currentTarget.style.transform = `scale(2)`
+    e.currentTarget.style.transition = '500ms'
+
     // console.log('my id is: target: ',e.currentTarget)
-    console.log('my id is: ',e.currentTarget.dataset.id)
+    // console.log('my id is: ',e.currentTarget.dataset.id)
+    // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
+    // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
+    
+    let oner = e.currentTarget.previousElementSibling.dataset.id
+    let twor = oner-1
+    console.log('The id thats before the previous is: ' + twor)
+    console.log('The previous id is: ' + oner)
+    console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
+    let onerer = e.currentTarget.nextElementSibling.dataset.id
+    console.log('The next id is: ' + onerer)
+    let tworer = (onerer +++ 1)
+    console.log('The id thats after next is: ' + tworer)
+    
+    let prev = e.currentTarget.previousElementSibling
+    // console.log(prev)
+    prev.style.transform = `translateX(-7.5vw)`
+    prev.style.transition = '500ms'
+    let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
+        console.log(prev_two)
+    prev_two.style.transform = `translateX(-7.5vw)`
+    prev_two.style.transition = '500ms'
+    let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_three)
+    prev_three.style.transform = `translateX(-7.5vw)`
+    prev_three.style.transition = '500ms'
+    let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_four)
+    prev_four.style.transform = `translateX(-7.5vw)`
+    prev_four.style.transition = '500ms'
+    let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_five)
+    prev_five.style.transform = `translateX(-7.5vw)`
+    prev_five.style.transition = '500ms'
+    let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+        console.log(prev_six)
+    prev_six.style.transform = `translateX(-7.5vw)`
+    prev_six.style.transition = '500ms'
+
+    let next = e.currentTarget.nextElementSibling
+    // console.log(next)
+    next.style.transform = `translateX(7.5vw)`
+    next.style.transition = '500ms'
+    let next_two = e.currentTarget.nextElementSibling.nextElementSibling
+    console.log(next_two)
+    next_two.style.transform = `translateX(7.5vw)`
+    next_two.style.transition = '500ms'
+    let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_three)
+    next_three.style.transform = `translateX(7.5vw)`
+    next_three.style.transition = '500ms'
+    let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_four)
+    next_four.style.transform = `translateX(7.5vw)`
+    next_four.style.transition = '500ms'
+    let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_five)
+    next_five.style.transform = `translateX(7.5vw)`
+    next_five.style.transition = '500ms'
+    let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    console.log(next_six)
+    next_six.style.transform = `translateX(7.5vw)`
+    next_six.style.transition = '500ms'
+    
+
       this.short_fade_in();
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.long_fade_out, 2000);
-      console.log()
+      // console.log()
   }
   mouseLeave = e => {
+    e.currentTarget.style.transform = `scale(1)`
+    e.currentTarget.style.transition = '500ms'
+    // e.currentTarget.style.margin = '0'
+
+    let prev = e.currentTarget.previousElementSibling
+    // console.log(prev)
+    prev.style.transform = `translateX(0px)`
+    prev.style.transition = '500ms'
+    let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
+    // console.log(prev_two)
+    prev_two.style.transform = `translateX(0px)`
+    prev_two.style.transition = '500ms'
+    let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_three)
+    prev_three.style.transform = `translateX(0px)`
+    prev_three.style.transition = '500ms'
+    let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_four)
+    prev_four.style.transform = `translateX(0px)`
+    prev_four.style.transition = '500ms'
+    let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_five)
+    prev_five.style.transform = `translateX(0px)`
+    prev_five.style.transition = '500ms'
+    let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
+    // console.log(prev_six)
+    prev_six.style.transform = `translateX(0px)`
+    prev_six.style.transition = '500ms'
+
+
+    let next = e.currentTarget.nextElementSibling
+    // console.log(next)
+    next.style.transform = `translateX(0px)`
+    next.style.transition = '500ms'
+    let next_two = e.currentTarget.nextElementSibling.nextElementSibling
+    // console.log(next_two)
+    next_two.style.transform = `translateX(0px)`
+    next_two.style.transition = '500ms'
+    let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_three)
+    next_three.style.transform = `translateX(0px)`
+    next_three.style.transition = '500ms'
+    let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_four)
+    next_four.style.transform = `translateX(0px)`
+    next_four.style.transition = '500ms'
+    let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_five)
+    next_five.style.transform = `translateX(0px)`
+    next_five.style.transition = '500ms'
+    let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+    // console.log(next_six)
+    next_six.style.transform = `translateX(0px)`
+    next_six.style.transition = '500ms'
+
       clearTimeout(this.timeout);
       clearTimeout(this.move_timeout);
       this.move_timeout = null;
@@ -164,6 +301,9 @@ class Slider extends Component {
       }
   };
 
+  // ** ========================= Faders ============================= **
+
+  
   short_fade_in = () => {
       this.setState({
           fade_duration: '250ms',
@@ -183,7 +323,6 @@ class Slider extends Component {
       });
   };
   
-
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -199,15 +338,15 @@ class Slider extends Component {
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
-                //console.log(e)
+                // console.log(e)
                 return (
                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
-                  onMouseEnter={this.mouseEnter}
-                  onMouseLeave={this.mouseLeave}
-                  onMouseMove={this.mouseMove}
-                  data-id={e.id}
+                        onMouseEnter={this.mouseEnter}
+                        onMouseLeave={this.mouseLeave}
+                        onMouseMove={this.mouseMove}
+                        data-id={e.id}
                   >
-                          <Box>
+                        <Box>
                             <IMG src={e.poster}/>
                             <Summary
                                 anim={this.state.fade_anim}
@@ -216,7 +355,7 @@ class Slider extends Component {
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                                 <Title>{e.title}</Title>
                                 <Details>{e.details}</Details>
-                                <Description>{e.description}</Description>
+                                {/* <Description>{e.description}</Description> */}
                             </Summary>
                             <CirclesBox
                                 anim={this.state.fade_anim}
@@ -238,14 +377,9 @@ class Slider extends Component {
           <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="https://img.icons8.com/ios/96/000000/forward-filled.png" /></RightArrow>
 
       </Wrapper>
-    );
-    
-  }
+    ); 
+    }
   }
 }
 
 export default Slider;
-
-// nav shadow https://assets.nflxext.com/en_us/akira/jawBone/nav-shadow.png
-// weeds big https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABf0nJdIBtgLdHwx2zoKdt3d59TeGIvgX_wjn0D6TYhV2-Ay42KRNYzk-Y_BTOuPp4el8AUjVT4jz2xmtDYAqfAmrgtK4OB7CqaYhPXshMx2R4_ptPLWdZAtfjlORcGvLGOWrhZLKnSI.webp
-// stranger things https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABU3yfQ5VYfhr38dBd1t1sOz_rZ1OhAHDWl79d53Cvu6R8a_aQTXRqK04m1XzFDP8CYElk3k6uzRwXA7dFhQRvEw93LQDXX0d0NM9tY7fX270gJ0H56ATPk7COBLrpdclmRPqw6wIiw.jpg
