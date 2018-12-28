@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
-// import react from 'react';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
@@ -301,7 +300,7 @@ class SliderTvShows extends Component {
       }
   };
 
-  // ===================== Faders ======================
+  // ** ========================= Faders ============================= **
 
   
   short_fade_in = () => {
@@ -377,9 +376,8 @@ class SliderTvShows extends Component {
           <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="https://img.icons8.com/ios/96/000000/forward-filled.png" /></RightArrow>
 
       </Wrapper>
-    );
-    
-  }
+    ); 
+    }
   }
 }
 
