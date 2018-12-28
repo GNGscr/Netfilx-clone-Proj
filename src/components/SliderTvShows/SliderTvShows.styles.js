@@ -276,10 +276,10 @@ export const Description = styled.div`
     min-height: 35px;
 `;
 export const Summary = styled.div`
-    border: grey dashed 1px;
+    /* border: grey dashed 1px; */
     position: absolute;
     right: 1.2rem;
-    bottom: 1.2rem;
+    bottom: .6rem;
     margin-right: 20px;
     margin-left: 10px;
     height: 6vw;
@@ -294,9 +294,10 @@ export const Summary = styled.div`
 export const CirclesBox = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
+    justify-content: space-between;
     right: 1.2rem;
-    bottom: .5rem;
-    height: 80px;
+    bottom: .5em;
+    height: 75px;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */

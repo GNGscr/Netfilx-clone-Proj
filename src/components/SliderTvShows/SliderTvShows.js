@@ -163,63 +163,64 @@ class SliderTvShows extends Component {
     // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
     // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
     
-    let oner = e.currentTarget.previousElementSibling.dataset.id
-    let twor = oner-1
-    console.log('The id thats before the previous is: ' + twor)
-    console.log('The previous id is: ' + oner)
-    console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
-    let onerer = e.currentTarget.nextElementSibling.dataset.id
-    console.log('The next id is: ' + onerer)
-    let tworer = (onerer +++ 1)
-    console.log('The id thats after next is: ' + tworer)
+    // let oner = e.currentTarget.previousElementSibling.dataset.id
+    // let twor = oner-1
+    // console.log('The id thats before the previous is: ' + twor)
+    // console.log('The previous id is: ' + oner)
+    // console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
+    // let onerer = e.currentTarget.nextElementSibling.dataset.id
+    // console.log('The next id is: ' + onerer)
+    // let tworer = (onerer +++ 1)
+    // console.log('The id thats after next is: ' + tworer)
     
     let prev = e.currentTarget.previousElementSibling
     // console.log(prev)
     prev.style.transform = `translateX(-7.5vw)`
     prev.style.transition = '500ms'
     let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
-        console.log(prev_two)
+        // console.log(prev_two)
     prev_two.style.transform = `translateX(-7.5vw)`
     prev_two.style.transition = '500ms'
     let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
-        console.log(prev_three)
+        // console.log(prev_three)
     prev_three.style.transform = `translateX(-7.5vw)`
     prev_three.style.transition = '500ms'
     let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        console.log(prev_four)
+        // console.log(prev_four)
     prev_four.style.transform = `translateX(-7.5vw)`
     prev_four.style.transition = '500ms'
     let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        console.log(prev_five)
+        // console.log(prev_five)
     prev_five.style.transform = `translateX(-7.5vw)`
     prev_five.style.transition = '500ms'
     let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        console.log(prev_six)
+        // console.log(prev_six)
     prev_six.style.transform = `translateX(-7.5vw)`
     prev_six.style.transition = '500ms'
+
 
     let next = e.currentTarget.nextElementSibling
     // console.log(next)
     next.style.transform = `translateX(7.5vw)`
     next.style.transition = '500ms'
     let next_two = e.currentTarget.nextElementSibling.nextElementSibling
-    console.log(next_two)
+    // console.log(next_two)
     next_two.style.transform = `translateX(7.5vw)`
     next_two.style.transition = '500ms'
     let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
-    console.log(next_three)
+    // console.log(next_three)
     next_three.style.transform = `translateX(7.5vw)`
     next_three.style.transition = '500ms'
     let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-    console.log(next_four)
+    // console.log(next_four)
     next_four.style.transform = `translateX(7.5vw)`
     next_four.style.transition = '500ms'
     let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-    console.log(next_five)
+    // console.log(next_five)
     next_five.style.transform = `translateX(7.5vw)`
     next_five.style.transition = '500ms'
     let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-    console.log(next_six)
+    // console.log(next_six)
     next_six.style.transform = `translateX(7.5vw)`
     next_six.style.transition = '500ms'
     

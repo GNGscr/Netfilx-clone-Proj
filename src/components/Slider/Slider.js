@@ -34,7 +34,7 @@ class Slider extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATAtvShows.json')
+    const res = await fetch('./MOCK_DATA.json')
     const data = await res.json();
     this.setState({ 
       data 
