@@ -73,7 +73,7 @@ export const FilterInputMobile = styled.input`
 `;
 export const ContentBox = styled.div`
     position: absolute;
-    display: none;
+    display: flex;
     opacity: 0;
     flex-direction: column;
     justify-content: flex-start;
@@ -123,4 +123,5 @@ export const Carret = styled.h3`
     font-size: 32px;
     color: rgba(128, 128, 128, 0.8);
     font-weight: 300;
+    margin-top: 1.5vw;
 `;

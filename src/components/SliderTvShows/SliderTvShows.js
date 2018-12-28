@@ -5,7 +5,8 @@ import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
-  Title, Details, Description, Summary, CirclesBox 
+  Title, Details, Summary, CirclesBox, 
+  // Description
   // scale_ease, wire_grey ,scale_delay
 } from './SliderTvShows.styles'
 import { setTimeout } from 'timers';
@@ -187,7 +188,9 @@ class SliderTvShows extends Component {
     // let last = six.previousElementSibling.dataset.id
     // console.log('my previos elements are: ', one,two,three,four,five,six,last)
     // const slider = this.refs.slider
-    const sliderItem = this.refs.sliderItem
+
+    // const sliderItem = this.refs.sliderItem
+
     // e.currentTarget.style.transform = `translateX(-40px)`
     e.currentTarget.style.transform = `scale(2)`
     e.currentTarget.style.transition = '500ms'
