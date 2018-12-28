@@ -155,9 +155,9 @@ class SliderTvShows extends Component {
     console.log('The previous id is: ' + oner)
     console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
     let onerer = e.currentTarget.nextElementSibling.dataset.id
-          console.log('The next id is: ' + onerer)
-          let tworer = (onerer +++ 1)
-          console.log('The id thats after next is: ' + tworer)
+    console.log('The next id is: ' + onerer)
+    let tworer = (onerer +++ 1)
+    console.log('The id thats after next is: ' + tworer)
 
     let one = e.currentTarget.previousElementSibling
     // console.log(one)
