@@ -73,7 +73,7 @@ export const FilterInputMobile = styled.input`
 `;
 export const ContentBox = styled.div`
     position: absolute;
-    display: flex;
+    display: none;
     opacity: 0;
     flex-direction: column;
     justify-content: flex-start;
@@ -85,6 +85,8 @@ export const ContentBox = styled.div`
     color: #ccc;
     overflow-x: hidden;
     overflow-y: scroll;
+    transform: display .5s;
+    display: ${props => props.dsp};
     transition: opacity 1s ease-in-out;
     transition-delay: .5s;
     opacity: ${props => props.cntctbx};

@@ -279,7 +279,7 @@ export const Description = styled.div`
     min-height: 35px;
 `;
 export const Summary = styled.div`
-    border: grey dashed 1px;
+    /* border: grey dashed 1px; */
     position: absolute;
     right: 1.2rem;
     bottom: 1.2rem;

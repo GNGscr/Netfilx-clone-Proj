@@ -11,6 +11,7 @@ export default class Filter extends Component {
         InputOn: false,        
         navbgclr: 'opacity: 0',
         cntctbox: 'opacity: 0',
+        dspflx: 'none',
         data: [],
         original_list: [],
         // list_data: [],
@@ -64,6 +65,7 @@ export default class Filter extends Component {
             this.setState({
                 navbgclr: 0,
                 cntctbox: 0,
+                dspflx: 'none',
                 InputOn: false
             })
         } else {
@@ -71,6 +73,7 @@ export default class Filter extends Component {
             this.setState({
                 navbgclr: 1,
                 cntctbox: 1,
+                dspflx: 'flex',
                 InputOn: true
             })
         }
@@ -82,7 +85,7 @@ export default class Filter extends Component {
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
-                        <ContentBox cntctbx={this.state.cntctbox}>
+                        <ContentBox cntctbx={this.state.cntctbox} dsp={this.state.dspflx}>
                             <FilterHeader>{this.state.displayed_list.length} Items found</FilterHeader>
                             <Carret>^</Carret>
                             {
