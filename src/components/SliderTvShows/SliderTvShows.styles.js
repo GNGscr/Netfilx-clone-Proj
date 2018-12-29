@@ -250,8 +250,9 @@ export const Title = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 9px;
-    /* width: 60px;
-    height: 14px; */
+    width: 60px;
+    height: 14px;
+    margin-bottom: -1vw;
     `;
 export const Details = styled.div`
     /* background-color: ${wire_grey}; */
@@ -261,28 +262,28 @@ export const Details = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 8px;
+    margin-bottom: -.5vw;
     width: 120px;
     height: 8px;
 `;
 export const Description = styled.div`
-    background-color: ${wire_grey};
+    /* background-color: ${wire_grey}; */
     /* position: absolute; */
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
     color: white;
-    margin-top: .5vw;
-
+    margin-bottom: 0;
     flex-wrap: wrap;
     font-size: 6px;
     width: 160px;
-    min-height: 35px;
+    height: 15px;
 `;
 export const Summary = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
     right: 1.2rem;
-    bottom: 1.2rem;
+    bottom: .5rem;
     margin-right: 20px;
     margin-left: 10px;
     height: 6vw;
@@ -299,22 +300,22 @@ export const CirclesBox = styled.div`
     position: absolute;
     right: 1.2rem;
     bottom: .5rem;
-    height: 80px;
+    height: 60px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     opacity: 0;
     animation: ${p => p.anim} ${p => p.duration} forwards;
 `;
 export const Circle = styled.div`
     /* position: absolute; */
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     border: 1px solid #fff;
     /* background-color: white; */
     opacity: 0.6;
-    font-size: 1.5rem;
+    font-size: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,8 +324,8 @@ export const Circle = styled.div`
 `;
 export const Play = styled(Circle)`
     /* border: 1px solid #fff; */
-    width: 22px;
-    height: 22px;
+    width: 15px;
+    height: 15px;
 `;
 export const Box = styled.div`
     box-sizing: border-box;
