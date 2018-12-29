@@ -97,7 +97,7 @@ class SliderComedy extends Component {
       slider.style.transform = `translateX(0px)`
       slider.style.transition = '0ms'    
     }, 700);
-    console.log('left')
+    // console.log('left')
     setTimeout(()=> {
       let item = {};
       let items = [];
@@ -131,7 +131,7 @@ class SliderComedy extends Component {
       slider.style.transition = '0ms'    
     }, 700);
 
-    console.log('right')
+    // console.log('right')
     setTimeout(() => {
       let item = {};
       let items = [];
