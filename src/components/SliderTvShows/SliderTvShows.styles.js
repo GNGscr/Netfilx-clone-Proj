@@ -7,11 +7,12 @@ export const Wrapper = styled.div`
     position: relative;
     max-width: 100vw;
     margin-bottom: 3.7vw;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     @media all and (min-width: 500px) {}
     @media all and (min-width: 800px) {}
     @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
+        overflow-x: unset;
     }
 `;
 export const PageHead = styled.div`
