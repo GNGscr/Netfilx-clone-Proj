@@ -37,7 +37,7 @@ export default class Filter extends Component {
       }
 
     update_list_state(filtered_list){
-        console.log('update_list_state',filtered_list.length)
+        // console.log('update_list_state',filtered_list.length)
         this.setState({
             displayed_list: filtered_list
         })
@@ -49,15 +49,6 @@ export default class Filter extends Component {
     //     })
     // }
 
-    // update_list(event) {
-    //     console.log(event.target.value)
-    //     const { list_data, on_filter } = this.props;
-    //     let txt = event.target.value;
-    //     let filtered_list = list_data.filter( item =>
-    //         item.first_name.toLowerCase().includes(txt.toLowerCase())
-    //     )
-    //     on_filter(filtered_list)
-    // }
     toggleInput = () => {
 
         if (this.state.InputOn) {
