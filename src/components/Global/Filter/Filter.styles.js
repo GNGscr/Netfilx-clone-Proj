@@ -13,12 +13,13 @@ export const FilterClass = styled.div`
 `;
 export const FilterIcon = styled.img`
     display: flex;
-    width: 9vw;
+    width: 8vw;
     margin-right: 2vw;
-    background-color: #f0f0f0;
+    background-color: gray;
     @media all and (min-width: 477px) {}
     @media all and (min-width: 900px) {
         display: flex;
+        width: 9vw;
         /* background-color: rgb(20, 20, 20); */
         background-color: #f0f0f0;
         width: 35px; 
@@ -29,32 +30,40 @@ export const FilterIcon = styled.img`
     }
 `;
 export const Inputer = styled.input`
-    display: none;
-    @media all and (min-width: 477px) {
-
-}
+    display: flex;  
+    height: 22px; 
+    width: 125px;  
+    background-color: rgb(20, 20, 20);
+    border: #ccc 1px solid;
+    font-size: 14px;
+    padding: 4px;
+    padding-left: 10px;
+    overflow-x: hidden;
+    transition: opacity .1s linear;
+    opacity: ${props => props.bgclr};        
+    transition: border .3s;
+    color: white;
+    &:focus {
+        outline:-webkit-focus-ring-color auto 5px
+    }
+    @media all and (min-width: 477px) {}
     @media all and (min-width: 900px) {
         display: flex;
         height: 25px;
-        width: 200px;
+        width: 170px;
+        margin-right: .9vw;
         outline: none;
         font-size: 16px;
-        /* opacity: 0; */
         border-radius: 0px;
-        border: #ccc 1px solid;
-        transition: border .3s;
-        background-color: rgb(20, 20, 20);
-        padding: 4px;
-        padding-left: 10px;
-        /* margin-right: -250px; */
-        overflow-x: hidden;
-        transition: opacity .1s linear;
-        opacity: ${props => props.bgclr};
-        color: white;
+        padding: 4px 12px;
+        &:focus {
+        outline: none;
+    }
+
 }
 `;
 export const FilterInputMobile = styled.input`
-    display: flex;
+    display: none;
     height: 28px;
     width: 114px;
     outline: none;
@@ -95,11 +104,10 @@ export const ContentBox = styled.div`
     transition-delay: .5s;
     opacity: ${props => props.cntctbx};
     z-index: 15;
-    /* background-color: rgb(20,20,20); */
     @media all and (min-width: 1400px) {
         margin-top: 3.6vw;
         height: 30vw;
-        width: 22vw;
+        width: 24vw;
     }
 `;
 export const Filtered = styled.div`
@@ -131,6 +139,7 @@ export const IMG = styled.img`
     @media all and (min-width: 1400px) {
     height: 2.3vw;
     width: 3.8vw;
+    margin-left: .5vw;
     margin-right: .5vw; 
     }
 `;
