@@ -6,7 +6,7 @@ import {
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
   Title, Details, Summary, CirclesBox, 
-  // Description
+  Description
   // scale_ease, wire_grey ,scale_delay
 } from './Slider.styles'
 import { setTimeout } from 'timers';
@@ -355,7 +355,7 @@ class Slider extends Component {
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                                 <Title>{e.title}</Title>
                                 <Details>{e.details}</Details>
-                                {/* <Description>{e.description}</Description> */}
+                                <Description>{e.description}</Description>
                             </Summary>
                             <CirclesBox
                                 anim={this.state.fade_anim}

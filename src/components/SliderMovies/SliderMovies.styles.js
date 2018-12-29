@@ -271,6 +271,7 @@ export const Description = styled.div`
     /* position: absolute; */
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     overflow: hidden;
     color: white;
     margin-bottom: 0;
@@ -289,6 +290,7 @@ export const Summary = styled.div`
     height: 6vw;
     width: 11vw;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     /* overflow: hidden; */
