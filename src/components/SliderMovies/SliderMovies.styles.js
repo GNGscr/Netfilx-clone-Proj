@@ -278,7 +278,7 @@ export const Description = styled.div`
     flex-wrap: wrap;
     font-size: 6px;
     width: 160px;
-    height: 15px;
+    min-height: 15px;
 `;
 export const Summary = styled.div`
     /* border: grey dashed 1px; */
