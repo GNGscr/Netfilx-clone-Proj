@@ -95,7 +95,7 @@ export const NavList = styled.ul`
     position:absolute;
     transition: left .3s ease-in;
     left:${props => props.xpos };
-    width: 240px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     color: #ccc;
