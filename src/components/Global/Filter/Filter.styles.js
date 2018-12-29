@@ -12,7 +12,10 @@ export const FilterClass = styled.div`
     }
 `;
 export const FilterIcon = styled.img`
-    display: none;
+    display: flex;
+    width: 9vw;
+    margin-right: 2vw;
+    background-color: #f0f0f0;
     @media all and (min-width: 477px) {}
     @media all and (min-width: 900px) {
         display: flex;
@@ -78,9 +81,9 @@ export const ContentBox = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 30vw;
-    width: 22vw;
-    margin-top: 3.6vw;
+    height: 43vw;
+    width: 45vw;
+    margin-top: 9.6vw;
     background-color: rgb(20,20,20);
     color: #ccc;
     overflow-x: hidden;
@@ -90,11 +93,17 @@ export const ContentBox = styled.div`
     transition: opacity 1s ease-in-out;
     transition-delay: .5s;
     opacity: ${props => props.cntctbx};
+    z-index: 15;
     /* background-color: rgb(20,20,20); */
+    @media all and (min-width: 1400px) {
+        margin-top: 3.6vw;
+        height: 30vw;
+        width: 22vw;
+    }
 `;
 export const Filtered = styled.div`
     margin: .08vw;
-    top: -2vw;
+    top: -4vw;
     position: relative;
     display: flex;
     padding: 2vw 0;
@@ -102,10 +111,14 @@ export const Filtered = styled.div`
     justify-content: flex-start;
     align-items: center;
     box-shadow: 0 .2rem .8rem DimGrey;
-    font-size: 18px;
+    font-size: 12px;
     border: 1px solid rgba(128, 128, 128, 0.8);
     width: 90%;
     cursor: pointer;
+    @media all and (min-width: 1400px) {
+        font-size: 18px;
+        top: -2vw; 
+    }
 `;
 
 export const IMG = styled.img`

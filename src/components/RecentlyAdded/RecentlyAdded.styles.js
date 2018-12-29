@@ -135,7 +135,7 @@ export const LogoAndTextDiv = styled.div`
 `;
 export const Hero = styled.img`
     width: 100vw;
-    height: 50vw;
+    height: 60vw;
     z-index: -5;
     position: relative;
     @media all and (min-width: 500px) {
@@ -155,7 +155,7 @@ export const Hero = styled.img`
     `;
 export const HeroMask = styled.div`
     width: 100vw;
-    height: 50vw;
+    height: 60vw;
     margin-top: 0vw;
     z-index: -3;
     position: absolute;
