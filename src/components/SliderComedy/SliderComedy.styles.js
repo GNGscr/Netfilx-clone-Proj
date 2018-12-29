@@ -20,19 +20,12 @@ export const PageHead = styled.div`
     /* min-height: 35px; */
     display: flex;
     margin: 0 6%;
-    /* z-index: 5; */
-    overflow-x: hidden;
-    @media all and (min-width: 500px) {
-        overflow-x: hidden;    
-    }
+
+    @media all and (min-width: 500px) {}
     @media all and (min-width: 800px) {}
-    @media all and (min-width: 1100px) {
-        overflow-x: hidden;
-        /* margin: 0 5%;    */
-    }
+    @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
         margin: 0 4%;
-        overflow-x: hidden;
     }
 `;
 // export const Sliderer = styled.div`
