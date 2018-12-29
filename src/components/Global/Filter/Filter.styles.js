@@ -108,6 +108,7 @@ export const ContentBox = styled.div`
         margin-top: 3.6vw;
         height: 30vw;
         width: 24vw;
+        margin-left: -1vw;
     }
 `;
 export const Filtered = styled.div`
