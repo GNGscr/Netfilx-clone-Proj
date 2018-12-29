@@ -24,6 +24,7 @@ export const FilterIcon = styled.img`
         width: 35px; 
         height: 35px;
         margin-left: 10px;
+        margin-right: 0;
         cursor: pointer;
     }
 `;
@@ -81,7 +82,7 @@ export const ContentBox = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 43vw;
+    height: 67vw;
     width: 45vw;
     margin-top: 9.6vw;
     background-color: rgb(20,20,20);
@@ -103,40 +104,53 @@ export const ContentBox = styled.div`
 `;
 export const Filtered = styled.div`
     margin: .08vw;
-    top: -4vw;
+    top: -11vw;
     position: relative;
     display: flex;
-    padding: 2vw 0;
+    padding: 4vw 0;
     padding-left: .5vw;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 0 .2rem .8rem DimGrey;
-    font-size: 12px;
+    font-size: 11px;
     border: 1px solid rgba(128, 128, 128, 0.8);
     width: 90%;
     cursor: pointer;
     @media all and (min-width: 1400px) {
+        padding: 2vw 0;
         font-size: 18px;
         top: -2vw; 
     }
 `;
 
 export const IMG = styled.img`
+    height: 4vw;
+    width: 6vw;
+    margin-right: 1vw;
+    margin-left: .3vw;
+    @media all and (min-width: 1400px) {
     height: 2.3vw;
     width: 3.8vw;
-    margin-right: .5vw;
+    margin-right: .5vw; 
+    }
 `;
 export const FilterHeader = styled.h2`
     margin-left: 0vw;
     margin-top: 2vw;
     color: grey;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: .9rem;
     opacity: .7;
+    @media all and (min-width: 1400px) {
+        font-size: 1.2rem; 
+    }
 `;
 export const Carret = styled.h3`
     font-size: 32px;
     color: rgba(128, 128, 128, 0.8);
     font-weight: 300;
-    margin-top: 1.5vw;
+    margin-top: 2vw;
+    @media all and (min-width: 1400px) {
+        margin-top: 1.5vw; 
+    }
 `;
