@@ -30,8 +30,6 @@ export default class Filter extends Component {
             data,
             original_list:data,
             displayed_list: data,
-            // list_data: data,
-            // filtered_list: data
         })
         // console.log(data.length)
       }
