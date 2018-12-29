@@ -262,7 +262,7 @@ export const Details = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 8px;
-    margin-bottom: -.5vw;
+    margin-bottom: -.8vw;
     width: 120px;
     height: 8px;
 `;
