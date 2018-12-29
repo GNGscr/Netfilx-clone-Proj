@@ -126,20 +126,21 @@ export const LeftArrow = styled.div`
     position: absolute;
     /* background-color: red; */
     background: linear-gradient(to left, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
-    width: 5.5%;
-    height: calc(99% - 17px);
+    width: 5.5vw;
+    height: 26vw;
     z-index: 14;
 
     @media all and (min-width: 500px) {
-        width: 3.5%;
-        height: calc(99% - 17px);
+        width: 3.2vw;
+        height: 16.8vw;
     }
     @media all and (min-width: 800px) {
-        height: calc(99% - 17px);
-        width: 5.9%;
+        height: 11.9vw;
+        width: 5.8vw;
     }
     @media all and (min-width: 1100px) {
-        width: 5%;
+        height: 11vw;
+        width: 5.1vw;
     }
     @media all and (min-width: 1400px) {
         width: 4.1vw;
@@ -150,21 +151,22 @@ export const RightArrow = styled.div`
     position: absolute;
     /* background: red; */
     background: linear-gradient(to right, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
-    width: 5.5%;
-    height: calc(99% - 17px);
+    width: 5.5vw;
+    height: 26vw;
     right: 0px;
     z-index: 14;
 
     @media all and (min-width: 500px) {
-        width: 3.5%;
-        height: calc(99% - 17px);
+        width: 3.2vw;
+        height: 16.8vw;
     }
     @media all and (min-width: 800px) {
-        height: calc(99% - 17px);
-        width: 5.9%;
+        height: 11.9vw;
+        width: 5.8vw;
     }
     @media all and (min-width: 1100px) {
-        width: 5%;
+        height: 11vw;
+        width: 4.5vw;
     }
     @media all and (min-width: 1400px) {
         width: 4.1vw;
@@ -210,6 +212,7 @@ export const RightArrowIMG = styled.img`
     }
     @media all and (min-width: 1100px) {
         width: calc(100% -10px);
+        margin-top: 3.3vw;
     }
     @media all and (min-width: 1400px) {
         width: calc(100% - 15px);

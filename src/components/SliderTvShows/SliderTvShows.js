@@ -115,7 +115,7 @@ class SliderTvShows extends Component {
     // let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     // console.dir(sliderItem)
-    slider.style.transform = `translateX(-${this.state.width -42}px)`
+    slider.style.transform = `translateX(-${this.state.width -41.8}px)`
     if(this.state.width > 1400) {
       slider.style.transform = `translateX(-${this.state.width-115.5}px)`
     } else if (this.state.width > 1100) {
@@ -197,7 +197,6 @@ class SliderTvShows extends Component {
         // console.log(prev_six)
     prev_six.style.transform = `translateX(-7.5vw)`
     prev_six.style.transition = '500ms'
-
 
     let next = e.currentTarget.nextElementSibling
     // console.log(next)
@@ -384,98 +383,3 @@ class SliderTvShows extends Component {
 }
 
 export default SliderTvShows;
-
-// nav shadow https://assets.nflxext.com/en_us/akira/jawBone/nav-shadow.png
-// weeds big https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABf0nJdIBtgLdHwx2zoKdt3d59TeGIvgX_wjn0D6TYhV2-Ay42KRNYzk-Y_BTOuPp4el8AUjVT4jz2xmtDYAqfAmrgtK4OB7CqaYhPXshMx2R4_ptPLWdZAtfjlORcGvLGOWrhZLKnSI.webp
-// stranger things https://occ-0-1390-2774.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABU3yfQ5VYfhr38dBd1t1sOz_rZ1OhAHDWl79d53Cvu6R8a_aQTXRqK04m1XzFDP8CYElk3k6uzRwXA7dFhQRvEw93LQDXX0d0NM9tY7fX270gJ0H56ATPk7COBLrpdclmRPqw6wIiw.jpg
-
-
-    // const rect = e.currentTarget.getBoundingClientRect()
-    // const targetX = rect.x - window.innerWidth / 100 * 7.5;
-
-    // console.log('MY X IS: ' + rect.x)
-    // console.log('MY target X IS: ' + targetX);
-    // console.log('rect: ', rect)
-
-    // let hovered_id = e.currentTarget.dataset.id;
-    // let prev_itmes = []
-    // let next_itmes = []
-    // for(let i = 1; i <= 36; i++) {
-    //   if(i< hovered_id){
-
-    //     const slider_item  = this.refs['sliderItem-'+i];
-    //     const rect = slider_item.getBoundingClientRect()
-    //     const targetX = rect.x - window.innerWidth / 100 * 7.5;
-
-    //     TweenLite.to(slider_item, 0.5, { x: targetX})
-
-    //   } else if (i> hovered_id){
-    
-    //     const slider_item  = this.refs['sliderItem-'+i];
-    //     const rect = slider_item.getBoundingClientRect()
-    //     const targetX = rect.x + window.innerWidth / 100 * 7.5;
-
-    //     TweenLite.to(slider_item, 0.5, { x: targetX})
-    //   }
-    // }
-
-    
-    // TweenLite.to(e.currentTarget, 0.5, {scale: 2})
-  
-
-
-    // let two = one.previousElementSibling.dataset.id
-    // let three = two.previousElementSibling.dataset.id
-    // let four = three.previousElementSibling.dataset.id
-    // let five = four.previousElementSibling.dataset.id
-    // let six = five.previousElementSibling.dataset.id
-    // let last = six.previousElementSibling.dataset.id
-    // console.log('my previos elements are: ', one,two,three,four,five,six,last)
-    // const slider = this.refs.slider
-
-    // const sliderItem = this.refs.sliderItem
-
-    // e.currentTarget.style.transform = `translateX(-40px)`
-    // console.log(e.currentTarget.parentElement)
-    
-      // if(e.target.id < e.currentTarget.dataset.id) {
-      //   console.log('lower then current', e.target.id)
-      // } else {
-      //   console.log('else')
-    //   // }
-
-    // e.currentTarget.parentElement.style.
-
-    // if(e.target.id < e.currentTarget){
-    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
-    // } else if (e.target.id < e.currentTarget) {
-    //   console.log('lower then current', e.target.id)
-    // } else if (e.target.id === e.currentTarget){
-    //   console.log('same')
-    // } else {
-    //   console.log('else')
-    // }
-    // e.currentTarget.parentElement.style.transform = `translateX(-200px)`
-
-    // e.currentTarget.style.margin = '0 3.75vw'
-    // console.log(slider)
-    // if(slider.e.currentTarget.dataset.id > e.currentTarget.dataset.id) {
-    //   slider.style.transform = `translateX(-100px)`
-    // }
-    // let counter = [];
-    // for(let i = 0; i < e.currentTarget.parentElement; i++) {
-    //   counter.push(i)
-      
-    //   // slider.splice(3, 1);
-    //   slider.style.transform = `translateX(-300px)`
-    //   slider.style.transition = '500ms'
-    //   e.currentTarget.dataset.id.style.transform = `translateX(-200px)`
-    // }
-    // console.log(counter)
-
-    // for(let j = slider; e.currentTarget.dataset.id > j; j++) {
-    //   let counterer = [];
-    //   counterer.push(j)
-    //   console.log(counterer)
-    //   // slider.style.transform = `translateX(-100px)`
-    // }
