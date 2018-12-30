@@ -7,12 +7,14 @@ export const Wrapper = styled.div`
     position: relative;
     max-width: 100vw;
     margin-bottom: 3.7vw;
-    overflow-x: hidden;
-    @media all and (min-width: 500px) {}
+    @media all and (min-width: 300px) {
+    }
+    @media all and (min-width: 500px) {
+    }
     @media all and (min-width: 800px) {}
     @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
-        overflow-x: unset;
+        /* overflow-x: unset; */
     }
 `;
 export const PageHead = styled.div`
@@ -20,7 +22,6 @@ export const PageHead = styled.div`
     /* min-height: 35px; */
     display: flex;
     margin: 0 6%;
-
     @media all and (min-width: 500px) {}
     @media all and (min-width: 800px) {}
     @media all and (min-width: 1100px) {}
@@ -55,6 +56,8 @@ export const SliderMask = styled.div`
     padding: 0 15px;
     margin-left: -322vw;
     z-index: 4;
+    overflow: unset;
+
     @media all and (min-width: 500px) {
         padding: 0 30px;
         margin-left: -229.5vw;

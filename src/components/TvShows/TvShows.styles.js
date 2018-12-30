@@ -179,6 +179,7 @@ export const HeroMask = styled.div`
     export const SliderSection = styled.div`
         position: absolute;
         margin-top: 42vw;
+        overflow-x: hidden;
     `;
     export const FooterSection = styled.footer`
     position: absolute;
