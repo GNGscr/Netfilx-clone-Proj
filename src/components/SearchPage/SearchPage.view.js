@@ -10,9 +10,9 @@ import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './SearchPage.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask} from './SearchPage.styles';
 // import MovieItem from '../Global/MovieItem/MovieItem.view'
-// , Trailer
+// , Trailer 
 
 class App extends Component {
   state = {
