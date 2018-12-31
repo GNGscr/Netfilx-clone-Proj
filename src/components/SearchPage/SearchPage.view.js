@@ -10,19 +10,49 @@ import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './SearchPage.styles';
-
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './SearchPage.styles';
+// import MovieItem from '../Global/MovieItem/MovieItem.view'
+// , Trailer
 
 class App extends Component {
   state = {
-    msg: "temp msg"
+    mouseEntered: false,
+    dspflx: 'none'
   }
+
+  toggle_trailer = e => {
+    console.log('works')
+    if(this.state.dspflx) {
+      this.setState({
+        mouseEntered: false,
+        dspflx: 'none'
+      })
+    } else {
+      this.setState({
+        mouseEntered: true,
+        dspflx: 'flex'
+      })
+    }
+  }
+
+  // mouseLeave = e => {
+  //   this.setState({
+  //     mouseEntered: false,
+  //     dspflx: 'none'
+  //   })
+  // }
+
   render() {
     return (
       <AppDiv>
           <NavBar><Links /></NavBar>
-          <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
-          <HeroMask />
+          <Hero
+          src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
+          {/* <Player onClick={this.toggle_trailer}></Player> */}
+          {/* <Trailer><MovieItem /></Trailer> */}
+          <TrailerMask/>
+          {/* <Trailer dsp={this.state.dspflx}><MovieItem /></Trailer> */}
+          <HeroMask></HeroMask>
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>

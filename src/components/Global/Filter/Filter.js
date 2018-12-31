@@ -53,7 +53,7 @@ export default class Filter extends Component {
             // console.log('works')
             this.setState({
                 navbgclr: 0,
-                cntctbox: 0,
+                // cntctbox: 0,
                 dspflx: 'none',
                 InputOn: false
             })
@@ -61,7 +61,7 @@ export default class Filter extends Component {
             // console.log('doesnt work')
             this.setState({
                 navbgclr: 1,
-                cntctbox: 1,
+                // cntctbox: 1,
                 dspflx: 'flex',
                 InputOn: true
             })

@@ -199,3 +199,34 @@ export const HeroMask = styled.div`
         padding: 0 4.1vw;
         margin-bottom: .6vw;
     `;
+    export const Trailer = styled.div`
+        display: none;
+        position: absolute;
+        top: -2.8vw;
+        left: 0;
+        background-repeat: no-repeat;
+        transition: display .5s;
+        display: ${props => props.dsp};
+        /* z-index: -4; */
+        @media all and (min-width: 1400px) {
+            top: -5.2vw; 
+        }
+    `;
+    export const Player = styled.div`
+        display: none;
+        z-index: 10;
+        top: -8vw;
+        right: 0px;
+        /* position: absolute; */
+        height: 5vw;
+        width: 8vw;
+        background-color: blue;
+    `;
+    export const TrailerMask = styled.div`
+    width: 100vw;
+    height: 45.5vw;
+    margin-top: 0vw;
+    z-index: 4;
+    position: absolute;
+    /* background-color: blue; */
+    `;
