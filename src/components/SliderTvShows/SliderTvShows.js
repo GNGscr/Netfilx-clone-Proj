@@ -53,7 +53,7 @@ class SliderTvShows extends Component {
     this.setState({
       width: window.innerWidth
     });
-    // console.log(this.state.width);
+    console.log(this.state.width);
   }
 
   updateSliderState() {
@@ -82,15 +82,29 @@ class SliderTvShows extends Component {
   leftArrowClick() {
     // let windowWidth = window.innerWidth
     const slider = this.refs.slider;
-    slider.style.transform = `translateX(${this.state.width -42}px)`
+    slider.style.transform = `translateX(${this.state.width -35}px)`
     if(this.state.width > 1400) {
       slider.style.transform = `translateX(${this.state.width-115.5}px)`
+    } else if (this.state.width > 1250) {
+      slider.style.transform = `translateX(${this.state.width-128}px)`
     } else if (this.state.width > 1100) {
-      slider.style.transform = `translateX(${this.state.width-122}px)`
+      slider.style.transform = `translateX(${this.state.width-139}px)`
+    } else if (this.state.width > 1000) {
+      slider.style.transform = `translateX(${this.state.width-123}px)`
     } else if (this.state.width > 800) {
       slider.style.transform = `translateX(${this.state.width -114}px)`
+    } else if (this.state.width > 765) {
+      slider.style.transform = `translateX(${this.state.width -54}px)`
     } else if (this.state.width > 500) {
       slider.style.transform = `translateX(${this.state.width -49}px)`
+    } else if (this.state.width > 412) {
+      slider.style.transform = `translateX(${this.state.width -45.2}px)`
+    }  else if (this.state.width > 400) {
+      slider.style.transform = `translateX(${this.state.width-45}px)`
+    } else if (this.state.width > 365) {
+      slider.style.transform = `translateX(${this.state.width -41.8}px)`
+    } else if (this.state.width > 355) {
+      slider.style.transform = `translateX(${this.state.width -39}px)`
     }
     slider.style.transition = '700ms'
     setTimeout(() => {
@@ -118,6 +132,8 @@ class SliderTvShows extends Component {
     slider.style.transform = `translateX(-${this.state.width -35}px)`
     if(this.state.width > 1400) {
       slider.style.transform = `translateX(-${this.state.width-115.5}px)`
+    } else if (this.state.width > 1250) {
+      slider.style.transform = `translateX(-${this.state.width-128}px)`
     } else if (this.state.width > 1100) {
       slider.style.transform = `translateX(-${this.state.width-139}px)`
     } else if (this.state.width > 1000) {
