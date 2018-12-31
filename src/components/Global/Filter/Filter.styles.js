@@ -17,6 +17,11 @@ export const FilterIcon = styled.img`
     margin-right: 2vw;
     background-color: gray;
     @media all and (min-width: 477px) {}
+    @media all and (min-width: 477px) {}
+    @media all and (min-width: 765px) {
+        width: 4vw;
+        margin-left: 1vw;
+    }
     @media all and (min-width: 900px) {
         display: flex;
         width: 9vw;

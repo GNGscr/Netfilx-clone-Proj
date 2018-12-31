@@ -128,12 +128,16 @@ export const LeftArrow = styled.div`
     z-index: 14;
 
     @media all and (min-width: 500px) {
-        width: 3.2vw;
+        width: 3.5vw;
         height: 16.8vw;
     }
     @media all and (min-width: 800px) {
         height: 11.9vw;
         width: 5.8vw;
+    }
+    @media all and (min-width: 1000px) {
+        height: 11vw;
+        width: 4.8vw;
     }
     @media all and (min-width: 1100px) {
         height: 11vw;
@@ -154,7 +158,7 @@ export const RightArrow = styled.div`
     z-index: 14;
 
     @media all and (min-width: 500px) {
-        width: 3.2vw;
+        width: 3.5vw;
         height: 16.8vw;
     }
     @media all and (min-width: 800px) {
@@ -164,6 +168,10 @@ export const RightArrow = styled.div`
     @media all and (min-width: 1100px) {
         height: 11vw;
         width: 4.5vw;
+    }
+    @media all and (min-width: 1000px) {
+        height: 11vw;
+        width: 4.8vw;
     }
     @media all and (min-width: 1400px) {
         width: 4.1vw;
