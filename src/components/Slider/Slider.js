@@ -334,8 +334,8 @@ class Slider extends Component {
 
     }
 
-    console.log('my id is: target: ',e.currentTarget)
-    console.log('my id is: ',e.currentTarget.dataset.id)
+    // console.log('my id is: target: ',e.currentTarget)
+    // console.log('my id is: ',e.currentTarget.dataset.id)
     // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
     // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
     
