@@ -200,7 +200,7 @@ export const HeroMask = styled.div`
         margin-bottom: .6vw;
     `;
     export const Trailer = styled.div`
-        display: none;
+        display: flex;
         position: absolute;
         top: -2.8vw;
         left: 0;
