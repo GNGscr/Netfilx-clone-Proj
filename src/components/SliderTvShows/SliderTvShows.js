@@ -53,7 +53,7 @@ class SliderTvShows extends Component {
     this.setState({
       width: window.innerWidth
     });
-    console.log(this.state.width);
+    // console.log(this.state.width);
   }
 
   updateSliderState() {
