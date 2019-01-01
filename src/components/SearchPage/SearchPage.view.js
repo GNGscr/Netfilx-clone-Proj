@@ -119,3 +119,27 @@ export default App;
     // {/*   <Route exact path="/" render={ ()=> <Profiles /> }/>  {/* Landing Page */} */}
     // { /*}     <Route path="/movie" Component={MoviePage}></Route> {/* Movie Page */} */}
     // {/*    {/*  <Route path="/404" Component={NotFound}></Route>    {/* Error Page*/} */}
+
+
+
+
+// Github :
+// =======
+
+
+// …or push an existing repository from the command line
+//------------------------------------------------------------
+//     git remote add origin git@github.com:GNGscr/Netfilx-clone-Proj.git
+//     git push -u origin master
+
+
+
+// …or create a new repository on the command line
+//--------------------------------------------------
+
+// echo "# Netfilx-clone-Proj" >> README.md
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git remote add origin git@github.com:GNGscr/Netfilx-clone-Proj.git
+// git push -u origin master
