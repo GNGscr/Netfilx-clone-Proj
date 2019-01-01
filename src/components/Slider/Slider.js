@@ -189,7 +189,7 @@ class Slider extends Component {
       e.currentTarget.style.transition = '500ms'
       // console.log(x)
       if(x < 278){
-        e.currentTarget.style.transformOrigin = 'center left' 
+        e.currentTarget.style.transformOrigin = 'left' 
         let previ = e.currentTarget.previousElementSibling
         previ.style.transform = `translateX(0vw)`
         let nexti = e.currentTarget.nextElementSibling
@@ -212,7 +212,7 @@ class Slider extends Component {
         nexti_six.style.transition = '500ms'
         // console.log(nexti)
       } else if(x > 1162){
-        e.currentTarget.style.transformOrigin = 'center right'
+        e.currentTarget.style.transformOrigin = 'right'
         let previo = e.currentTarget.previousElementSibling
         previo.style.transform = `translateX(-15vw)`
         previo.style.transition = '500ms'
@@ -289,7 +289,7 @@ class Slider extends Component {
       e.currentTarget.style.transform = `scale(2.003)`
       e.currentTarget.style.transition = '500ms'
       if(x < 188){
-        e.currentTarget.style.transformOrigin = 'center left' 
+        e.currentTarget.style.transformOrigin = 'left' 
         let nextio = e.currentTarget.nextElementSibling
         // console.log(nextio)
         nextio.style.transform = `translateX(44.9vw)`
@@ -298,7 +298,7 @@ class Slider extends Component {
         nextio_two.style.transform = `translateX(44.9vw)`
         nextio_two.style.transition = '500ms'
       } else if(x > 188) {
-        e.currentTarget.style.transformOrigin = 'center right' 
+        e.currentTarget.style.transformOrigin = 'right' 
         let previou = e.currentTarget.previousElementSibling
         // console.log(previou)
         previou.style.transform = `translateX(-44.9vw)`
@@ -312,7 +312,7 @@ class Slider extends Component {
       e.currentTarget.style.transform = `scale(2.003)`
       e.currentTarget.style.transition = '500ms'
       if(x < 188){
-        e.currentTarget.style.transformOrigin = 'center left' 
+        e.currentTarget.style.transformOrigin = 'left' 
         let nextio = e.currentTarget.nextElementSibling
         // console.log(nextio)
         nextio.style.transform = `translateX(44.9vw)`
@@ -322,7 +322,7 @@ class Slider extends Component {
         nextio_two.style.transition = '500ms'
       } 
       else if(x > 188) {
-        e.currentTarget.style.transformOrigin = 'center right' 
+        e.currentTarget.style.transformOrigin = 'right' 
         let previou = e.currentTarget.previousElementSibling
         // console.log(previou)
         previou.style.transform = `translateX(-44.9vw)`
@@ -334,8 +334,8 @@ class Slider extends Component {
 
     }
 
-    // console.log('my id is: target: ',e.currentTarget)
-    // console.log('my id is: ',e.currentTarget.dataset.id)
+    console.log('my id is: target: ',e.currentTarget)
+    console.log('my id is: ',e.currentTarget.dataset.id)
     // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
     // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
     
