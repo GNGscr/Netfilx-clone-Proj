@@ -10,9 +10,9 @@ import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, Trailer } from './SearchPage.styles';
-import MovieItem from '../Global/MovieItem/MovieItem.view'
-
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask} from './SearchPage.styles';
+// import MovieItem from '../Global/MovieItem/MovieItem.view'
+// , Trailer 
 
 class App extends Component {
   state = {
@@ -49,7 +49,7 @@ class App extends Component {
           <Hero
           src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
           {/* <Player onClick={this.toggle_trailer}></Player> */}
-          <Trailer><MovieItem /></Trailer>
+          {/* <Trailer><MovieItem /></Trailer> */}
           <TrailerMask/>
           {/* <Trailer dsp={this.state.dspflx}><MovieItem /></Trailer> */}
           <HeroMask></HeroMask>
