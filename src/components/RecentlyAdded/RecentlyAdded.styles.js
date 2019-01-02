@@ -128,7 +128,7 @@ export const LogoAndTextDiv = styled.div`
         height: 550px;
         display: flex;
         flex-direction: column;
-        z-index: 2;
+        z-index: 7;
         padding-top: 3vw;
         margin-left: 25px;
     }
