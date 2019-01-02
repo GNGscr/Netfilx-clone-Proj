@@ -9,6 +9,7 @@ import Slider from '../Slider/Slider';
 import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
+import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './TvShows.styles';
 
@@ -28,6 +29,8 @@ class TvShows extends Component {
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
+              <Hone>More from Netflix</Hone>
+              <SliderFull/>
               <Hone>TV Shows</Hone>
               <SliderTvShows/>
               <Hone>Movies</Hone>

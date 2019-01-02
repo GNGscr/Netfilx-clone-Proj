@@ -9,6 +9,7 @@ import Slider from '../Slider/Slider';
 import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
+import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './MyList.styles';
 
@@ -30,6 +31,8 @@ class MyList extends Component {
             <SliderSection>
               <Hone>TV Shows</Hone>
               <SliderTvShows/>
+              <Hone>More from Netflix</Hone>
+              <SliderFull/>
               <Hone>Movies</Hone>
               <SliderMovies/>
               <Hone>Popular on Netflix</Hone>

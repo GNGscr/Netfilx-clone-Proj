@@ -9,6 +9,7 @@ import Slider from '../Slider/Slider';
 import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
+import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './RecentlyAdded.styles';
 
@@ -39,6 +40,8 @@ class RecentlyAdded extends Component {
               <SliderComedy/>
               <Hone>Netflix Originals</Hone>
               <Slider/>
+              <Hone>More from Netflix</Hone>
+              <SliderFull/>
             </SliderSection>
             <FooterSection>
               <Footer />

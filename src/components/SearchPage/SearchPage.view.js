@@ -9,6 +9,7 @@ import Slider from '../Slider/Slider';
 import SliderTvShows from '../SliderTvShows/SliderTvShows';
 import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
+import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask} from './SearchPage.styles';
 // import MovieItem from '../Global/MovieItem/MovieItem.view'
@@ -64,6 +65,8 @@ class App extends Component {
               <Slider/>
               <Hone>Comedies:</Hone>
               <SliderComedy/>
+              <Hone>More from Netflix</Hone>
+              <SliderFull/>
               <Hone>Netflix Originals</Hone>
               <Slider/>
             </SliderSection>
