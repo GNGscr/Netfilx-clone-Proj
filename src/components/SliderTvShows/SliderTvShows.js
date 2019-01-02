@@ -185,8 +185,7 @@ class SliderTvShows extends Component {
   mouseEnter = e => {
     let x = e.clientX
     if(this.state.width > 1400) {
-      e.currentTarget.style.transform = `scale(2)`
-      e.currentTarget.style.transition = '500ms'
+
       // console.log(x)
       if(x < 278){
         e.currentTarget.style.transformOrigin = 'left' 
@@ -284,10 +283,11 @@ class SliderTvShows extends Component {
         next_six.style.transform = `translateX(7.5vw)`
         next_six.style.transition = '500ms'
         }
+        e.currentTarget.style.transform = `scale(2)`
+        e.currentTarget.style.transition = '500ms'
     } else if(this.state.width < 500) {
       // console.log(x)
-      e.currentTarget.style.transform = `scale(2.003)`
-      e.currentTarget.style.transition = '500ms'
+
       if(x < 188){
         e.currentTarget.style.transformOrigin = 'left' 
         let nextio = e.currentTarget.nextElementSibling
@@ -307,10 +307,11 @@ class SliderTvShows extends Component {
         previou_two.style.transform = `translateX(-44.9vw)`
         previou_two.style.transition = '500ms'
       }
-    } else if(this.state.width < 400) {
-      // console.log(x)
       e.currentTarget.style.transform = `scale(2.003)`
       e.currentTarget.style.transition = '500ms'
+    } else if(this.state.width < 400) {
+      // console.log(x)
+
       if(x < 188){
         e.currentTarget.style.transformOrigin = 'left' 
         let nextio = e.currentTarget.nextElementSibling
@@ -331,7 +332,8 @@ class SliderTvShows extends Component {
         previou_two.style.transform = `translateX(-44.9vw)`
         previou_two.style.transition = '500ms'
       }
-
+      e.currentTarget.style.transform = `scale(2.003)`
+      e.currentTarget.style.transition = '500ms'
     }
 
     // console.log('my id is: target: ',e.currentTarget)
