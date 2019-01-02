@@ -85,6 +85,47 @@ export default App;
 
 
 
+// import React,{ Component } from 'react'
+
+// import {
+//     // BrowserRouter,
+//     HashRouter,
+//     Route
+// } from 'react-router-dom';
+// // import { connect } from 'react-redux'
+
+// import Browse from './components/Browse';
+
+
+// class App extends Component {
+//     render() {
+//         // const {
+
+//         // } = this.props;
+
+//         return (
+//             <div>
+//                 <HashRouter>
+//                     <div className="main-app">
+//                         <Route exact path="/browse" Component={Browse}></Route>   {/* Search Page */}
+//                     </div>
+//                 </HashRouter>
+//             </div>
+//         )
+//       }
+//     }
+    
+//     export default (App)
+
+
+    // {           /*             <TopBar><Links /></TopBar>      */   } 
+    // {/*   <Route exact path="/" render={ ()=> <Profiles /> }/>  {/* Landing Page */} */}
+    // { /*}     <Route path="/movie" Component={MoviePage}></Route> {/* Movie Page */} */}
+    // {/*    {/*  <Route path="/404" Component={NotFound}></Route>    {/* Error Page*/} */}
+
+
+
+
 // Github :
 // =======
 
