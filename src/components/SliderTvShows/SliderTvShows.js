@@ -191,9 +191,9 @@ class SliderTvShows extends Component {
         let current = e.currentTarget
         current.style.transformOrigin = 'left' 
         current.style.transition = '300ms'
-        let previ = e.currentTarget.previousElementSibling
-        previ.style.transform = `translateX(0vw)`
-        previ.style.transition = '400ms'
+        let prev = e.currentTarget.previousElementSibling
+        prev.style.transform = `translateX(0vw)`
+        prev.style.transition = '400ms'
         // Targeting all the next elements that comes after the current
         let next_one = current.nextElementSibling;
           while (next_one) {
@@ -207,9 +207,9 @@ class SliderTvShows extends Component {
         let current = e.currentTarget
         current.style.transformOrigin = 'right' 
         current.style.transition = '300ms'
-        let nextio = e.currentTarget.nextElementSibling
-        nextio.style.transform = `translateX(0vw)`
-        nextio.style.transition = '400ms'
+        let next = e.currentTarget.nextElementSibling
+        next.style.transform = `translateX(0vw)`
+        next.style.transition = '400ms'
           // Targeting all the previous elements that comes before the current
           let previous = current.previousElementSibling;
           while (previous) {
