@@ -301,7 +301,7 @@ class SliderMovies extends Component {
     } else {
       return (
         <Wrapper>
-        <PageHead />
+          <PageHead />
           <SliderMask ref="slider">
             {
               this.state.data.map((e, i) => {
@@ -346,5 +346,4 @@ class SliderMovies extends Component {
     }
   }
 }
-
 export default SliderMovies;
