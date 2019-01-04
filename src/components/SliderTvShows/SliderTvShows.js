@@ -11,14 +11,12 @@ import {
 // import { TweenLite, Expo, Power0, Power1 } from "gsap";
 
 
-
 class SliderTvShows extends Component {
 
   constructor(props) {
     super(props);
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);
     this.handleOnRightArrowClick = this.rightArrowClick.bind(this);
-
     this.state = {
       showItems: 1,
       width: window.innerWidth,
@@ -47,14 +45,13 @@ class SliderTvShows extends Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions)
   }
-
   updateDimensions() {
     this.setState({
       width: window.innerWidth
     });
     // console.log(this.state.width);
   }
-  
+
   // Updates the amount of shows to display according to the window's width
   updateSliderState() {
     let showItems = 2
@@ -72,15 +69,12 @@ class SliderTvShows extends Component {
     })
   }
 
-
-  // --------------------------------------------------------------------------------
-  // * * =============== Scrolling Animation left & right clicks ================ * *
-  // --------------------------------------------------------------------------------
-
+  // ---------------------------------------------------------------------------------
+  // * * ======= Scrolling Animation & Items Shuffle - left & right clicks ======= * *
+  // ---------------------------------------------------------------------------------
 
 
   leftArrowClick() {
-    // let windowWidth = window.innerWidth
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -35}px)`
     if(this.state.width > 1400) {
@@ -111,7 +105,6 @@ class SliderTvShows extends Component {
       slider.style.transform = `translateX(0px)`
       slider.style.transition = '0ms'    
     }, 700);
-    // console.log('left')
     setTimeout(()=> {
       let item = {};
       let items = [];
@@ -124,11 +117,8 @@ class SliderTvShows extends Component {
       })    
     }, 700)
   }
-
   rightArrowClick() {
-    // let windowWidth = window.innerWidth
     const slider = this.refs.slider;
-    // console.dir(sliderItem)
     slider.style.transform = `translateX(-${this.state.width -35}px)`
     if(this.state.width > 1400) {
       slider.style.transform = `translateX(-${this.state.width-115.5}px)`
@@ -158,8 +148,6 @@ class SliderTvShows extends Component {
       slider.style.transform = `translateX(0px)`
       slider.style.transition = '0ms'    
     }, 700);
-
-    // console.log('right')
     setTimeout(() => {
       let item = {};
       let items = [];
@@ -173,10 +161,9 @@ class SliderTvShows extends Component {
     }, 700);
   }
 
-
-  // ----------------------------------------------------------------------------
-  // * * ==================== Mouse Enter & Leave Events ==================== * *
-  // ----------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------
+  // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
+  // -----------------------------------------------------------------------------
 
 
   timeout = null;
@@ -186,82 +173,64 @@ class SliderTvShows extends Component {
     let x = e.clientX
     // console.log(x)
     let current = e.currentTarget
-
+    let previous = current.previousElementSibling;
+    let next = current.nextElementSibling
     if(this.state.width > 1400) {
       if(x < 278){
         current.style.transformOrigin = 'left' 
         current.style.transition = '300ms'
-        let prev = e.currentTarget.previousElementSibling
-        prev.style.transform = `translateX(0vw)`
-        prev.style.transition = '400ms'
-        // Targeting all the next elements that comes after the current
-        let next_one = current.nextElementSibling;
-          while (next_one) {
-            // console.log(next_one.dataset.id);
-            console.log(next_one);
-            next_one.style.transform = `translateX(15vw)`
-            next_one.style.transition = '400ms'
-            next_one = next_one.nextElementSibling;
+          // Targeting all the next elements that comes after the current
+          while (next) {
+            next.style.transform = `translateX(15vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
           }
         } else if(x > 1162){
         current.style.transformOrigin = 'right' 
         current.style.transition = '300ms'
-        let next = e.currentTarget.nextElementSibling
-        next.style.transform = `translateX(0vw)`
-        next.style.transition = '400ms'
-          // Targeting all the previous elements that comes before the current
-          let previous = current.previousElementSibling;
+        // Targeting all the previous elements that comes before the current       
           while (previous) {
-            console.log(previous);
             previous.style.transform =`translateX(-15vw)`
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
         } else {
-          let previous = current.previousElementSibling;
           while (previous) {
-            console.log(previous);
             previous.style.transform =`translateX(-7.5vw)`
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
-          let next_one = current.nextElementSibling;
-          while (next_one) {
-            // console.log(next_one.dataset.id);
-            console.log(next_one);
-            next_one.style.transform = `translateX(7.5vw)`
-            next_one.style.transition = '400ms'
-            next_one = next_one.nextElementSibling;
+          while (next) {
+            next.style.transform = `translateX(7.5vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
           }
         }
-        e.currentTarget.style.transform = `scale(2)`
-        e.currentTarget.style.transition = '400ms'
-      }  else if(this.state.width < 400) {
+        current.style.transform = `scale(2)`
+        current.style.transition = '400ms'
+
+      } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){
           current.style.transformOrigin = 'left' 
           current.style.transition = '300ms'
-          let next_one = current.nextElementSibling;
-          while (next_one) {
-            console.log(next_one);
-            next_one.style.transform = `translateX(44.9vw)`
-            next_one.style.transition = '400ms'
-            next_one = next_one.nextElementSibling;
+          while (next) {
+            next.style.transform = `translateX(44.9vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
           }
         } 
         else if(x > 188) {
-          let previous = current.previousElementSibling;
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
           while (previous) {
-            console.log(previous);
             previous.style.transform =`translateX(-44.9vw)`
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
-          current.style.transformOrigin = 'right' 
-          current.style.transition = '300ms'
         }
-      e.currentTarget.style.transform = `scale(2.003)`
-      e.currentTarget.style.transition = '400ms'
+      current.style.transform = `scale(2.003)`
+      current.style.transition = '400ms'
     }
     this.short_fade_in();
     clearTimeout(this.timeout);
@@ -269,23 +238,21 @@ class SliderTvShows extends Component {
   }
   mouseLeave = e => {
     let current = e.currentTarget
-    current.style.transform = `scale(1)`
-    current.style.transition = '500ms'
     // e.currentTarget.style.margin = '0'
+    current.style.transform = `scale(1)`
+    current.style.transition = '400ms'
     let previous = current.previousElementSibling;
+    let next = current.nextElementSibling;
     while (previous) {
-      console.log(previous);
       previous.style.transform =`translateX(0px)`
-      previous.style.transition = '500ms'
+      previous.style.transition = '400ms'
       previous = previous.previousElementSibling;
-    }    
-    let next_one = current.nextElementSibling;
-    while (next_one) {
-      console.log(next_one);
-      next_one.style.transform = `translateX(0px)`
-      next_one.style.transition = '500ms'
-      next_one = next_one.nextElementSibling;
-    }  
+    }
+    while (next) {
+      next.style.transform = `translateX(0px)`
+      next.style.transition = '400ms'
+      next = next.nextElementSibling;
+    }
     clearTimeout(this.timeout);
     clearTimeout(this.move_timeout);
     this.move_timeout = null;
@@ -302,7 +269,9 @@ class SliderTvShows extends Component {
     }
   };
   
-  // ** ========================= Faders ============================= **
+  // ----------------------------------------------------------------------
+  // * * ========================= Faders ============================= * *
+  // ----------------------------------------------------------------------
   
   
   short_fade_in = () => {
@@ -362,6 +331,7 @@ class SliderTvShows extends Component {
                                 anim={this.state.fade_anim}
                                 duration={this.state.fade_duration}
                                 >
+                                {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
                                 <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
@@ -375,7 +345,6 @@ class SliderTvShows extends Component {
             </SliderMask>
             <LeftArrow onClick={this.handleOnLeftArrowClick}><LeftArrowIMG src="https://img.icons8.com/ios/96/000000/back-filled.png" /></LeftArrow>
             <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="https://img.icons8.com/ios/96/000000/forward-filled.png" /></RightArrow>
-
         </Wrapper>
       ); 
     }

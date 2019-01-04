@@ -417,3 +417,40 @@
 // const font2_regular = "https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v2/NetflixSans-Regular-Opt.woff2"
 // const font3_icon_v1_93 = "https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-93.woff"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log('my id is: target: ',e.currentTarget)
+// console.log('my id is: ',e.currentTarget.dataset.id)
+
+// console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
+// console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
+
+// let oner = e.currentTarget.previousElementSibling.dataset.id
+// let twor = oner-1
+// console.log('The id thats before the previous is: ' + twor)
+// console.log('The previous id is: ' + oner)
+// console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
+// let onerer = e.currentTarget.nextElementSibling.dataset.id
+// console.log('The next id is: ' + onerer)
+// let tworer = (onerer +++ 1)
+// console.log('The id thats after next is: ' + tworer)
+
+
+
+//  const element = this.refs[`sliderItem-${e.currentTarget.dataset.id}`]
+//  const summary = this.refs[`summary-${e.currentTarget.dataset.id}`]
+//  const circlebox = this.refs[`circle-${e.currentTarget.dataset.id}`]
+//  TweenLite.to(element,.25,{scale:2})
+//   console.log('current: '+e.currentTarget)
+//   console.log('current id: '+e.currentTarget.dataset.id)
