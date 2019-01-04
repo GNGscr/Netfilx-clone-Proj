@@ -366,7 +366,6 @@ class SliderComedy extends Component {
                                 anim={this.state.fade_anim}
                                 duration={this.state.fade_duration}
                                 >
-                                {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
                                 <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
