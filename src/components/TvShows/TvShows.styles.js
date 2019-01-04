@@ -180,6 +180,7 @@ export const HeroMask = styled.div`
         position: absolute;
         margin-top: 42vw;
         overflow-x: hidden;
+        height: 100%;
     `;
     export const FooterSection = styled.footer`
     position: absolute;
