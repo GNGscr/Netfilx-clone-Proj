@@ -54,7 +54,7 @@ class SliderFull extends Component {
     });
     // console.log(this.state.width);
   }
-  
+
   // Updates the amount of shows to display according to the window's width
   updateSliderState() {
     let showItems = 2
@@ -237,33 +237,6 @@ class SliderFull extends Component {
           }
         }
         e.currentTarget.style.transform = `scale(2)`
-        e.currentTarget.style.transition = '400ms'
-      } else if(this.state.width < 400) {
-      // console.log(x)
-        if(x < 188){
-          let current = e.currentTarget
-          current.style.transformOrigin = 'left' 
-          current.style.transition = '300ms'
-          let next_one = current.nextElementSibling;
-          while (next_one) {
-            console.log(next_one);
-            next_one.style.transform = `translateX(44.9vw)`
-            next_one.style.transition = '400ms'
-            next_one = next_one.nextElementSibling;
-          }
-        } else if(x > 188) {
-          let current = e.currentTarget
-          current.style.transformOrigin = 'right' 
-          current.style.transition = '300ms'
-          let previous = current.previousElementSibling;
-          while (previous) {
-            console.log(previous);
-            previous.style.transform =`translateX(-44.9vw)`
-            previous.style.transition = '400ms'
-            previous = previous.previousElementSibling;
-          }
-        }
-        e.currentTarget.style.transform = `scale(2.003)`
         e.currentTarget.style.transition = '400ms'
       } else if(this.state.width < 400) {
       // console.log(x)
