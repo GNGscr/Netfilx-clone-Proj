@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import '../../styled/App.css';
-
+import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
   Title, Details, Summary, CirclesBox, 
   Description
-  // scale_ease, wire_grey ,scale_delay
 } from './SliderComedy.styles'
-import { setTimeout } from 'timers';
 // import { TweenLite, Expo, Power0, Power1 } from "gsap";
-
 
 
 
@@ -186,290 +183,182 @@ class SliderComedy extends Component {
   
   mouseEnter = e => {
     let x = e.clientX
-    if(this.state.width > 1400) {
+    // console.log(x)
 
-      // console.log(x)
+    if(this.state.width > 1400) {
       if(x < 278){
         let current = e.currentTarget
         current.style.transformOrigin = 'left' 
         current.style.transition = '300ms'
         let previ = e.currentTarget.previousElementSibling
         previ.style.transform = `translateX(0vw)`
-        let nexti = e.currentTarget.nextElementSibling
-        nexti.style.transform = `translateX(15vw)`
-        nexti.style.transition = '400ms'
-        let nexti_two = e.currentTarget.nextElementSibling.nextElementSibling
-        nexti_two.style.transform = `translateX(15vw)`
-        nexti_two.style.transition = '400ms'
-        let nexti_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
-        nexti_three.style.transform = `translateX(15vw)`
-        nexti_three.style.transition = '400ms'
-        let nexti_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-        nexti_four.style.transform = `translateX(15vw)`
-        nexti_four.style.transition = '400ms'
-        let nexti_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-        nexti_five.style.transform = `translateX(15vw)`
-        nexti_five.style.transition = '400ms'
-        let nexti_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-        nexti_six.style.transform = `translateX(15vw)`
-        nexti_six.style.transition = '400ms'
-        // console.log(nexti)
-      } else if(x > 1162){
+        previ.style.transition = '400ms'
+        // Targeting all the next elements that comes after the current
+        let next_one = current.nextElementSibling;
+          while (next_one) {
+            // console.log(next_one.dataset.id);
+            console.log(next_one);
+            next_one.style.transform = `translateX(15vw)`
+            next_one.style.transition = '400ms'
+            next_one = next_one.nextElementSibling;
+          }
+        } else if(x > 1162){
         let current = e.currentTarget
         current.style.transformOrigin = 'right' 
         current.style.transition = '300ms'
-        let previo = e.currentTarget.previousElementSibling
-        previo.style.transform = `translateX(-15vw)`
-        previo.style.transition = '400ms'
-        let previo_two = e.currentTarget.previousElementSibling.previousElementSibling
-        previo_two.style.transform = `translateX(-15vw)`
-        previo_two.style.transition = '400ms'
-        let previo_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
-        previo_three.style.transform = `translateX(-15vw)`
-        previo_three.style.transition = '400ms'
-        let previo_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        previo_four.style.transform = `translateX(-15vw)`
-        previo_four.style.transition = '400ms'
-        let previo_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        previo_five.style.transform = `translateX(-15vw)`
-        previo_five.style.transition = '400ms'
-        let previo_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-        previo_six.style.transform = `translateX(-15vw)`
-        previo_six.style.transition = '400ms'
         let nextio = e.currentTarget.nextElementSibling
         nextio.style.transform = `translateX(0vw)`
+        nextio.style.transition = '400ms'
+        // Targeting all the previous elements that comes before the current
+          let previous = current.previousElementSibling;
+          while (previous) {
+            console.log(previous);
+            previous.style.transform =`translateX(-15vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
         } else {
-        let prev = e.currentTarget.previousElementSibling
-        // console.log(prev)
-        prev.style.transform = `translateX(-7.5vw)`
-        prev.style.transition = '400ms'
-        let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
-        // console.log(prev_two)
-        prev_two.style.transform = `translateX(-7.5vw)`
-        prev_two.style.transition = '400ms'
-        let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
-            // console.log(prev_three)
-        prev_three.style.transform = `translateX(-7.5vw)`
-        prev_three.style.transition = '400ms'
-        let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-            // console.log(prev_four)
-        prev_four.style.transform = `translateX(-7.5vw)`
-        prev_four.style.transition = '400ms'
-        let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-             // console.log(prev_five)
-        prev_five.style.transform = `translateX(-7.5vw)`
-        prev_five.style.transition = '400ms'
-        let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-            // console.log(prev_six)
-        prev_six.style.transform = `translateX(-7.5vw)`
-        prev_six.style.transition = '400ms'
-      
-        let next = e.currentTarget.nextElementSibling
-        // console.log(next)
-        next.style.transform = `translateX(7.5vw)`
-        next.style.transition = '400ms'
-        let next_two = e.currentTarget.nextElementSibling.nextElementSibling
-          // console.log(next_two)
-        next_two.style.transform = `translateX(7.5vw)`
-        next_two.style.transition = '400ms'
-        let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
-          // console.log(next_three)
-        next_three.style.transform = `translateX(7.5vw)`
-        next_three.style.transition = '400ms'
-        let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-          // console.log(next_four)
-        next_four.style.transform = `translateX(7.5vw)`
-        next_four.style.transition = '400ms'
-        let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-          // console.log(next_five)
-        next_five.style.transform = `translateX(7.5vw)`
-        next_five.style.transition = '400ms'
-        let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-          // console.log(next_six)
-        next_six.style.transform = `translateX(7.5vw)`
-        next_six.style.transition = '400ms'
+          let current = e.currentTarget
+          let previous = current.previousElementSibling;
+          while (previous) {
+            console.log(previous);
+            previous.style.transform =`translateX(-7.5vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        let next_one = current.nextElementSibling;
+          while (next_one) {
+            // console.log(next_one.dataset.id);
+            console.log(next_one);
+            next_one.style.transform = `translateX(7.5vw)`
+            next_one.style.transition = '400ms'
+            next_one = next_one.nextElementSibling;
+          }
         }
         e.currentTarget.style.transform = `scale(2)`
         e.currentTarget.style.transition = '400ms'
-    } else if(this.state.width < 400) {
-      // console.log(x)
 
-      if(x < 188){
-        let current = e.currentTarget
-        current.style.transformOrigin = 'left' 
-        current.style.transition = '300ms'
-        let nextio = e.currentTarget.nextElementSibling
-        // console.log(nextio)
-        nextio.style.transform = `translateX(44.9vw)`
-        nextio.style.transition = '400ms'
-        let nextio_two = e.currentTarget.nextElementSibling.nextElementSibling
-        nextio_two.style.transform = `translateX(44.9vw)`
-        nextio_two.style.transition = '400ms'
-      } else if(x > 188) {
-        let current = e.currentTarget
-        current.style.transformOrigin = 'right' 
-        current.style.transition = '300ms'
-        let previou = e.currentTarget.previousElementSibling
-        // console.log(previou)
-        previou.style.transform = `translateX(-44.9vw)`
-        previou.style.transition = '400ms'
-        let previou_two = e.currentTarget.previousElementSibling.previousElementSibling
-        previou_two.style.transform = `translateX(-44.9vw)`
-        previou_two.style.transition = '400ms'
-      }
-      e.currentTarget.style.transform = `scale(2.003)`
-      e.currentTarget.style.transition = '400ms'
-    } else if(this.state.width < 400) {
+      } else if(this.state.width < 400) {
       // console.log(x)
+        if(x < 188){
+          let current = e.currentTarget
+          current.style.transformOrigin = 'left' 
+          current.style.transition = '300ms'
+          let next_one = current.nextElementSibling;
+          while (next_one) {
+            console.log(next_one);
+            next_one.style.transform = `translateX(44.9vw)`
+            next_one.style.transition = '400ms'
+            next_one = next_one.nextElementSibling;
+          }
+        } else if(x > 188) {
+          let current = e.currentTarget
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
+          let previous = current.previousElementSibling;
+          while (previous) {
+            console.log(previous);
+            previous.style.transform =`translateX(-44.9vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        }
+        e.currentTarget.style.transform = `scale(2.003)`
+        e.currentTarget.style.transition = '400ms'
 
-      if(x < 188){
-        let current = e.currentTarget
-        current.style.transformOrigin = 'left' 
-        current.style.transition = '300ms'
-        let nextio = e.currentTarget.nextElementSibling
-        // console.log(nextio)
-        nextio.style.transform = `translateX(44.9vw)`
-        nextio.style.transition = '400ms'
-        let nextio_two = e.currentTarget.nextElementSibling.nextElementSibling
-        nextio_two.style.transform = `translateX(44.9vw)`
-        nextio_two.style.transition = '400ms'
-      } 
-      else if(x > 188) {
-        let current = e.currentTarget
-        current.style.transformOrigin = 'right' 
-        current.style.transition = '300ms'
-        let previou = e.currentTarget.previousElementSibling
-        // console.log(previou)
-        previou.style.transform = `translateX(-44.9vw)`
-        previou.style.transition = '400ms'
-        let previou_two = e.currentTarget.previousElementSibling.previousElementSibling
-        previou_two.style.transform = `translateX(-44.9vw)`
-        previou_two.style.transition = '400ms'
-      }
+      } else if(this.state.width < 400) {
+      // console.log(x)
+        if(x < 188){
+          let current = e.currentTarget
+          current.style.transformOrigin = 'left' 
+          current.style.transition = '300ms'
+          let next_one = current.nextElementSibling;
+          while (next_one) {
+            console.log(next_one);
+            next_one.style.transform = `translateX(44.9vw)`
+            next_one.style.transition = '400ms'
+            next_one = next_one.nextElementSibling;
+          }
+        } 
+        else if(x > 188) {
+          let current = e.currentTarget
+          let previous = current.previousElementSibling;
+          while (previous) {
+            console.log(previous);
+            previous.style.transform =`translateX(-44.9vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
+
+        }
       e.currentTarget.style.transform = `scale(2.003)`
       e.currentTarget.style.transition = '400ms'
     }
 
-    // console.log('my id is: target: ',e.currentTarget)
-    // console.log('my id is: ',e.currentTarget.dataset.id)
-
-    // console.log('my previous id is: ',e.currentTarget.previousElementSibling.dataset.id)
-    // console.log('my next id is: ',e.currentTarget.nextElementSibling.dataset.id)
-    
-    // let oner = e.currentTarget.previousElementSibling.dataset.id
-    // let twor = oner-1
-    // console.log('The id thats before the previous is: ' + twor)
-    // console.log('The previous id is: ' + oner)
-    // console.log('MY ELEMENTS ID - the element that I mouse Entered on is: ',e.currentTarget.dataset.id)
-    // let onerer = e.currentTarget.nextElementSibling.dataset.id
-    // console.log('The next id is: ' + onerer)
-    // let tworer = (onerer +++ 1)
-    // console.log('The id thats after next is: ' + tworer)
-
-
-
-    //  const element = this.refs[`sliderItem-${e.currentTarget.dataset.id}`]
-    //  const summary = this.refs[`summary-${e.currentTarget.dataset.id}`]
-    //  const circlebox = this.refs[`circle-${e.currentTarget.dataset.id}`]
-    //  TweenLite.to(element,.25,{scale:2})
-    //   console.log('current: '+e.currentTarget)
-    //   console.log('current id: '+e.currentTarget.dataset.id)
-      this.short_fade_in();
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.long_fade_out, 2000);
+    this.short_fade_in();
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(this.long_fade_out, 2000);
   }
   mouseLeave = e => {
-    e.currentTarget.style.transform = `scale(1)`
-    e.currentTarget.style.transition = '500ms'
+    let current = e.currentTarget
+    current.style.transform = `scale(1)`
+    current.style.transition = '500ms'
     // e.currentTarget.style.margin = '0'
-
-      let prev = e.currentTarget.previousElementSibling
-      // console.log(prev)
-      prev.style.transform = `translateX(0px)`
-      prev.style.transition = '500ms'
-      let prev_two = e.currentTarget.previousElementSibling.previousElementSibling
-      // console.log(prev_two)
-      prev_two.style.transform = `translateX(0px)`
-      prev_two.style.transition = '500ms'
-      let prev_three = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling
-      // console.log(prev_three)
-      prev_three.style.transform = `translateX(0px)`
-      prev_three.style.transition = '500ms'
-      let prev_four = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-      // console.log(prev_four)
-      prev_four.style.transform = `translateX(0px)`
-      prev_four.style.transition = '500ms'
-      let prev_five = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-      // console.log(prev_five)
-      prev_five.style.transform = `translateX(0px)`
-      prev_five.style.transition = '500ms'
-      let prev_six = e.currentTarget.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling
-      // console.log(prev_six)
-      prev_six.style.transform = `translateX(0px)`
-      prev_six.style.transition = '500ms'
-  
-  
-      let next = e.currentTarget.nextElementSibling
-      // console.log(next)
-      next.style.transform = `translateX(0px)`
-      next.style.transition = '500ms'
-      let next_two = e.currentTarget.nextElementSibling.nextElementSibling
-      // console.log(next_two)
-      next_two.style.transform = `translateX(0px)`
-      next_two.style.transition = '500ms'
-      let next_three = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling
-      // console.log(next_three)
-      next_three.style.transform = `translateX(0px)`
-      next_three.style.transition = '500ms'
-      let next_four = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-      // console.log(next_four)
-      next_four.style.transform = `translateX(0px)`
-      next_four.style.transition = '500ms'
-      let next_five = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-      // console.log(next_five)
-      next_five.style.transform = `translateX(0px)`
-      next_five.style.transition = '500ms'
-      let next_six = e.currentTarget.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-      // console.log(next_six)
-      next_six.style.transform = `translateX(0px)`
-      next_six.style.transition = '500ms'
-  
-      clearTimeout(this.timeout);
-      clearTimeout(this.move_timeout);
-      this.move_timeout = null;
-      this.short_fade_out();
+    let previous = current.previousElementSibling;
+    while (previous) {
+      console.log(previous);
+      previous.style.transform =`translateX(0px)`
+      previous.style.transition = '500ms'
+      previous = previous.previousElementSibling;
+    }
+    
+    let next_one = current.nextElementSibling;
+    while (next_one) {
+      console.log(next_one);
+      next_one.style.transform = `translateX(0px)`
+      next_one.style.transition = '500ms'
+      next_one = next_one.nextElementSibling;
+    }
+    
+    clearTimeout(this.timeout);
+    clearTimeout(this.move_timeout);
+    this.move_timeout = null;
+    this.short_fade_out();
   }
   mouseMove = e => {
-      if(!this.move_timeout) {
-          this.short_fade_in();
-          this.move_timeout = setTimeout(() => {
-              this.move_timeout = null;
-              clearTimeout(this.timeout);
-              this.timeout = setTimeout(this.long_fade_out, 2000);
-          }, 300);
-      }
+    if(!this.move_timeout) {
+      this.short_fade_in();
+      this.move_timeout = setTimeout(() => {
+        this.move_timeout = null;
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(this.long_fade_out, 2000);
+      }, 300);
+    }
   };
-
+  
   // ** ========================= Faders ============================= **
-
+  
   
   short_fade_in = () => {
-      this.setState({
-          fade_duration: '250ms',
-          fade_anim: FADE_IN
-      });
+    this.setState({
+      fade_duration: '250ms',
+      fade_anim: FADE_IN
+    });
   };
   short_fade_out = () => {
-      this.setState({
-          fade_duration: '400ms',
-          fade_anim: FADE_OUT
-      });
+    this.setState({
+      fade_duration: '400ms',
+      fade_anim: FADE_OUT
+    });
   };
   long_fade_out = () => {
-      this.setState({
-          fade_duration: '4000ms',
-          fade_anim: FADE_OUT
-      });
+    this.setState({
+      fade_duration: '4000ms',
+      fade_anim: FADE_OUT
+    });
   };
   
   render() {
@@ -481,8 +370,8 @@ class SliderComedy extends Component {
         </>
       )
     } else {
-    return (
-      <Wrapper>
+      return (
+        <Wrapper>
         <PageHead />
           <SliderMask ref="slider">
             {
@@ -490,17 +379,17 @@ class SliderComedy extends Component {
                 // console.log(e)
                 return (
                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
-                        onMouseEnter={this.mouseEnter}
-                        onMouseLeave={this.mouseLeave}
-                        onMouseMove={this.mouseMove}
-                        data-id={e.id}
+                  onMouseEnter={this.mouseEnter}
+                  onMouseLeave={this.mouseLeave}
+                  onMouseMove={this.mouseMove}
+                  data-id={e.id}
                   >
                         <Box>
                             <IMG src={e.poster}/>
                             <Summary
                                 anim={this.state.fade_anim}
                                 duration={this.state.fade_duration}
-                            >
+                                >
                                 <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                                 <Title>{e.title}</Title>
                                 <Details>{e.details}</Details>
@@ -509,7 +398,7 @@ class SliderComedy extends Component {
                             <CirclesBox
                                 anim={this.state.fade_anim}
                                 duration={this.state.fade_duration}
-                            >
+                                >
                                 {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
                                 <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                                 <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
@@ -527,8 +416,8 @@ class SliderComedy extends Component {
 
       </Wrapper>
     ); 
-    }
   }
+}
 }
 
 export default SliderComedy;
