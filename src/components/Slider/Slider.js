@@ -237,7 +237,6 @@ class Slider extends Component {
         }
         e.currentTarget.style.transform = `scale(2)`
         e.currentTarget.style.transition = '400ms'
-
       } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){
@@ -265,7 +264,6 @@ class Slider extends Component {
         }
         e.currentTarget.style.transform = `scale(2.003)`
         e.currentTarget.style.transition = '400ms'
-
       } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){
@@ -289,15 +287,12 @@ class Slider extends Component {
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
-
           current.style.transformOrigin = 'right' 
           current.style.transition = '300ms'
-
         }
       e.currentTarget.style.transform = `scale(2.003)`
       e.currentTarget.style.transition = '400ms'
     }
-
     this.short_fade_in();
     clearTimeout(this.timeout);
     this.timeout = setTimeout(this.long_fade_out, 2000);
@@ -314,7 +309,6 @@ class Slider extends Component {
       previous.style.transition = '500ms'
       previous = previous.previousElementSibling;
     }
-    
     let next_one = current.nextElementSibling;
     while (next_one) {
       console.log(next_one);
@@ -322,7 +316,6 @@ class Slider extends Component {
       next_one.style.transition = '500ms'
       next_one = next_one.nextElementSibling;
     }
-    
     clearTimeout(this.timeout);
     clearTimeout(this.move_timeout);
     this.move_timeout = null;
