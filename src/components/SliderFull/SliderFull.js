@@ -54,7 +54,8 @@ class SliderFull extends Component {
     });
     // console.log(this.state.width);
   }
-
+  
+  // Updates the amount of shows to display according to the window's width
   updateSliderState() {
     let showItems = 2
     if (this.state.width > 1400) {
