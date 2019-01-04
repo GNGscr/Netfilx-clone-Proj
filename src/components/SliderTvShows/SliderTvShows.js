@@ -313,28 +313,27 @@ class SliderTvShows extends Component {
                   onMouseMove={this.mouseMove}
                   data-id={e.id}
                   >
-                        <Box>
-                            <IMG src={e.poster}/>
-                            <Summary
-                                anim={this.state.fade_anim}
-                                duration={this.state.fade_duration}
-                                >
-                                <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                                <Title>{e.title}</Title>
-                                <Details>{e.details}</Details>
-                                <Description>{e.description}</Description>
-                            </Summary>
-                            <CirclesBox
-                                anim={this.state.fade_anim}
-                                duration={this.state.fade_duration}
-                                >
-                                {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
-                                <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
-                                <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
-                                <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
-                                <Circle><IMG src='https://img.icons8.com/ios/48/000000/plus-math-filled.png'/></Circle>
-                            </CirclesBox>
-                        </Box>
+                  <Box>
+                      <IMG src={e.poster}/>
+                      <Summary
+                          anim={this.state.fade_anim}
+                          duration={this.state.fade_duration}
+                          >
+                          <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                          <Title>{e.title}</Title>
+                          <Details>{e.details}</Details>
+                          <Description>{e.description}</Description>
+                      </Summary>
+                      <CirclesBox
+                          anim={this.state.fade_anim}
+                          duration={this.state.fade_duration}
+                          >
+                          <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
+                          <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
+                          <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
+                          <Circle><IMG src='https://img.icons8.com/ios/48/000000/plus-math-filled.png'/></Circle>
+                      </CirclesBox>
+                  </Box>
                   </SliderItem>
                 )
               })
