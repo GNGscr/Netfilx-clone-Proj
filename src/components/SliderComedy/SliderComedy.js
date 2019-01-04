@@ -48,8 +48,8 @@ class SliderComedy extends Component {
   updateDimensions() {
     this.setState({
       width: window.innerWidth
+      // console.log(this.state.width);
     });
-    // console.log(this.state.width);
   }
 
   // Updates the amount of shows to display according to the window's width
