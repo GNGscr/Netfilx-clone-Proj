@@ -1,6 +1,6 @@
 require('dotenv').config()
 const path = require('path')
-const p = require( './utils/color_logger')(path.basename(__filename))
+// const p = require( './utils/color_logger')(path.basename(__filename))
 
 const express = require('express')
 const morgan = require('morgan')

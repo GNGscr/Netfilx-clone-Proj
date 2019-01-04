@@ -57,18 +57,18 @@ class App extends Component {
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
-              <Hone>TV Shows</Hone>
-              <SliderTvShows/>
-              <Hone>Movies</Hone>
-              <SliderMovies/>
-              <Hone>Popular on Netflix</Hone>
-              <Slider/>
-              <Hone>Comedies:</Hone>
-              <SliderComedy/>
-              <Hone>More from Netflix</Hone>
-              <SliderFull/>
               <Hone>Netflix Originals</Hone>
               <Slider/>
+              <Hone>Movies</Hone>
+              <SliderMovies/>
+              <Hone>TV Shows</Hone>
+              <SliderTvShows/>
+              <Hone>Comedies:</Hone>
+              <SliderComedy/>
+              <Hone>Popular on Netflix</Hone>
+              <Slider/>
+              <Hone>More from Netflix</Hone>
+              <SliderFull/>
             </SliderSection>
             <FooterSection>
               <Footer />
