@@ -185,10 +185,10 @@ class SliderMovies extends Component {
   mouseEnter = e => {
     let x = e.clientX
     // console.log(x)
+    let current = e.currentTarget
 
     if(this.state.width > 1400) {
       if(x < 278){
-        let current = e.currentTarget
         current.style.transformOrigin = 'left' 
         current.style.transition = '300ms'
         let prev = e.currentTarget.previousElementSibling
@@ -204,7 +204,6 @@ class SliderMovies extends Component {
             next_one = next_one.nextElementSibling;
           }
         } else if(x > 1162){
-        let current = e.currentTarget
         current.style.transformOrigin = 'right' 
         current.style.transition = '300ms'
         let next = e.currentTarget.nextElementSibling
@@ -219,7 +218,6 @@ class SliderMovies extends Component {
             previous = previous.previousElementSibling;
           }
         } else {
-          let current = e.currentTarget
           let previous = current.previousElementSibling;
           while (previous) {
             console.log(previous);
@@ -241,7 +239,6 @@ class SliderMovies extends Component {
       } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){
-          let current = e.currentTarget
           current.style.transformOrigin = 'left' 
           current.style.transition = '300ms'
           let next_one = current.nextElementSibling;
@@ -253,7 +250,6 @@ class SliderMovies extends Component {
           }
         } 
         else if(x > 188) {
-          let current = e.currentTarget
           let previous = current.previousElementSibling;
           while (previous) {
             console.log(previous);
