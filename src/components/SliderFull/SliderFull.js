@@ -73,7 +73,6 @@ class SliderFull extends Component {
   // * * ======= Scrolling Animation & Items Shuffle - left & right clicks ======= * *
   // ---------------------------------------------------------------------------------
 
-
   leftArrowClick() {
     const slider = this.refs.slider;
     slider.style.transform = `translateX(${this.state.width -35}px)`
@@ -164,7 +163,6 @@ class SliderFull extends Component {
   // -----------------------------------------------------------------------------
   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
   // -----------------------------------------------------------------------------
-
 
   timeout = null;
   move_timeout = null;
@@ -272,7 +270,6 @@ class SliderFull extends Component {
   // ----------------------------------------------------------------------
   // * * ========================= Faders ============================= * *
   // ----------------------------------------------------------------------
-  
   
   short_fade_in = () => {
     this.setState({
