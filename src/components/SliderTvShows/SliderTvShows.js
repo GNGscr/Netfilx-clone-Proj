@@ -210,7 +210,7 @@ class SliderTvShows extends Component {
         let nextio = e.currentTarget.nextElementSibling
         nextio.style.transform = `translateX(0vw)`
         nextio.style.transition = '400ms'
-        // Targeting all the previous elements that comes before the current
+          // Targeting all the previous elements that comes before the current
           let previous = current.previousElementSibling;
           while (previous) {
             console.log(previous);
@@ -227,7 +227,7 @@ class SliderTvShows extends Component {
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
-        let next_one = current.nextElementSibling;
+          let next_one = current.nextElementSibling;
           while (next_one) {
             // console.log(next_one.dataset.id);
             console.log(next_one);

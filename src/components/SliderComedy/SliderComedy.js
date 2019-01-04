@@ -194,8 +194,8 @@ class SliderComedy extends Component {
         let previ = e.currentTarget.previousElementSibling
         previ.style.transform = `translateX(0vw)`
         previ.style.transition = '400ms'
-        // Targeting all the next elements that comes after the current
-        let next_one = current.nextElementSibling;
+          // Targeting all the next elements that comes after the current
+          let next_one = current.nextElementSibling;
           while (next_one) {
             // console.log(next_one.dataset.id);
             console.log(next_one);
@@ -227,7 +227,7 @@ class SliderComedy extends Component {
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
           }
-        let next_one = current.nextElementSibling;
+          let next_one = current.nextElementSibling;
           while (next_one) {
             // console.log(next_one.dataset.id);
             console.log(next_one);
