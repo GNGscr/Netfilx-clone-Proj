@@ -20,6 +20,14 @@ class App extends Component {
     on: false
   }
 
+  // componentDidMount() {
+  //   if(!this.state.on){    
+  //     this.setState({
+  //       on:false
+  //     })
+  //   }
+  // }
+
   mouseEnter = e => {
     console.log('enter')
       this.setState({
@@ -29,7 +37,7 @@ class App extends Component {
   mouseLeave = e => {
     console.log('leave')
     this.setState({
-      on: !this.state.on
+      on: false
     })
   }
 
