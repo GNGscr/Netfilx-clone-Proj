@@ -13,7 +13,7 @@ import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './SearchPage.styles';
 import MovieItem from '../Global/MovieItem/MovieItem.view'
-// , Trailer
+
 
 class App extends Component {
   state = {
@@ -49,7 +49,6 @@ class App extends Component {
           onMouseLeave={this.mouseLeave}
           />
           <HeroMask />
-          {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
               <Hone>Netflix Originals</Hone>

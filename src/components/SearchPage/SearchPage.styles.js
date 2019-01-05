@@ -200,29 +200,16 @@ export const HeroMask = styled.div`
         padding: 0 4.1vw;
         margin-bottom: .6vw;
     `;
-    export const Trailer = styled.div`
-        display: flex;
-        position: absolute;
-        top: -2.8vw;
-        left: 0;
-        background-repeat: no-repeat;
-        /* transform: display .5s;
-        display: ${props => props.dsp}; */
-        /* z-index: -4; */
-        @media all and (min-width: 1400px) {
-            top: -5.2vw; 
-        }
-    `;
-    export const Player = styled.div`
-        display: flex;
-        z-index: 10;
-        top: -8vw;
-        right: 0px;
-        /* position: absolute; */
-        height: 5vw;
-        width: 8vw;
-        background-color: blue;
-    `;
+    // export const Player = styled.div`
+    //     display: flex;
+    //     z-index: 10;
+    //     top: -8vw;
+    //     right: 0px;
+    //     /* position: absolute; */
+    //     height: 5vw;
+    //     width: 8vw;
+    //     background-color: blue;
+    // `;
     export const TrailerMask = styled.div`
     width: 100vw;
     height: 45.5vw;

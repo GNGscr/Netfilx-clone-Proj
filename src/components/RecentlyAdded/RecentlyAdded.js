@@ -11,14 +11,27 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './RecentlyAdded.styles';
-
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './RecentlyAdded.styles';
+import MovieItemRecentlyAdded from '../Global/MovieItem/MovieItemRecentlyAdded.view'
 
 
 
 class RecentlyAdded extends Component {
   state = {
-    msg: "temp msg"
+    on: false
+  }
+
+  mouseEnter = e => {
+    console.log('enter')
+      this.setState({
+        on: !this.state.on
+      })
+  }
+  mouseLeave = e => {
+    console.log('leave')
+    this.setState({
+      on: !this.state.on
+    })
   }
 
   render() {
@@ -26,8 +39,16 @@ class RecentlyAdded extends Component {
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/eb6d0/6f8b62fa1a805b0bbea4c02170e9239e592eb6d0.webp" alt=""/>
+          <>
+            {this.state.on && (
+            <MovieItemRecentlyAdded />
+            )}
+          </>
+          <TrailerMask
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseLeave}
+          />
           <HeroMask />
-          {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
               <Hone>TV Shows</Hone>

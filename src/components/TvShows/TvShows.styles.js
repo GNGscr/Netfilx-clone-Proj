@@ -200,3 +200,11 @@ export const HeroMask = styled.div`
         padding: 0 4.1vw;
         margin-bottom: .6vw;
     `;
+    export const TrailerMask = styled.div`
+    width: 100vw;
+    height: 45.5vw;
+    margin-top: 0vw;
+    z-index: 0;
+    position: absolute;
+    /* background-color: blue; */
+    `;

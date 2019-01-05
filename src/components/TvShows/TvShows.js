@@ -11,22 +11,44 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './TvShows.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './TvShows.styles';
+import MovieItemTvshows from '../Global/MovieItem/MovieItemTvshows.view.'
 
 
 
 
 class TvShows extends Component {
   state = {
-    msg: "temp msg"
+    on: false
+  }
+
+  mouseEnter = e => {
+    console.log('enter')
+      this.setState({
+        on: !this.state.on
+      })
+  }
+  mouseLeave = e => {
+    console.log('leave')
+    this.setState({
+      on: !this.state.on
+    })
   }
   render() {
     return (
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/28f4e/b8e1f9755ecda49dc8afef7c603923029f828f4e.webp" alt=""/>
+          <>
+            {this.state.on && (
+            <MovieItemTvshows />
+            )}
+          </>
+          <TrailerMask
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseLeave}
+          />
           <HeroMask />
-          {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
               <Hone>More from Netflix</Hone>

@@ -11,22 +11,43 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask } from './MyList.styles';
-
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './MyList.styles';
+import MovieItemMyList from '../Global/MovieItem/MovieItemMyList.view'
 
 
 
 class MyList extends Component {
   state = {
-    msg: "temp msg"
+    on: false
+  }
+
+  mouseEnter = e => {
+    console.log('enter')
+      this.setState({
+        on: !this.state.on
+      })
+  }
+  mouseLeave = e => {
+    console.log('leave')
+    this.setState({
+      on: !this.state.on
+    })
   }
   render() {
     return (
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/b2c33/224481a9d5dc45c5413582cfc1964a94f77b2c33.webp" alt=""/>
+          <>
+            {this.state.on && (
+            <MovieItemMyList />
+            )}
+          </>
+          <TrailerMask
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseLeave}
+          />
           <HeroMask />
-          {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
               <Hone>TV Shows</Hone>
