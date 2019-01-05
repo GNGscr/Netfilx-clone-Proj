@@ -218,3 +218,10 @@ export const HeroMask = styled.div`
     position: absolute;
     /* background-color: blue; */
     `;
+    export const TrailerWrapper = styled.div`
+    top: -2.75vw;
+    position: absolute;
+    @media all and (min-width: 1400px) {
+        top: -5.2vw;
+    }
+    `;

@@ -9,7 +9,6 @@ const divStyle = {
   // backgroundRepeat: 'no-repeat',
   // width: '100vw'
   position: 'absolute',
-  top: '-2.6vw',
   left: 0,
   // transform: 'display',
   // display: `${props => props.dsp}`

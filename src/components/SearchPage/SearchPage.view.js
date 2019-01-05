@@ -11,7 +11,7 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './SearchPage.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, TrailerWrapper } from './SearchPage.styles';
 import MovieItem from '../Global/MovieItem/MovieItem.view'
 
 
@@ -39,11 +39,11 @@ class App extends Component {
           <NavBar><Links /></NavBar>
           <Hero
           src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
-          <>
+          <TrailerWrapper>
             {this.state.on && (
             <MovieItem />
             )}
-          </>
+          </TrailerWrapper>
           <TrailerMask
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseLeave}

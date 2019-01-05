@@ -10,7 +10,7 @@ const divStyle = {
   // width: '100vw'
   position: 'absolute',
   top: '-2.6vw',
-  left: 0,
+  left: 0
   // transform: 'display',
   // display: `${props => props.dsp}`
 };
