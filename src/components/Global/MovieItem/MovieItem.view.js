@@ -8,7 +8,11 @@ const divStyle = {
   // backgroundImage: 'url(' + imgUrl + ')',
   // backgroundRepeat: 'no-repeat',
   // width: '100vw'
-
+  position: 'absolute',
+  top: '-2.6vw',
+  left: 0,
+  // transform: 'display',
+  // display: `${props => props.dsp}`
 };
 
 class MovieItem extends Component {
@@ -26,9 +30,12 @@ class MovieItem extends Component {
               height="60vw" 
               width="100vw" 
               playing
-              config 
+              light="true"
+              // suppressHydrationWarning={true}
+              // config 
               // volume='0.3' 
-              // onEnded 
+              onEnded 
+
             />
   }
 }

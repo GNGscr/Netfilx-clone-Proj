@@ -5,7 +5,6 @@ import { MainHeaderDiv, LeftNavBar, RightNavBar, LI, Profiles, LOGO, Hamburger,L
     } from './NavBar.styles';
 // import { keyframes } from 'styled-components';
 import Filter from './Filter/Filter';
-
 const scale_duration = '400ms';
 
 export default class MainHeader extends React.Component {

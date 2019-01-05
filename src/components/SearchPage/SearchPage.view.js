@@ -12,36 +12,26 @@ import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './SearchPage.styles';
-// import MovieItem from '../Global/MovieItem/MovieItem.view'
+import MovieItem from '../Global/MovieItem/MovieItem.view'
 // , Trailer
 
 class App extends Component {
   state = {
-    mouseEntered: false,
-    dspflx: 'none'
+    on: false
   }
 
-  toggle_trailer = e => {
-    console.log('works')
-    if(this.state.dspflx) {
+  mouseEnter = e => {
+    console.log('enter')
       this.setState({
-        mouseEntered: false,
-        dspflx: 'none'
+        on: !this.state.on
       })
-    } else {
-      this.setState({
-        mouseEntered: true,
-        dspflx: 'flex'
-      })
-    }
   }
-
-  // mouseLeave = e => {
-  //   this.setState({
-  //     mouseEntered: false,
-  //     dspflx: 'none'
-  //   })
-  // }
+  mouseLeave = e => {
+    console.log('leave')
+    this.setState({
+      on: !this.state.on
+    })
+  }
 
   render() {
     return (
@@ -49,11 +39,16 @@ class App extends Component {
           <NavBar><Links /></NavBar>
           <Hero
           src="https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp" alt=""></Hero>
-          {/* <Player onClick={this.toggle_trailer}></Player> */}
-          {/* <Trailer><MovieItem /></Trailer> */}
-          <TrailerMask/>
-          {/* <Trailer dsp={this.state.dspflx}><MovieItem /></Trailer> */}
-          <HeroMask></HeroMask>
+          <>
+            {this.state.on && (
+            <MovieItem />
+            )}
+          </>
+          <TrailerMask
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseLeave}
+          />
+          <HeroMask />
           {/* <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/97e73/577e0a36fa77f3f032e4538e859c90267ab97e73.webp" alt=""></Hero> */}
           <LogoAndText />
             <SliderSection>
