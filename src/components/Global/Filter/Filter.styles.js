@@ -48,8 +48,14 @@ export const Inputer = styled.input`
     /* transition: opacity 1s linear;
     opacity: ${props => props.bgclr};        
     transition: border .3s; */
-    transition: opacity 1s ease-in-out;
-    opacity: ${props => props.bgclr};
+    /* transition: opacity 1s ease-in-out;
+    opacity: ${props => props.bgclr}; */
+
+    /* transform: display .5s;
+    display: ${props => props.bgclr}; */
+    /* transition: opacity 1s ease-in-out;
+    transition-delay: .5s;
+    opacity: ${props => props.cntctbx}; */
     color: white;
     &:focus {
         outline:-webkit-focus-ring-color auto 5px

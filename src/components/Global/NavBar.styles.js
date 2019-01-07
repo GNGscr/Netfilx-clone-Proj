@@ -350,3 +350,11 @@ export const Hamburger = styled.img`
 //         background-color: rgba(20, 20, 20, 0);
 // }
 // `;
+export const Notifications = styled.div`
+    height: 20vw;
+    width: 35vw;
+    top: 1vw;
+    position: absolute;
+    display: flex;
+    background-color: red;
+`;

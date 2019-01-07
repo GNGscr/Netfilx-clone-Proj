@@ -10,7 +10,7 @@ export default class Filter extends Component {
     state = {
         InputOn: false,        
         navbgclr: 'opacity: 0',
-        cntctbox: 'opacity: 0',
+        // cntctbox:'opacity: 0',
         dspflx: 'none',
         data: [],
         original_list: [],
@@ -74,7 +74,7 @@ export default class Filter extends Component {
                     <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
-                        <ContentBox cntctbx={this.state.cntctbox} dsp={this.state.dspflx}>
+                        <ContentBox dsp={this.state.dspflx}>
                             <FilterHeader>{this.state.displayed_list.length} Items found</FilterHeader>
                             <Carret>^</Carret>
                             {
@@ -104,3 +104,6 @@ export default class Filter extends Component {
         //             avatar: PropTypes.string.isRequired
         //         })).isRequired
         // }
+
+        
+        // cntctbx={this.state.cntctbox}

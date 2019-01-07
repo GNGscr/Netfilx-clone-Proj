@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MainHeaderDiv, LeftNavBar, RightNavBar, LI, Profiles, LOGO, Hamburger,LIMOBILE,
-     NetfilxSans, AccountDropdownButton, IMG, NavControllers, NavList, BcgrNav
+     NetfilxSans, AccountDropdownButton, IMG, NavControllers, NavList, BcgrNav,
+    //  Notifications
     } from './NavBar.styles';
 // import { keyframes } from 'styled-components';
 import Filter from './Filter/Filter';
@@ -45,6 +46,15 @@ export default class MainHeader extends React.Component {
             })
         }
     }
+    toggle_notifications = () => {
+        if(this.state) {
+            this.setState({
+
+            })
+        } else {
+            
+        }
+    }
     
     render() {
         return (
@@ -66,8 +76,9 @@ export default class MainHeader extends React.Component {
                 </LeftNavBar>
                 <RightNavBar>
                     <Filter />
-                    <AccountDropdownButton src="https://img.icons8.com/ios/50/000000/appointment-reminders.png" alt=""/>
+                    <AccountDropdownButton onClick={this.toggle_notifications} src="https://img.icons8.com/ios/50/000000/appointment-reminders.png" alt=""/>
                     <Profiles><Link to="/Profiles"><IMG src="https://occ-0-1390-2774.1.nflxso.net/art/326d2/7f22331395c9669f63f6e97b9b3fcb0a9cc326d2.png" alt="User's-icon" /></Link></Profiles>
+                    {/* <Notifications></Notifications> */}
                 </RightNavBar>
             </MainHeaderDiv>
         )
