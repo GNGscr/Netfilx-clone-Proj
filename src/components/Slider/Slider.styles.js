@@ -80,7 +80,6 @@ export const SliderMask = styled.div`
     }
 `;
 export const SliderItem = styled.div`
-    /* position: absolute; */
     transition: all 2s ease-in;
     display: inline-flex;
     width: calc(89vw/2);
@@ -249,69 +248,85 @@ export const FADE_OUT = keyframes`
 
 export const Title = styled.div`
     /* background-color: ${wire_grey}; */
-    /* margin-left: -4px;
-    position: absolute; */
+    /* margin-left: -4px; */
+    position: absolute; 
     display: flex;
     justify-content: flex-start;
     color: white;
     font-size: 9px;
     width: 60px;
-    height: 14px;
-    margin-bottom: -1vw;
+    height: 12px;
+    margin-bottom: -5vw;
+    @media all and (min-width: 1400px) {
+        margin-bottom: -1vw;
+    }
     `;
 export const Details = styled.div`
     /* background-color: ${wire_grey}; */
-    /* position: absolute;
-    margin-left: -4px; */
+    /* margin-left: -4px; */
+    position: absolute;
     display: flex;
     justify-content: flex-start;
     color: white;
-    font-size: 8px;
-    margin-bottom: -.8vw;
+    font-size: 7px;
+    bottom: 4vw;
     width: 120px;
     height: 8px;
+    @media all and (min-width: 1400px) {
+       bottom: 2vw;   
+    }
 `;
 export const Description = styled.div`
     /* background-color: ${wire_grey}; */
-    /* position: absolute; */
+    position: absolute;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
     color: white;
-    margin-bottom: 0;
-    flex-wrap: wrap;
+    bottom: 1vw;
     font-size: 6px;
-    width: 160px;
-    min-height: 15px;
+    width: 115px;
+    /* min-height: 15px; */
+    @media all and (min-width: 1400px) {
+       bottom: 1.1vw;
+       width: 150px;
+    }
 `;
 export const Summary = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
-    right: 1.2rem;
-    bottom: .5rem;
+    right: 25vw;
+    bottom: .25rem;
     margin-right: 20px;
     margin-left: 10px;
-    height: 6vw;
+    height: 16vw;
     width: 11vw;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     opacity: ${props => props.opc};
     /* overflow: hidden; */
     /* opacity: 0; */
-
-    /* animation: ${p => p.anim} ${p => p.duration} forwards; */
+    @media all and (min-width: 1400px) {
+    right: 1.2rem;
+    bottom: .25rem;
+    height: 6vw;
+    }
+    `;
+export const SummaryWrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 `;
 export const CirclesBox = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
-    right: 1.2rem;
-    bottom: .5rem;
-    height: 60px;
+    right: 1rem;
+    bottom: .2rem;
+    height: 55px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -319,26 +334,43 @@ export const CirclesBox = styled.div`
     transition: opacity 1s ease-in-out;
     opacity: ${props => props.opc};
     /* animation: ${p => p.anim} ${p => p.duration} forwards; */
+    @media all and (min-width: 1400px) {
+    right: 1.2rem;
+    bottom: .6rem;
+    height: 65px;  
+    }
 `;
 export const Circle = styled.div`
     /* position: absolute; */
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     border: 1px solid #fff;
     /* background-color: white; */
     opacity: 0.6;
-    font-size: .5rem;
+    font-size: .2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .4);
     color: #fff;
+    @media all and (min-width: 1400px) {
+    width: 13px;
+    height: 13px;
+    font-size: .3rem;
+    }
 `;
 export const Play = styled(Circle)`
     /* border: 1px solid #fff; */
+    position: absolute;
     width: 15px;
     height: 15px;
+    top: .8vw;
+    @media all and (min-width: 1400px) {
+    width: 17px;
+    height: 17px; 
+    top: .5vw;  
+    }
 `;
 export const Box = styled.div`
     box-sizing: border-box;

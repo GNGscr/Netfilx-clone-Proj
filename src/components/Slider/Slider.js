@@ -5,7 +5,7 @@ import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration,
-  Title, Details, Summary, CirclesBox, 
+  Title, Details, Summary, CirclesBox, SummaryWrapper,
   Description
 } from './Slider.styles';
 
@@ -368,10 +368,13 @@ class Slider extends Component {
                           // anim={this.state.fade_anim}
                           // duration={this.state.fade_duration}
                           >
-                          <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                          <Title>{e.title}</Title>
-                          <Details>{e.details}</Details>
-                          <Description>{e.description}</Description>
+                          <SummaryWrapper>
+                            <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                            <Title>{e.title}</Title>
+                            <Details>{e.details}</Details>
+                            
+                            <Description>{e.description}</Description>
+                          </SummaryWrapper>
                       </Summary>
                       <CirclesBox
                           // ref={`circleBox-${e.id}`}
