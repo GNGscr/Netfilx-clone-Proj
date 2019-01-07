@@ -11,7 +11,7 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './RecentlyAdded.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, TrailerWrapper } from './RecentlyAdded.styles';
 import MovieItemRecentlyAdded from '../Global/MovieItem/MovieItemRecentlyAdded.view'
 
 
@@ -47,11 +47,11 @@ class RecentlyAdded extends Component {
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/eb6d0/6f8b62fa1a805b0bbea4c02170e9239e592eb6d0.webp" alt=""/>
-          <>
+          <TrailerWrapper>
             {this.state.on && (
             <MovieItemRecentlyAdded />
             )}
-          </>
+          </TrailerWrapper>
           <TrailerMask
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseLeave}

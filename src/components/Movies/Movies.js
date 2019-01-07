@@ -11,7 +11,7 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './Movies.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, TrailerWrapper } from './Movies.styles';
 import MovieItemMovies from '../Global/MovieItem/MovieItemMovies.view'
 
 
@@ -47,11 +47,11 @@ class Movies extends Component {
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/b22b1/6ba4d7d1ac9eca044cc84278f18b8cd3057b22b1.webp" alt=""/>
-          <>
+          <TrailerWrapper>
             {this.state.on && (
             <MovieItemMovies />
             )}
-          </>
+          </TrailerWrapper>
           <TrailerMask
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseLeave}

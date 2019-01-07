@@ -124,13 +124,13 @@ export const LogoAndTextDiv = styled.div`
 }
     @media all and (min-width: 900px) {
         position: absolute;
-        width: 38vw;
-        height: 550px;
+        width: 40vw;
+        height: 42.5vw;
         display: flex;
         flex-direction: column;
         z-index: 7;
         padding-top: 3vw;
-        margin-left: 25px;
+        padding-left: 25px;
     }
 `;
 export const Hero = styled.img`
@@ -207,4 +207,11 @@ export const HeroMask = styled.div`
     z-index: 0;
     position: absolute;
     /* background-color: blue; */
+    `;
+    export const TrailerWrapper = styled.div`
+    top: -2.75vw;
+    position: absolute;
+    @media all and (min-width: 1400px) {
+        top: -5.2vw;
+    }
     `;

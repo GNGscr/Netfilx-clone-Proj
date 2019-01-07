@@ -11,7 +11,7 @@ import SliderMovies from '../SliderMovies/SliderMovies';
 import SliderComedy from '../SliderComedy/SliderComedy';
 import SliderFull from '../SliderFull/SliderFull';
 import Footer from '../Global/Footer';
-import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask } from './MyList.styles';
+import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, TrailerWrapper } from './MyList.styles';
 import MovieItemMyList from '../Global/MovieItem/MovieItemMyList.view'
 
 
@@ -46,11 +46,11 @@ class MyList extends Component {
       <AppDiv>
           <NavBar><Links /></NavBar>
           <Hero src="https://occ-0-1390-2774.1.nflxso.net/art/b2c33/224481a9d5dc45c5413582cfc1964a94f77b2c33.webp" alt=""/>
-          <>
+          <TrailerWrapper>
             {this.state.on && (
             <MovieItemMyList />
             )}
-          </>
+          </TrailerWrapper>
           <TrailerMask
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseLeave}
