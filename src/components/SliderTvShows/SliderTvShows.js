@@ -4,7 +4,7 @@ import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
-  RightArrowIMG, LeftArrowIMG, scale_duration, FADE_IN, FADE_OUT,
+  RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description
 } from './SliderTvShows.styles'
@@ -23,7 +23,8 @@ class SliderTvShows extends Component {
       data: [],
       fade_duration: scale_duration,
       fade_anim: null,
-      slider: 0
+      slider: 0,
+      opcty: 'opacity: 0'
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -164,8 +165,6 @@ class SliderTvShows extends Component {
   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
   // -----------------------------------------------------------------------------
 
-  timeout = null;
-  move_timeout = null;
   
   mouseEnter = e => {
     let x = e.clientX
@@ -186,7 +185,7 @@ class SliderTvShows extends Component {
         } else if(x > 1162){
         current.style.transformOrigin = 'right' 
         current.style.transition = '300ms'
-        // Targeting all the previous elements that comes before the current       
+        // Targeting all the previous elements that comes before the current        
           while (previous) {
             previous.style.transform =`translateX(-15vw)`
             previous.style.transition = '400ms'
@@ -230,13 +229,9 @@ class SliderTvShows extends Component {
       current.style.transform = `scale(2.003)`
       current.style.transition = '400ms'
     }
-    this.short_fade_in();
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(this.long_fade_out, 2000);
   }
   mouseLeave = e => {
     let current = e.currentTarget
-    // e.currentTarget.style.margin = '0'
     current.style.transform = `scale(1)`
     current.style.transition = '400ms'
     let previous = current.previousElementSibling;
@@ -251,45 +246,50 @@ class SliderTvShows extends Component {
       next.style.transition = '400ms'
       next = next.nextElementSibling;
     }
-    clearTimeout(this.timeout);
-    clearTimeout(this.move_timeout);
-    this.move_timeout = null;
-    this.short_fade_out();
   }
   mouseMove = e => {
-    if(!this.move_timeout) {
-      this.short_fade_in();
-      this.move_timeout = setTimeout(() => {
-        this.move_timeout = null;
-        clearTimeout(this.timeout);
-        this.timeout = setTimeout(this.long_fade_out, 2000);
-      }, 300);
-    }
-  };
-  
-  // ----------------------------------------------------------------------
-  // * * ========================= Faders ============================= * *
-  // ----------------------------------------------------------------------
-  
-  short_fade_in = () => {
-    this.setState({
-      fade_duration: '250ms',
-      fade_anim: FADE_IN
-    });
-  };
-  short_fade_out = () => {
-    this.setState({
-      fade_duration: '400ms',
-      fade_anim: FADE_OUT
-    });
-  };
-  long_fade_out = () => {
-    this.setState({
-      fade_duration: '4000ms',
-      fade_anim: FADE_OUT
-    });
-  };
-  
+    const enter = e.currentTarget.children[1]
+    const circbx = e.currentTarget.children[2]
+      enter.style.opacity = '1'
+      circbx.style.opacity = '1'
+      enter.style.transition = '500ms'
+      circbx.style.transition = '500ms'
+      // this.boxLinger()
+      setTimeout(() => {
+        enter.style.opacity = '0'
+        circbx.style.opacity = '0'
+        enter.style.transition = '6000ms'
+        circbx.style.transition = '6000ms'
+      }, 3500);
+  }
+  boxEnter = e => {
+    console.log('enter')
+    const enter = e.currentTarget.children[1]
+    const circbx = e.currentTarget.children[2]
+    console.log(enter)
+    enter.style.opacity = '1'
+    circbx.style.opacity = '1'
+    enter.style.transition = '500ms'
+    circbx.style.transition = '500ms'
+    setTimeout(() => {
+      enter.style.opacity = '0'
+      circbx.style.opacity = '0'
+      enter.style.transition = '6000ms'
+      circbx.style.transition = '6000ms'
+    }, 3500); 
+  }
+  boxLeave = e => {
+    console.log('leave')
+    const enter = e.currentTarget.children[1]
+    const circbx = e.currentTarget.children[2]
+    console.log(enter)
+    enter.style.opacity = '0'
+    circbx.style.opacity = '0'
+    enter.style.transition = '500ms'
+    circbx.style.transition = '500ms'
+  }
+
+
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -310,24 +310,24 @@ class SliderTvShows extends Component {
                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
                   onMouseEnter={this.mouseEnter}
                   onMouseLeave={this.mouseLeave}
-                  onMouseMove={this.mouseMove}
                   data-id={e.id}
                   >
-                  <Box>
+                  <Box
+                  onMouseEnter={this.boxEnter}
+                  onMouseLeave={this.boxLeave}
+                  onMouseMove={this.mouseMove}
+                  >
                       <IMG src={e.poster}/>
                       <Summary
-                          anim={this.state.fade_anim}
-                          duration={this.state.fade_duration}
+                          ref={`summary-${e.id}`}
+                          opc={this.state.opcty}
                           >
                           <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                           <Title>{e.title}</Title>
                           <Details>{e.details}</Details>
                           <Description>{e.description}</Description>
                       </Summary>
-                      <CirclesBox
-                          anim={this.state.fade_anim}
-                          duration={this.state.fade_duration}
-                          >
+                      <CirclesBox>
                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>

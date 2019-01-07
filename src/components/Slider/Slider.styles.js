@@ -298,9 +298,13 @@ export const Summary = styled.div`
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    /* overflow: hidden; */
     opacity: 0;
-    animation: ${p => p.anim} ${p => p.duration} forwards;
+    transition: opacity 1s ease-in-out;
+    opacity: ${props => props.opc};
+    /* overflow: hidden; */
+    /* opacity: 0; */
+
+    /* animation: ${p => p.anim} ${p => p.duration} forwards; */
 `;
 export const CirclesBox = styled.div`
     /* border: grey dashed 1px; */
@@ -312,7 +316,9 @@ export const CirclesBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     opacity: 0;
-    animation: ${p => p.anim} ${p => p.duration} forwards;
+    transition: opacity 1s ease-in-out;
+    opacity: ${props => props.opc};
+    /* animation: ${p => p.anim} ${p => p.duration} forwards; */
 `;
 export const Circle = styled.div`
     /* position: absolute; */
