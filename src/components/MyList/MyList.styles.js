@@ -40,7 +40,8 @@ export const HeadSix = styled.h6`
 }
     @media all and (min-width: 900px) {
         text-align: left;
-        color: white;
+        color: rgb(20, 20,20);
+        /* color: white; */
         font-size: 24px;
         margin: 0px;
         margin-top: 30px;
@@ -52,12 +53,12 @@ export const P = styled.p`
 
 }
     @media all and (min-width: 900px) {
-        /* color: rgb(20, 20,20); */
+        color: rgb(20, 20,20);
         margin: 0;
         margin-left:.2vw;
         line-height: 1.8vw;
         letter-spacing: 1;
-        color: white;
+        /* color: white; */
         font-size: 21px;
         text-align: left;
     }
@@ -71,6 +72,7 @@ export const Buttons = styled.div`
         display: flex;
         flex-direction: row;
         width: 20vw;
+        z-index: 8;
         margin-left: 20px;
         margin-top: 1.7vw;
         line-height: 88%;
@@ -86,15 +88,13 @@ export const Button = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(51,51,51,.4);
-        /* background-color: rgba(54, 53, 53, 0.482); */
+        background-color: rgba(51,51,51,.5);
         color: #fff;
         border: 0px solid rgba(255, 255, 255, 0);
         margin-left: 8px;
         height: 3vw;
-        width: 25vw;
+        width: 9.5vw;
         font-weight: 700;
-        /* width: 153.92px; */
         border-radius: 3px;
         font-size: 1.1vw;
         transition: .2s ease-in-out;
@@ -200,6 +200,16 @@ export const HeroMask = styled.div`
         padding: 0 4.1vw;
         margin-bottom: .6vw;
     `;
+    // export const Player = styled.div`
+    //     display: flex;
+    //     z-index: 10;
+    //     top: -8vw;
+    //     right: 0px;
+    //     /* position: absolute; */
+    //     height: 5vw;
+    //     width: 8vw;
+    //     background-color: blue;
+    // `;
     export const TrailerMask = styled.div`
     width: 100vw;
     height: 45.5vw;

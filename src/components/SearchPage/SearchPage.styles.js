@@ -71,6 +71,7 @@ export const Buttons = styled.div`
         display: flex;
         flex-direction: row;
         width: 20vw;
+        z-index: 8;
         margin-left: 20px;
         margin-top: 1.7vw;
         line-height: 88%;
@@ -86,15 +87,13 @@ export const Button = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(51,51,51,.4);
-        /* background-color: rgba(54, 53, 53, 0.482); */
+        background-color: rgba(51,51,51,.5);
         color: #fff;
         border: 0px solid rgba(255, 255, 255, 0);
         margin-left: 8px;
         height: 3vw;
-        width: 25vw;
+        width: 9.5vw;
         font-weight: 700;
-        /* width: 153.92px; */
         border-radius: 3px;
         font-size: 1.1vw;
         transition: .2s ease-in-out;
