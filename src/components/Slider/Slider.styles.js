@@ -1,3 +1,4 @@
+
 // import styled from 'styled-components';
 import styled, { keyframes } from 'styled-components';
 
@@ -256,7 +257,7 @@ export const Title = styled.div`
     font-size: 9px;
     width: 60px;
     height: 12px;
-    margin-bottom: -5vw;
+    top: 2.5vw;
     @media all and (min-width: 1400px) {
         margin-bottom: -1vw;
     }
@@ -269,11 +270,11 @@ export const Details = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 7px;
-    bottom: 4vw;
+    top: 4vw;
     width: 120px;
     height: 8px;
     @media all and (min-width: 1400px) {
-       bottom: 2vw;   
+       top: 3.5vw;   
     }
 `;
 export const Description = styled.div`
@@ -285,12 +286,12 @@ export const Description = styled.div`
     align-items: center;
     overflow: hidden;
     color: white;
-    bottom: 1vw;
+    margin-top: 3.5vw;
     font-size: 6px;
     width: 115px;
     /* min-height: 15px; */
     @media all and (min-width: 1400px) {
-       bottom: 1.1vw;
+       top: 1.1vw;
        width: 150px;
     }
 `;
@@ -309,18 +310,20 @@ export const Summary = styled.div`
     opacity: ${props => props.opc};
     /* overflow: hidden; */
     /* opacity: 0; */
+    flex-direction: column;
+    justify-content: space-around;
     @media all and (min-width: 1400px) {
     right: 1.2rem;
     bottom: .25rem;
     height: 6vw;
     }
     `;
-export const SummaryWrapper = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-`;
+// export const SummaryWrapper = styled.div`
+//     position: relative;
+//     display: flex;
+//     height: 100%;
+//     width: 100%;
+// `;
 export const CirclesBox = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
@@ -336,8 +339,8 @@ export const CirclesBox = styled.div`
     /* animation: ${p => p.anim} ${p => p.duration} forwards; */
     @media all and (min-width: 1400px) {
     right: 1.2rem;
-    bottom: .6rem;
-    height: 65px;  
+    bottom: 1vw;
+    height: 70px;  
     }
 `;
 export const Circle = styled.div`

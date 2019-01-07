@@ -172,7 +172,7 @@ class SliderFull extends Component {
     if(this.state.width > 1400) {
       if(x < 278){
         current.style.transformOrigin = 'left' 
-        current.style.transition = '300ms'
+        current.style.transition = '400ms'
           // Targeting all the next elements that comes after the current
           while (next) {
             next.style.transform = `translateX(15vw)`
@@ -181,7 +181,7 @@ class SliderFull extends Component {
           }
         } else if(x > 1162){
         current.style.transformOrigin = 'right' 
-        current.style.transition = '300ms'
+        current.style.transition = '400ms'
         // Targeting all the previous elements that comes before the current        
           while (previous) {
             previous.style.transform =`translateX(-15vw)`
@@ -207,7 +207,7 @@ class SliderFull extends Component {
       // console.log(x)
         if(x < 188){
           current.style.transformOrigin = 'left' 
-          current.style.transition = '300ms'
+          current.style.transition = '400ms'
           while (next) {
             next.style.transform = `translateX(44.9vw)`
             next.style.transition = '400ms'
@@ -216,7 +216,7 @@ class SliderFull extends Component {
         } 
         else if(x > 188) {
           current.style.transformOrigin = 'right' 
-          current.style.transition = '300ms'
+          current.style.transition = '400ms'
           while (previous) {
             previous.style.transform =`translateX(-44.9vw)`
             previous.style.transition = '400ms'
@@ -318,10 +318,10 @@ class SliderFull extends Component {
                           ref={`summary-${e.id}`}
                           opc={this.state.opcty}
                           >
-                          <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                          <Title>{e.title}</Title>
-                          <Details>{e.details}</Details>
-                          <Description>{e.description}</Description>
+                            <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                            <Title>{e.title}</Title>
+                            <Details>{e.details}</Details>
+                            <Description>{e.description}</Description>
                       </Summary>
                       <CirclesBox>
                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
