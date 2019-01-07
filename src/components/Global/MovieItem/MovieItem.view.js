@@ -17,17 +17,13 @@ const divStyle = {
 class MovieItem extends Component {
   render () {
     return <ReactPlayer 
-    url='https://youtu.be/o2AsIXSh2xo' 
-    // url='https://drive.google.com/open?id=1Lk3uu548oZs7vLX5GIrr8_sg2mBSMkPq' 
-    
-              // url='https://youtu.be/o2AsIXSh2xo' 
-              // url='https://www.youtube.com/embed/MPWMBITCudM' 
-              // url='https://www.youtube.com/embed/0vHziRrCYqA' 
+              url='https://youtu.be/o2AsIXSh2xo' 
               style={divStyle} 
               height="60vw" 
               width="100vw" 
               playing
               light="true"
+              wrapper='div'
               // suppressHydrationWarning={true}
               config={{
                 youtube: {
