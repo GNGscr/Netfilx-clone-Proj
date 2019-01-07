@@ -265,7 +265,6 @@ class Slider extends Component {
       }, 3500);
     };
     
-
   //     // this.move_timeout = setTimeout(() => {
   //     //   this.move_timeout = null;
   //     //   clearTimeout(this.timeout);
@@ -274,10 +273,10 @@ class Slider extends Component {
 
   // };
   boxEnter = e => {
-    console.log('enter')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('enter')
+    // console.log(enter)
     enter.style.opacity = '1'
     circbx.style.opacity = '1'
     enter.style.transition = '500ms'
@@ -295,10 +294,10 @@ class Slider extends Component {
     
   }
   boxLeave = e => {
-    console.log('leave')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('leave')
+    // console.log(enter)
     enter.style.opacity = '0'
     circbx.style.opacity = '0'
     enter.style.transition = '500ms'

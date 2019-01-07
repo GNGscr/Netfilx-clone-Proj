@@ -259,10 +259,10 @@ class SliderFull extends Component {
       }, 3500);
   }
   boxEnter = e => {
-    console.log('enter')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('enter')
+    // console.log(enter)
     enter.style.opacity = '1'
     circbx.style.opacity = '1'
     enter.style.transition = '500ms'
@@ -275,10 +275,10 @@ class SliderFull extends Component {
     }, 3500);
   }
   boxLeave = e => {
-    console.log('leave')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('leave')
+    // console.log(enter)
     enter.style.opacity = '0'
     circbx.style.opacity = '0'
     enter.style.transition = '500ms'
@@ -306,11 +306,9 @@ class SliderFull extends Component {
                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
                   onMouseEnter={this.mouseEnter}
                   onMouseLeave={this.mouseLeave}
-                  // onMouseMove={this.mouseMove}
                   data-id={e.id}
                   >
-                  <Box 
-                  // opc={this.state.opcty}
+                  <Box
                   onMouseEnter={this.boxEnter}
                   onMouseLeave={this.boxLeave}
                   onMouseMove={this.mouseMove}
@@ -319,20 +317,13 @@ class SliderFull extends Component {
                       <Summary
                           ref={`summary-${e.id}`}
                           opc={this.state.opcty}
-                          // anim={this.state.fade_anim}
-                          // duration={this.state.fade_duration}
                           >
                           <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                           <Title>{e.title}</Title>
                           <Details>{e.details}</Details>
                           <Description>{e.description}</Description>
                       </Summary>
-                      <CirclesBox
-                          // ref={`circleBox-${e.id}`}
-                          // anim={this.state.fade_anim}
-                          // duration={this.state.fade_duration}
-                          >
-                          {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
+                      <CirclesBox>
                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>

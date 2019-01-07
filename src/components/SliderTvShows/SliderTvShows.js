@@ -7,8 +7,7 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description
-} from './SliderTvShows.styles'
-// import { TweenLite, Expo, Power0, Power1 } from "gsap";
+} from './SliderTvShows.styles';
 
 
 class SliderTvShows extends Component {
@@ -31,9 +30,7 @@ class SliderTvShows extends Component {
 
   async componentDidMount() {
     const res = await fetch('./MOCK_DATAtvShows.json')
-    // console.log('res: ',res)
     const data = await res.json();
-    // console.log('data: ',data)
     this.setState({ 
       data 
     })
@@ -254,7 +251,6 @@ class SliderTvShows extends Component {
       circbx.style.opacity = '1'
       enter.style.transition = '500ms'
       circbx.style.transition = '500ms'
-      // this.boxLinger()
       setTimeout(() => {
         enter.style.opacity = '0'
         circbx.style.opacity = '0'
@@ -263,10 +259,10 @@ class SliderTvShows extends Component {
       }, 3500);
   }
   boxEnter = e => {
-    console.log('enter')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('enter')
+    // console.log(enter)
     enter.style.opacity = '1'
     circbx.style.opacity = '1'
     enter.style.transition = '500ms'
@@ -279,10 +275,10 @@ class SliderTvShows extends Component {
     }, 3500); 
   }
   boxLeave = e => {
-    console.log('leave')
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
-    console.log(enter)
+    // console.log('leave')
+    // console.log(enter)
     enter.style.opacity = '0'
     circbx.style.opacity = '0'
     enter.style.transition = '500ms'
