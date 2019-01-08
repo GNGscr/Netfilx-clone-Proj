@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styled/App.css';
+import '../../../styled/App.css';
 import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
@@ -7,10 +7,10 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description
-} from './SliderFull.styles';
+} from './SliderComedy.styles';
 
 
-class SliderFull extends Component {
+class SliderComedy extends Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class SliderFull extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATAfull.json')
+    const res = await fetch('./MOCK_DATAcomedy.json')
     const data = await res.json();
     this.setState({ 
       data 
@@ -162,7 +162,7 @@ class SliderFull extends Component {
   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
   // -----------------------------------------------------------------------------
 
-  
+
   mouseEnter = e => {
     let x = e.clientX
     // console.log(x)
@@ -294,7 +294,7 @@ class SliderFull extends Component {
       circbx.style.opacity = '0'
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
-    }, 3500);
+    }, 3500); 
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -364,4 +364,4 @@ class SliderFull extends Component {
     }
   }
 }
-export default SliderFull;
+export default SliderComedy;

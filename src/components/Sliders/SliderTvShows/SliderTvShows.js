@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styled/App.css';
+import '../../../styled/App.css';
 import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
@@ -7,10 +7,10 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description
-} from './SliderMovies.styles';
+} from './SliderTvShows.styles';
 
 
-class SliderMovies extends Component {
+class SliderTvShows extends Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class SliderMovies extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATAmovies.json')
+    const res = await fetch('./MOCK_DATAtvShows.json')
     const data = await res.json();
     this.setState({ 
       data 
@@ -203,7 +203,8 @@ class SliderMovies extends Component {
         current.style.transform = `scale(2)`
         current.style.transition = '400ms'
 
-      }else if(this.state.width < 500) {
+      }
+      else if(this.state.width < 500) {
         // console.log(x)
           if(x < 188){
             current.style.transformOrigin = 'left' 
@@ -273,7 +274,6 @@ class SliderMovies extends Component {
       circbx.style.opacity = '1'
       enter.style.transition = '500ms'
       circbx.style.transition = '500ms'
-      // this.boxLinger()
       setTimeout(() => {
         enter.style.opacity = '0'
         circbx.style.opacity = '0'
@@ -295,7 +295,7 @@ class SliderMovies extends Component {
       circbx.style.opacity = '0'
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
-    }, 3500);
+    }, 3500); 
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -308,7 +308,7 @@ class SliderMovies extends Component {
     circbx.style.transition = '500ms'
   }
 
-  
+
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -341,10 +341,10 @@ class SliderMovies extends Component {
                           ref={`summary-${e.id}`}
                           opc={this.state.opcty}
                           >
-                          <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                          <Title>{e.title}</Title>
-                          <Details>{e.details}</Details>
-                          <Description>{e.description}</Description>
+                            <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                            <Title>{e.title}</Title>
+                            <Details>{e.details}</Details>
+                            <Description>{e.description}</Description>
                       </Summary>
                       <CirclesBox>
                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
@@ -365,7 +365,8 @@ class SliderMovies extends Component {
     }
   }
 }
-export default SliderMovies;
+
+export default SliderTvShows;
 
 
 // import React, { Component } from 'react';
@@ -375,12 +376,12 @@ export default SliderMovies;
 //   Wrapper, PageHead, SliderMask, SliderItem,
 //   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
 //   RightArrowIMG, LeftArrowIMG, scale_duration,
-//   Title, Details, Summary, CirclesBox, 
-//   Description, SummaryWrapper
-// } from './SliderMovies.styles';
+//   Title, Details, Summary, CirclesBox, SummaryWrapper,
+//   Description
+// } from './SliderTvShows.styles';
 
 
-// class SliderMovies extends Component {
+// class SliderTvShows extends Component {
 
 //   constructor(props) {
 //     super(props);
@@ -399,7 +400,7 @@ export default SliderMovies;
 //   }
 
 //   async componentDidMount() {
-//     const res = await fetch('./MOCK_DATAmovies.json')
+//     const res = await fetch('./MOCK_DATAtvShows.json')
 //     const data = await res.json();
 //     this.setState({ 
 //       data 
@@ -621,7 +622,6 @@ export default SliderMovies;
 //       circbx.style.opacity = '1'
 //       enter.style.transition = '500ms'
 //       circbx.style.transition = '500ms'
-//       // this.boxLinger()
 //       setTimeout(() => {
 //         enter.style.opacity = '0'
 //         circbx.style.opacity = '0'
@@ -643,7 +643,7 @@ export default SliderMovies;
 //       circbx.style.opacity = '0'
 //       enter.style.transition = '6000ms'
 //       circbx.style.transition = '6000ms'
-//     }, 3500);
+//     }, 3500); 
 //   }
 //   boxLeave = e => {
 //     const enter = e.currentTarget.children[1]
@@ -656,7 +656,7 @@ export default SliderMovies;
 //     circbx.style.transition = '500ms'
 //   }
 
-  
+
 //   render() {
 //     // console.log(this.state.data)
 //     if(this.state.data === []) {
@@ -715,4 +715,4 @@ export default SliderMovies;
 //     }
 //   }
 // }
-// export default SliderMovies;
+// export default SliderTvShows;

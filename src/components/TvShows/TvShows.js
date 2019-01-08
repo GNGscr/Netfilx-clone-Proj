@@ -5,15 +5,14 @@ import LogoAndText from './Logo_and_text/Logo_and_text';
 
 import NavBar from '../Global/NavBar';
 import Links from '../Global/Links';
-import Slider from '../Slider/Slider';
-import SliderTvShows from '../SliderTvShows/SliderTvShows';
-import SliderMovies from '../SliderMovies/SliderMovies';
-import SliderComedy from '../SliderComedy/SliderComedy';
-import SliderFull from '../SliderFull/SliderFull';
+import Slider from '../Sliders/Slider/Slider';
+import SliderTvShows from '../Sliders/SliderTvShows/SliderTvShows';
+import SliderMovies from '../Sliders/SliderMovies/SliderMovies';
+import SliderComedy from '../Sliders/SliderComedy/SliderComedy';
+import SliderFull from '../Sliders/SliderFull/SliderFull';
 import Footer from '../Global/Footer';
 import { AppDiv, Hero, SliderSection, FooterSection, Hone, HeroMask, TrailerMask, TrailerWrapper } from './TvShows.styles';
 import MovieItemTvshows from '../Global/MovieItem/MovieItemTvshows.view.'
-
 
 
 
@@ -21,14 +20,6 @@ class TvShows extends Component {
   state = {
     on: false
   }
-
-  // componentDidMount() {
-  //   if(!this.state.on){    
-  //     this.setState({
-  //       on:false
-  //     })
-  //   }
-  // }
 
   mouseEnter = e => {
     // console.log('enter')
