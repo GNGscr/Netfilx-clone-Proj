@@ -203,6 +203,28 @@ class SliderFull extends Component {
         current.style.transform = `scale(2)`
         current.style.transition = '400ms'
 
+      }else if(this.state.width < 500) {
+        // console.log(x)
+          if(x < 188){
+            current.style.transformOrigin = 'left' 
+            current.style.transition = '300ms'
+            while (next) {
+              next.style.transform = `translateX(44.9vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          } 
+          else if(x > 188) {
+            current.style.transformOrigin = 'right' 
+            current.style.transition = '300ms'
+            while (previous) {
+              previous.style.transform =`translateX(-44.9vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
       } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){

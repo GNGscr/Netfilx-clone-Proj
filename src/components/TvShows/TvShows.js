@@ -31,13 +31,13 @@ class TvShows extends Component {
   // }
 
   mouseEnter = e => {
-    console.log('enter')
+    // console.log('enter')
       this.setState({
         on: !this.state.on
       })
   }
   mouseLeave = e => {
-    console.log('leave')
+    // console.log('leave')
     this.setState({
       on: false
     })
