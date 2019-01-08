@@ -257,9 +257,9 @@ export const Title = styled.div`
     font-size: 9px;
     width: 60px;
     height: 12px;
-    top: 2.5vw;
+    margin-top: -2vw;
     @media all and (min-width: 1400px) {
-        margin-bottom: -1vw;
+        margin-top: .5vw;
     }
     `;
 export const Details = styled.div`
@@ -270,11 +270,11 @@ export const Details = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 7px;
-    top: 4vw;
+    margin-top: 1.5vw;
     width: 120px;
     height: 8px;
     @media all and (min-width: 1400px) {
-       top: 3.5vw;   
+       top: 2.75vw;   
     }
 `;
 export const Description = styled.div`
@@ -286,12 +286,12 @@ export const Description = styled.div`
     align-items: center;
     overflow: hidden;
     color: white;
-    margin-top: 3.5vw;
+    margin-top: 5vw;
     font-size: 6px;
     width: 115px;
     /* min-height: 15px; */
     @media all and (min-width: 1400px) {
-       top: 1.1vw;
+       margin-top: 2.5vw;
        width: 150px;
     }
 `;
@@ -328,7 +328,7 @@ export const CirclesBox = styled.div`
     /* border: grey dashed 1px; */
     position: absolute;
     right: 1rem;
-    bottom: .2rem;
+    margin-top: 2.7vw;
     height: 55px;
     display: flex;
     flex-direction: column;
@@ -339,8 +339,8 @@ export const CirclesBox = styled.div`
     /* animation: ${p => p.anim} ${p => p.duration} forwards; */
     @media all and (min-width: 1400px) {
     right: 1.2rem;
-    bottom: 1vw;
-    height: 70px;  
+    margin-top: 1.6vw;
+    height: 68px;  
     }
 `;
 export const Circle = styled.div`
@@ -368,11 +368,11 @@ export const Play = styled(Circle)`
     position: absolute;
     width: 15px;
     height: 15px;
-    top: .8vw;
+    top: -1vw;
     @media all and (min-width: 1400px) {
     width: 17px;
     height: 17px; 
-    top: .5vw;  
+    top: 1vw;  
     }
 `;
 export const Box = styled.div`
