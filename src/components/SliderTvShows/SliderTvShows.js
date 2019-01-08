@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import '../../../styled/App.css';
+import '../../styled/App.css';
 import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration,
-  Title, Details, Summary, CirclesBox,
+  Title, Details, Summary, CirclesBox, 
   Description
-} from './Slider.styles';
+} from './SliderTvShows.styles';
 
 
-class Slider extends Component {
+class SliderTvShows extends Component {
 
   constructor(props) {
     super(props);
@@ -29,10 +29,8 @@ class Slider extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATA.json')
-    // console.log('res: ',res)
+    const res = await fetch('./MOCK_DATAtvShows.json')
     const data = await res.json();
-    // console.log('data: ',data)
     this.setState({ 
       data 
     })
@@ -164,8 +162,6 @@ class Slider extends Component {
   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
   // -----------------------------------------------------------------------------
 
-  // timeout = null;
-  // move_timeout = null;
   
   mouseEnter = e => {
     let x = e.clientX
@@ -207,7 +203,8 @@ class Slider extends Component {
         current.style.transform = `scale(2)`
         current.style.transition = '400ms'
 
-      } else if(this.state.width < 500) {
+      }
+      else if(this.state.width < 500) {
         // console.log(x)
           if(x < 188){
             current.style.transformOrigin = 'left' 
@@ -255,7 +252,6 @@ class Slider extends Component {
   }
   mouseLeave = e => {
     let current = e.currentTarget
-    // e.currentTarget.style.margin = '0'
     current.style.transform = `scale(1)`
     current.style.transition = '400ms'
     let previous = current.previousElementSibling;
@@ -278,22 +274,13 @@ class Slider extends Component {
       circbx.style.opacity = '1'
       enter.style.transition = '500ms'
       circbx.style.transition = '500ms'
-      // this.boxLinger()
       setTimeout(() => {
         enter.style.opacity = '0'
         circbx.style.opacity = '0'
         enter.style.transition = '6000ms'
         circbx.style.transition = '6000ms'
       }, 3500);
-    };
-    
-  //     // this.move_timeout = setTimeout(() => {
-  //     //   this.move_timeout = null;
-  //     //   clearTimeout(this.timeout);
-  //     //   this.timeout = setTimeout(this.boxLinger, 2000);
-  //     // }, 300);
-
-  // };
+  }
   boxEnter = e => {
     const enter = e.currentTarget.children[1]
     const circbx = e.currentTarget.children[2]
@@ -308,12 +295,7 @@ class Slider extends Component {
       circbx.style.opacity = '0'
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
-    }, 3500);
-    
-    // this.short_fade_in();
-    // clearTimeout(this.timeout);
-    // this.timeout = setTimeout(this.long_fade_out, 2000);
-    
+    }, 3500); 
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -324,36 +306,9 @@ class Slider extends Component {
     circbx.style.opacity = '0'
     enter.style.transition = '500ms'
     circbx.style.transition = '500ms'
-    // clearTimeout(this.timeout);
-    // clearTimeout(this.move_timeout);
-    // this.move_timeout = null;
-    // this.short_fade_out();
   }
 
-  // ----------------------------------------------------------------------
-  // * * ========================= Faders ============================= * *
-  // ----------------------------------------------------------------------
 
-  // short_fade_in = e => {
-  //   this.setState({
-  //     fade_duration: '250ms',
-  //     fade_anim: FADE_IN
-  //   });
-  // };
-  // short_fade_out = e => {
-  //   this.setState({
-  //     fade_duration: '400ms',
-  //     fade_anim: FADE_OUT
-  //   });
-  // };
-  // long_fade_out = e => {
-
-  //   this.setState({
-  //     fade_duration: '4000ms',
-  //     fade_anim: FADE_OUT
-  //   });
-  // };
-  
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -374,11 +329,9 @@ class Slider extends Component {
                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
                   onMouseEnter={this.mouseEnter}
                   onMouseLeave={this.mouseLeave}
-                  // onMouseMove={this.mouseMove}
                   data-id={e.id}
                   >
-                  <Box 
-                  // opc={this.state.opcty}
+                  <Box
                   onMouseEnter={this.boxEnter}
                   onMouseLeave={this.boxLeave}
                   onMouseMove={this.mouseMove}
@@ -387,21 +340,13 @@ class Slider extends Component {
                       <Summary
                           ref={`summary-${e.id}`}
                           opc={this.state.opcty}
-                          // anim={this.state.fade_anim}
-                          // duration={this.state.fade_duration}
                           >
                             <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
                             <Title>{e.title}</Title>
                             <Details>{e.details}</Details>
-                            
                             <Description>{e.description}</Description>
                       </Summary>
-                      <CirclesBox
-                          // ref={`circleBox-${e.id}`}
-                          // anim={this.state.fade_anim}
-                          // duration={this.state.fade_duration}
-                          >
-                          {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
+                      <CirclesBox>
                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
@@ -421,7 +366,7 @@ class Slider extends Component {
   }
 }
 
-export default Slider;
+export default SliderTvShows;
 
 
 // import React, { Component } from 'react';
@@ -433,10 +378,10 @@ export default Slider;
 //   RightArrowIMG, LeftArrowIMG, scale_duration,
 //   Title, Details, Summary, CirclesBox, SummaryWrapper,
 //   Description
-// } from './Slider.styles';
+// } from './SliderTvShows.styles';
 
 
-// class Slider extends Component {
+// class SliderTvShows extends Component {
 
 //   constructor(props) {
 //     super(props);
@@ -455,10 +400,8 @@ export default Slider;
 //   }
 
 //   async componentDidMount() {
-//     const res = await fetch('./MOCK_DATA.json')
-//     // console.log('res: ',res)
+//     const res = await fetch('./MOCK_DATAtvShows.json')
 //     const data = await res.json();
-//     // console.log('data: ',data)
 //     this.setState({ 
 //       data 
 //     })
@@ -590,8 +533,6 @@ export default Slider;
 //   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
 //   // -----------------------------------------------------------------------------
 
-//   // timeout = null;
-//   // move_timeout = null;
   
 //   mouseEnter = e => {
 //     let x = e.clientX
@@ -659,7 +600,6 @@ export default Slider;
 //   }
 //   mouseLeave = e => {
 //     let current = e.currentTarget
-//     // e.currentTarget.style.margin = '0'
 //     current.style.transform = `scale(1)`
 //     current.style.transition = '400ms'
 //     let previous = current.previousElementSibling;
@@ -682,22 +622,13 @@ export default Slider;
 //       circbx.style.opacity = '1'
 //       enter.style.transition = '500ms'
 //       circbx.style.transition = '500ms'
-//       // this.boxLinger()
 //       setTimeout(() => {
 //         enter.style.opacity = '0'
 //         circbx.style.opacity = '0'
 //         enter.style.transition = '6000ms'
 //         circbx.style.transition = '6000ms'
 //       }, 3500);
-//     };
-    
-//   //     // this.move_timeout = setTimeout(() => {
-//   //     //   this.move_timeout = null;
-//   //     //   clearTimeout(this.timeout);
-//   //     //   this.timeout = setTimeout(this.boxLinger, 2000);
-//   //     // }, 300);
-
-//   // };
+//   }
 //   boxEnter = e => {
 //     const enter = e.currentTarget.children[1]
 //     const circbx = e.currentTarget.children[2]
@@ -712,12 +643,7 @@ export default Slider;
 //       circbx.style.opacity = '0'
 //       enter.style.transition = '6000ms'
 //       circbx.style.transition = '6000ms'
-//     }, 3500);
-    
-//     // this.short_fade_in();
-//     // clearTimeout(this.timeout);
-//     // this.timeout = setTimeout(this.long_fade_out, 2000);
-    
+//     }, 3500); 
 //   }
 //   boxLeave = e => {
 //     const enter = e.currentTarget.children[1]
@@ -728,36 +654,9 @@ export default Slider;
 //     circbx.style.opacity = '0'
 //     enter.style.transition = '500ms'
 //     circbx.style.transition = '500ms'
-//     // clearTimeout(this.timeout);
-//     // clearTimeout(this.move_timeout);
-//     // this.move_timeout = null;
-//     // this.short_fade_out();
 //   }
 
-//   // ----------------------------------------------------------------------
-//   // * * ========================= Faders ============================= * *
-//   // ----------------------------------------------------------------------
 
-//   // short_fade_in = e => {
-//   //   this.setState({
-//   //     fade_duration: '250ms',
-//   //     fade_anim: FADE_IN
-//   //   });
-//   // };
-//   // short_fade_out = e => {
-//   //   this.setState({
-//   //     fade_duration: '400ms',
-//   //     fade_anim: FADE_OUT
-//   //   });
-//   // };
-//   // long_fade_out = e => {
-
-//   //   this.setState({
-//   //     fade_duration: '4000ms',
-//   //     fade_anim: FADE_OUT
-//   //   });
-//   // };
-  
 //   render() {
 //     // console.log(this.state.data)
 //     if(this.state.data === []) {
@@ -778,11 +677,9 @@ export default Slider;
 //                   <SliderItem key={i} ref={`sliderItem-${e.id}`}
 //                   onMouseEnter={this.mouseEnter}
 //                   onMouseLeave={this.mouseLeave}
-//                   // onMouseMove={this.mouseMove}
 //                   data-id={e.id}
 //                   >
-//                   <Box 
-//                   // opc={this.state.opcty}
+//                   <Box
 //                   onMouseEnter={this.boxEnter}
 //                   onMouseLeave={this.boxLeave}
 //                   onMouseMove={this.mouseMove}
@@ -791,23 +688,15 @@ export default Slider;
 //                       <Summary
 //                           ref={`summary-${e.id}`}
 //                           opc={this.state.opcty}
-//                           // anim={this.state.fade_anim}
-//                           // duration={this.state.fade_duration}
 //                           >
 //                           <SummaryWrapper>
 //                             <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
 //                             <Title>{e.title}</Title>
 //                             <Details>{e.details}</Details>
-                            
 //                             <Description>{e.description}</Description>
 //                           </SummaryWrapper>
 //                       </Summary>
-//                       <CirclesBox
-//                           // ref={`circleBox-${e.id}`}
-//                           // anim={this.state.fade_anim}
-//                           // duration={this.state.fade_duration}
-//                           >
-//                           {/* <Circle><IMG src='https://img.icons8.com/color/48/000000/mute.png'/></Circle> */}
+//                       <CirclesBox>
 //                           <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
 //                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
 //                           <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
@@ -826,4 +715,4 @@ export default Slider;
 //     }
 //   }
 // }
-// export default Slider;
+// export default SliderTvShows;

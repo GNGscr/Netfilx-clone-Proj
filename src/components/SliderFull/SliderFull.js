@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../../styled/App.css';
+import '../../styled/App.css';
 import { setTimeout } from 'timers';
 import {
   Wrapper, PageHead, SliderMask, SliderItem,
@@ -7,10 +7,10 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description
-} from './SliderComedy.styles';
+} from './SliderFull.styles';
 
 
-class SliderComedy extends Component {
+class SliderFull extends Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class SliderComedy extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('./MOCK_DATAcomedy.json')
+    const res = await fetch('./MOCK_DATAfull.json')
     const data = await res.json();
     this.setState({ 
       data 
@@ -162,7 +162,7 @@ class SliderComedy extends Component {
   // * * ========= Events - Mouse Enter || Mouse Leave & Mouse Move  ========= * *
   // -----------------------------------------------------------------------------
 
-
+  
   mouseEnter = e => {
     let x = e.clientX
     // console.log(x)
@@ -294,7 +294,7 @@ class SliderComedy extends Component {
       circbx.style.opacity = '0'
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
-    }, 3500); 
+    }, 3500);
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -364,4 +364,4 @@ class SliderComedy extends Component {
     }
   }
 }
-export default SliderComedy;
+export default SliderFull;
