@@ -172,7 +172,7 @@ class SliderComedy extends Component {
     if(this.state.width > 1400) {
       if(x < 278){
         current.style.transformOrigin = 'left' 
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
           // Targeting all the next elements that comes after the current
           while (next) {
             next.style.transform = `translateX(15vw)`
@@ -181,7 +181,7 @@ class SliderComedy extends Component {
           }
         } else if(x > 1162){
         current.style.transformOrigin = 'right' 
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
         // Targeting all the previous elements that comes before the current        
           while (previous) {
             previous.style.transform =`translateX(-15vw)`
@@ -207,7 +207,7 @@ class SliderComedy extends Component {
       // console.log(x)
         if(x < 188){
           current.style.transformOrigin = 'left' 
-          current.style.transition = '400ms'
+          current.style.transition = '300ms'
           while (next) {
             next.style.transform = `translateX(44.9vw)`
             next.style.transition = '400ms'
@@ -216,7 +216,7 @@ class SliderComedy extends Component {
         } 
         else if(x > 188) {
           current.style.transformOrigin = 'right' 
-          current.style.transition = '400ms'
+          current.style.transition = '300ms'
           while (previous) {
             previous.style.transform =`translateX(-44.9vw)`
             previous.style.transition = '400ms'
