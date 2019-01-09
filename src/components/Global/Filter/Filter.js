@@ -75,7 +75,6 @@ export default class Filter extends Component {
     }
     render() {
         return <FilterClass>
-                    {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
                     {this.state.InputOn && (
                         <Filtering list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     )}
