@@ -118,14 +118,19 @@ export const IMG = styled.img`
         height: 100%;
         width: 100%; 
     }
-`;
+    `;
 export const LeftArrow = styled.div`
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* opacity: 0; */
     /* background-color: red; */
     background: linear-gradient(to left, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
     width: 5.5vw;
     height: 26vw;
     z-index: 14;
+    /* transition-duration: .7s; */
 
     @media all and (min-width: 500px) {
         width: 3.5vw;
@@ -146,10 +151,16 @@ export const LeftArrow = styled.div`
     @media all and (min-width: 1400px) {
         width: 4.1vw;
         height: 9vw;
+        /* &:hover {
+            opacity: 1;  
+        } */
     }
-`;
+    `;
 export const RightArrow = styled.div`
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background: red; */
     background: linear-gradient(to right, rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 1) );
     width: 5.5vw;
@@ -180,9 +191,14 @@ export const RightArrow = styled.div`
     }
 `;
 export const LeftArrowIMG = styled.img`
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .1;
+    transition-duration: .3s;
     /* color: white; */
     margin-top: 10vw;
     margin-left: 1px;
+    /* z-index:30; */
     width: calc(99% - 3px);
 
     @media all and (min-width: 500px) {
@@ -197,11 +213,20 @@ export const LeftArrowIMG = styled.img`
         width: calc(100% -10px);
     }
     @media all and (min-width: 1400px) {
-        width: calc(100% - 15px);
-        margin-top: 2.75vw;
+        width: 130%;
+        height: 60%;
+        margin-top: 0vw;
+        margin-right: .5vw;
+        &:hover {
+            opacity: .9;
+        }
     }
 `;
 export const RightArrowIMG = styled.img`
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .1;
+    transition-duration: .3s;
     /* color: white; */
     margin-top: 10vw;
     margin-right: 0px;
@@ -220,8 +245,13 @@ export const RightArrowIMG = styled.img`
         margin-top: 3.3vw;
     }
     @media all and (min-width: 1400px) {
-        width: calc(100% - 15px);
-        margin-top: 2.75vw;
+        width: 130%;
+        height: 60%;
+        margin-top: 0vw;
+        margin-left: .5vw;
+        &:hover {
+            opacity: .9;
+        }
     }
 `;
 export const P = styled.p`

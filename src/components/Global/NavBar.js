@@ -82,7 +82,7 @@ export default class MainHeader extends React.Component {
                 </LeftNavBar>
                 <RightNavBar>
                     <Filter />
-                    <AccountDropdownButton onClick={this.toggle_notifications} src="https://img.icons8.com/ios/50/000000/appointment-reminders.png" alt=""/>
+                    <AccountDropdownButton onClick={this.toggle_notifications} alt=""/>
                     <Profiles><Link to="/Profiles"><IMG src="https://occ-0-1390-2774.1.nflxso.net/art/326d2/7f22331395c9669f63f6e97b9b3fcb0a9cc326d2.png" alt="User's-icon" /></Link></Profiles>
                     <NotificationWin dspcntn={this.state.dspcntnOnPlay}>
                     <H3>New Releases</H3>

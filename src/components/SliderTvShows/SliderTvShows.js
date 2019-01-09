@@ -358,8 +358,8 @@ class SliderTvShows extends Component {
               })
             }
             </SliderMask>
-            <LeftArrow onClick={this.handleOnLeftArrowClick}><LeftArrowIMG src="https://img.icons8.com/ios/96/000000/back-filled.png" /></LeftArrow>
-            <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="https://img.icons8.com/ios/96/000000/forward-filled.png" /></RightArrow>
+            <LeftArrow onClick={this.handleOnLeftArrowClick}><LeftArrowIMG src="./images/left256.png" /></LeftArrow>
+            <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="./images/right256.png" /></RightArrow>
         </Wrapper>
       ); 
     }

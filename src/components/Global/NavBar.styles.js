@@ -260,22 +260,27 @@ export const NetfilxSans = styled.div`
         }
 }
 `;
-export const AccountDropdownButton = styled.img`
+export const AccountDropdownButton = styled.div`
     display: none;
     justify-content: center;
     align-items: center;
+    background-image: url('./images/notifications_menu.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
     @media all and (min-width: 477px) {
-
-}
+        
+    }
     @media all and (min-width: 900px) {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: -10px;
+        margin-right: 0px;
         margin-left: 20px;
-        background-color: white;
         height: 35px;
         width: 35px;
+        margin-top: .2vw;
+
         /* border: 1px solid rgb(20, 20, 20); */
 }
 `;
@@ -351,7 +356,7 @@ export const Hamburger = styled.img`
 // }
 // `;
 export const NotificationWin = styled.div`
-    height: 25vw;
+    height: 25.3vw;
     width: 25vw;
     top: 5vw;
     right: 3vw;

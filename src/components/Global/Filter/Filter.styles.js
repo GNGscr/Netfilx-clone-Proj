@@ -13,6 +13,8 @@ export const FilterClass = styled.div`
 `;
 export const FilterIcon = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30px;
     width: 30px;
     margin-left: 1.5vw;
@@ -33,6 +35,7 @@ export const FilterIcon = styled.div`
     @media all and (min-width: 900px) {
         display: flex;
         margin-left: 0vw;
+        /* margin-top: .2vw; */
         width: 35px; 
         height: 35px;
         margin-right: 0;
