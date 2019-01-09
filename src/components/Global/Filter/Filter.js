@@ -9,7 +9,7 @@ export default class Filter extends Component {
     state = {
         InputOn: false,        
         navbgclr: 'opacity: 0',
-        // cntctbox:'opacity: 0',
+        cntctbox:'opacity: 0',
         dspflx: 'none',
         data: [],
         original_list: [],
@@ -47,12 +47,11 @@ export default class Filter extends Component {
     // }
 
     toggleInput = () => {
-
         if (this.state.InputOn) {
             // console.log('works')
             this.setState({
                 navbgclr: 0,
-                // cntctbox: 0,
+                cntctbox: 0,
                 dspflx: 'none',
                 InputOn: false
             })
@@ -60,7 +59,7 @@ export default class Filter extends Component {
             // console.log('doesnt work')
             this.setState({
                 navbgclr: 1,
-                // cntctbox: 1,
+                cntctbox: 1,
                 dspflx: 'flex',
                 InputOn: true
             })
@@ -69,7 +68,9 @@ export default class Filter extends Component {
     render() {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
-                    <Filtering bgclr={this.state.navbgclr} list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                    {this.state.InputOn && (
+                        <Filtering cntctbx={this.state.cntctbox} list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                    )}
                     <FilterIcon onClick={this.toggleInput} alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                

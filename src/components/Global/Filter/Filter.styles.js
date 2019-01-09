@@ -33,14 +33,13 @@ export const FilterIcon = styled.div`
     @media all and (min-width: 900px) {
         display: flex;
         margin-left: 0vw;
-        /* background-color: rgb(20, 20, 20); */
-        /* background-color: #f0f0f0; */
         width: 35px; 
         height: 35px;
         margin-right: 0;
         cursor: pointer;
     }
 `;
+
 export const Inputer = styled.input`
     display: flex;  
     height: 22px; 
@@ -52,24 +51,15 @@ export const Inputer = styled.input`
     padding: 4px;
     padding-left: 10px;
     overflow-x: hidden;
-    /* transition: opacity 1s linear;
-    opacity: ${props => props.bgclr};        
-    transition: border .3s; */
-    /* transition: opacity 1s ease-in-out;
-    opacity: ${props => props.bgclr}; */
-
-    /* transform: display .5s;
-    display: ${props => props.bgclr}; */
-    /* transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
     transition-delay: .5s;
-    opacity: ${props => props.cntctbx}; */
+    opacity: ${props => props.cntctbx};
     color: white;
     &:focus {
         outline:-webkit-focus-ring-color auto 5px
     }
     @media all and (min-width: 477px) {}
     @media all and (min-width: 900px) {
-        display: flex;
         height: 25px;
         width: 170px;
         margin-right: .9vw;

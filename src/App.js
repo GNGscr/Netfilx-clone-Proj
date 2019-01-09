@@ -31,7 +31,7 @@ export default class App extends React.Component {
             <Route path='/my-list' component={MyList}></Route>
             <Route path='/profiles' component={LandingPage}></Route>
             <Route path='/list-item' component={ListItem}></Route>
-            <Route path='/error' component={NotFoundPage}></Route>
+            <Route path='/*' component={NotFoundPage}></Route>
             <Route path='/slider' component={Slider}></Route>
             <Route path='/movie-item' component={MovieItemView}></Route>
           </div>
