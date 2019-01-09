@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
-import Filtering from './Filtering'
-
+import Filtering from './Filtering';
 import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
 
 export default class Filter extends Component {
@@ -71,7 +70,7 @@ export default class Filter extends Component {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
                     <Filtering bgclr={this.state.navbgclr} list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
-                    <FilterIcon onClick={this.toggleInput} src="https://img.icons8.com/ios-glyphs/26/000000/search.png" alt="" />
+                    <FilterIcon onClick={this.toggleInput} alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
                         <ContentBox dsp={this.state.dspflx}>

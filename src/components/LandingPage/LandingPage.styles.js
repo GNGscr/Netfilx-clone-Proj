@@ -64,13 +64,17 @@ export const ImageProfile = styled.div`
         height: 10vw;
         width: 10vw;
         margin: 3vw;
-        background-color: grey;
-        /* background-color: rgba(20, 20, 20); */
+        /* background-color: grey; */
+        background-color: rgba(20, 20, 20);
     }
 `;
 export const UserImg = styled.img`
     height: 100%;
     width: 100%;
+    background-image: url('./images/profilePlusBigIcon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
 
     /* @media all and (min-width: 500px) {
         width: calc(100%/3);

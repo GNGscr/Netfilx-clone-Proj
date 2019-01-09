@@ -11,25 +11,32 @@ export const FilterClass = styled.div`
 
     }
 `;
-export const FilterIcon = styled.img`
+export const FilterIcon = styled.div`
     display: flex;
-    width: 9vw;
+    height: 30px;
+    width: 30px;
+    margin-left: 1.5vw;
+    margin-right: 1vw;
+    background-image: url('./images/searchIcon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
     margin-right: 2vw;
-    background-color: gray;
     @media all and (min-width: 477px) {}
     @media all and (min-width: 477px) {}
     @media all and (min-width: 765px) {
-        width: 4vw;
-        margin-left: 1vw;
+        width: 100%;
+        margin-left: 1vw;    
+        height: 100%;
     }
     @media all and (min-width: 900px) {
         display: flex;
-        width: 9vw;
+        margin-left: 0vw;
         /* background-color: rgb(20, 20, 20); */
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
         width: 35px; 
         height: 35px;
-        margin-left: 10px;
         margin-right: 0;
         cursor: pointer;
     }

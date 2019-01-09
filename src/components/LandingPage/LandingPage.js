@@ -26,7 +26,7 @@ class LandingPage extends Component {
                     Her
                 </Anker>
                 <Anker href="">
-                    <ImageProfile><UserImg src="https://img.icons8.com/material/480/000000/plus.png" alt="" /></ImageProfile>
+                    <ImageProfile><UserImg alt="" /></ImageProfile>
                     Add Profile
                 </Anker>
                 </LanderBtn>
