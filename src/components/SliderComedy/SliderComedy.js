@@ -346,10 +346,10 @@ class SliderComedy extends Component {
                             <Description>{e.description}</Description>
                       </Summary>
                       <CirclesBox>
-                          <Circle><IMG src='https://img.icons8.com/color/48/000000/medium-volume.png'/></Circle>
-                          <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumb-up.png'/></Circle>
-                          <Circle><IMG src='https://img.icons8.com/ios-glyphs/48/000000/thumbs-down.png'/></Circle>
-                          <Circle><IMG src='https://img.icons8.com/ios/48/000000/plus-math-filled.png'/></Circle>
+                          <Circle><IMG src='./images/volume16.png'/></Circle>
+                          <Circle><IMG src='./images/dislike16.png'/></Circle>
+                          <Circle><IMG src='./images/like16.png'/></Circle>
+                          <Circle><IMG src='./images/plus.png'/></Circle>
                       </CirclesBox>
                   </Box>
                   </SliderItem>

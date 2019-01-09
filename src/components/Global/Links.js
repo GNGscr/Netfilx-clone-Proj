@@ -9,7 +9,7 @@ export default () => (
         <li><Link to="/recently-added" className="nav-link"></Link></li>
         <li><Link to="/my-list" className="nav-link"></Link></li>
         <li><Link to="/list-item" className="nav-link"></Link></li>
-        <li><Link to="/*" className="nav-link"></Link></li>
+        <li><Link to="/error" className="nav-link"></Link></li>
         <li><Link to="/links" className="nav-link"></Link></li>
         <li><Link to="/movie-item" className="nav-link"></Link></li>
     </ul>
