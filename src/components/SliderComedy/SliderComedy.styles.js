@@ -193,7 +193,7 @@ export const RightArrow = styled.div`
 export const LeftArrowIMG = styled.img`
     background-repeat: no-repeat;
     background-position: center;
-    opacity: .1;
+    opacity: .05;
     transition-duration: .3s;
     /* color: white; */
     margin-top: 10vw;
@@ -225,7 +225,7 @@ export const LeftArrowIMG = styled.img`
 export const RightArrowIMG = styled.img`
     background-repeat: no-repeat;
     background-position: center;
-    opacity: .1;
+    opacity: .05;
     transition-duration: .3s;
     /* color: white; */
     margin-top: 10vw;
@@ -289,7 +289,7 @@ export const Title = styled.div`
     height: 12px;
     margin-top: -2vw;
     @media all and (min-width: 1400px) {
-        margin-top: .5vw;
+        margin-top: -.25vw;
     }
     `;
 export const Details = styled.div`
@@ -300,11 +300,11 @@ export const Details = styled.div`
     justify-content: flex-start;
     color: white;
     font-size: 7px;
-    margin-top: 1.5vw;
+    margin-top: 1vw;
     width: 120px;
     height: 8px;
     @media all and (min-width: 1400px) {
-       top: 2.75vw;   
+       top: 2.7vw;   
     }
 `;
 export const Description = styled.div`
@@ -321,7 +321,7 @@ export const Description = styled.div`
     width: 115px;
     /* min-height: 15px; */
     @media all and (min-width: 1400px) {
-       margin-top: 2.5vw;
+       margin-top: 2.3vw;
        width: 150px;
     }
 `;
@@ -369,7 +369,7 @@ export const CirclesBox = styled.div`
     /* animation: ${p => p.anim} ${p => p.duration} forwards; */
     @media all and (min-width: 1400px) {
     right: 1.2rem;
-    margin-top: 1.6vw;
+    margin-top: 1.5vw;
     height: 68px;  
     }
 `;
@@ -398,11 +398,11 @@ export const Play = styled(Circle)`
     position: absolute;
     width: 15px;
     height: 15px;
-    top: -1vw;
+    top: -.5vw;
     @media all and (min-width: 1400px) {
     width: 17px;
     height: 17px; 
-    top: 1vw;  
+    top: .25vw;  
     }
 `;
 export const Box = styled.div`

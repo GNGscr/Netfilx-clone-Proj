@@ -359,7 +359,7 @@ class SliderTvShows extends Component {
             }
             </SliderMask>
             <LeftArrow onClick={this.handleOnLeftArrowClick}><LeftArrowIMG src="./images/left256.png" /></LeftArrow>
-            <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="./images/left256.png" /></RightArrow>
+            <RightArrow onClick={this.handleOnRightArrowClick}><RightArrowIMG src="./images/right256.png" /></RightArrow>
         </Wrapper>
       ); 
     }
