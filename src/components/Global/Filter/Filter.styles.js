@@ -51,9 +51,6 @@ export const Inputer = styled.input`
     padding: 4px;
     padding-left: 10px;
     overflow-x: hidden;
-    transition: opacity 1s ease-in-out;
-    transition-delay: .5s;
-    opacity: ${props => props.cntctbx};
     color: white;
     &:focus {
         outline:-webkit-focus-ring-color auto 5px
@@ -112,9 +109,6 @@ export const ContentBox = styled.div`
     overflow-y: scroll;
     transform: display .5s;
     display: ${props => props.dsp};
-    /* transition: opacity 1s ease-in-out;
-    transition-delay: .5s;
-    opacity: ${props => props.cntctbx}; */
     z-index: 15;
     @media all and (min-width: 1400px) {
         margin-top: 3.6vw;

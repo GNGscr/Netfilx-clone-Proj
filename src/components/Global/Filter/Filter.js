@@ -8,8 +8,8 @@ export default class Filter extends Component {
 
     state = {
         InputOn: false,        
-        navbgclr: 'opacity: 0',
-        cntctbox:'opacity: 0',
+        // navbgclr: 'opacity: 0',
+        // cntctbox:'opacity: 0',
         dspflx: 'none',
         data: [],
         original_list: [],
@@ -46,20 +46,28 @@ export default class Filter extends Component {
     //     })
     // }
 
-    toggleInput = () => {
+    toggleInput = (e) => {
+        const filterToggle = e.currentTarget.nextElementSibling
+        console.log(filterToggle)
         if (this.state.InputOn) {
+            // filterToggle.style.transition = `translateX(-550px)`
+            // filterToggle.style.transitionDelay = '1000ms'
+            // filterToggle.style.transformOrigin = 'right'
+            // filterToggle.style.transition = '600ms'
             // console.log('works')
             this.setState({
-                navbgclr: 0,
-                cntctbox: 0,
+                // navbgclr: 0,
+                // cntctbox: 0,
                 dspflx: 'none',
                 InputOn: false
             })
         } else {
             // console.log('doesnt work')
+            // filterToggle.style.transition =`translateX(550px)`
+            // filterToggle.style.transition = '.5s'
             this.setState({
-                navbgclr: 1,
-                cntctbox: 1,
+                // navbgclr: 1,
+                // cntctbox: 1,
                 dspflx: 'flex',
                 InputOn: true
             })
@@ -69,7 +77,7 @@ export default class Filter extends Component {
         return <FilterClass>
                     {/* <Filter className="filter" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/> */}
                     {this.state.InputOn && (
-                        <Filtering cntctbx={this.state.cntctbox} list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                        <Filtering list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     )}
                     <FilterIcon onClick={this.toggleInput} alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
