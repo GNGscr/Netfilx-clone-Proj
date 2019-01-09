@@ -350,11 +350,36 @@ export const Hamburger = styled.img`
 //         background-color: rgba(20, 20, 20, 0);
 // }
 // `;
-export const Notifications = styled.div`
-    height: 20vw;
-    width: 35vw;
-    top: 1vw;
+export const NotificationWin = styled.div`
+    height: 25vw;
+    width: 25vw;
+    top: 5vw;
+    right: 3vw;
     position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(20, 20, 20);
+    transform: display .5s;
+    display: ${props => props.dspcntn};
+    z-index: 12;
+    color: gray;
+`;
+export const Item = styled.div`
+    width: 22.5vw;
+    height: 4vw;
     display: flex;
-    background-color: red;
+    justify-content: flex-start; 
+    align-items: center;
+    margin:.05vw;
+    padding: .2vw;
+    padding-left: 1vw;
+    border: 1px solid gray;
+    box-shadow: 0 .2rem .8rem DimGrey;
+`;
+export const H3 = styled.div`
+    color: #777;
+    font-size: 1.2rem;
+    margin: 2vw 0;
 `;

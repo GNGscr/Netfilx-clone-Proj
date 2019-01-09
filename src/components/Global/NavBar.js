@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MainHeaderDiv, LeftNavBar, RightNavBar, LI, Profiles, LOGO, Hamburger,LIMOBILE,
      NetfilxSans, AccountDropdownButton, IMG, NavControllers, NavList, BcgrNav,
-    //  Notifications
+     NotificationWin, Item, H3
     } from './NavBar.styles';
 // import { keyframes } from 'styled-components';
 import Filter from './Filter/Filter';
@@ -15,7 +15,9 @@ export default class MainHeader extends React.Component {
         navXpos: '-350px',
         navOpen: false,
         navbgclr: { opacity: 0 },
-        clrOpen: false
+        clrOpen: false,
+        dspcntnOnPlay: 'none',
+        dspcntnOn: false
     }
     componentDidMount(){
         window.addEventListener('scroll', () => {
@@ -47,12 +49,16 @@ export default class MainHeader extends React.Component {
         }
     }
     toggle_notifications = () => {
-        if(this.state) {
+        if(this.state.dspcntnOn) {
             this.setState({
-
+                dspcntnOnPlay: 'none',
+                dspcntnOn: false
             })
-        } else {
-            
+        } else if(this.state.dspcntnOn === false) {
+           this.setState({
+               dspcntnOnPlay: 'flex',
+               dspcntnOn: true
+           }) 
         }
     }
     
@@ -78,7 +84,13 @@ export default class MainHeader extends React.Component {
                     <Filter />
                     <AccountDropdownButton onClick={this.toggle_notifications} src="https://img.icons8.com/ios/50/000000/appointment-reminders.png" alt=""/>
                     <Profiles><Link to="/Profiles"><IMG src="https://occ-0-1390-2774.1.nflxso.net/art/326d2/7f22331395c9669f63f6e97b9b3fcb0a9cc326d2.png" alt="User's-icon" /></Link></Profiles>
-                    {/* <Notifications></Notifications> */}
+                    <NotificationWin dspcntn={this.state.dspcntnOnPlay}>
+                    <H3>New Releases</H3>
+                    <Item>Vikings - New Episodes</Item>
+                    <Item>Iron Fist - New Episodes</Item>
+                    <Item>Suits - New Episodes</Item>
+                    <Item>Stranger Things - New Episodes</Item>
+                    </NotificationWin>
                 </RightNavBar>
             </MainHeaderDiv>
         )
