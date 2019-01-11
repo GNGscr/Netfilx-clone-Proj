@@ -19,12 +19,18 @@ class App extends Component {
   state = {
     on: false
   }
-
+  
   mouseEnter = e => {
-    // console.log('enter')
-      this.setState({
-        on: !this.state.on
-      })
+    // const start = new Date().getTime();
+    // setTimeout(() => {
+    //   const end = new Date().getTime();
+    //   // console.log('end', end)
+    //   const add = end - start
+    //   console.log('time passed from entering: ', add,'ms')
+    // }, 4000);
+        this.setState({
+          on: !this.state.on
+        })
   }
   mouseLeave = e => {
     // console.log('leave')
@@ -32,7 +38,9 @@ class App extends Component {
       on: false
     })
   }
+  counter = () => {
 
+  }
   render() {
     return (
       <AppDiv>

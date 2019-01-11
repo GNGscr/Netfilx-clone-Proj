@@ -8,7 +8,19 @@ import {
   Title, Details, Summary, CirclesBox,
   Description
 } from './Slider.styles';
+// import ReactPlayer from 'react-player'
 
+
+// const imgUrl ='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp';
+// const divStyle = {
+//   // color: 'blue',
+//   // backgroundImage: 'url(' + imgUrl + ')',
+//   // backgroundRepeat: 'no-repeat',
+//   // width: '100vw'
+//   // display: null,
+//   position: 'absolute',
+//   left: 0
+// };
 
 class Slider extends Component {
 
@@ -330,6 +342,15 @@ class Slider extends Component {
     // this.short_fade_out();
   }
 
+  trailerEnter = e => {
+    // const current_trailer = e.currentTarget
+console.log('enter')
+  }
+  trailerLeave = e => {
+    // const current_trailer = e.currentTarget
+    console.log('enter')
+  }
+
   // ----------------------------------------------------------------------
   // * * ========================= Faders ============================= * *
   // ----------------------------------------------------------------------
@@ -383,6 +404,17 @@ class Slider extends Component {
                   onMouseLeave={this.boxLeave}
                   onMouseMove={this.mouseMove}
                   >
+                      {/* <ReactPlayer
+                      // ref={`trailer-${e.id}`}
+                      onMouseLeave={this.trailerLeave}
+                      onMouseEnter={this.trailerEnter}
+                      url={e.trailer}
+                      style={divStyle} 
+                      wrapper='div'
+                      playing
+                      height="100%"
+                      width="100%"
+                      /> */}
                       <IMG src={e.poster}/>
                       <Summary
                           ref={`summary-${e.id}`}

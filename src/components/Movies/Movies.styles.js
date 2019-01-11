@@ -127,7 +127,9 @@ export const LogoAndTextDiv = styled.div`
         height: 42.5vw;
         display: flex;
         flex-direction: column;
+        /* background-color:red; */
         z-index: 7;
+        padding-right: 39vw;
         padding-top: 3vw;
         padding-left: 25px;
     }
@@ -221,6 +223,6 @@ export const HeroMask = styled.div`
     top: -2.75vw;
     position: absolute;
     @media all and (min-width: 1400px) {
-        top: -5.2vw;
+        top: 0vw;
     }
     `;
