@@ -6,12 +6,14 @@ import {
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox,
-  Description
+  Description,
+  //  PlayerWrapper
 } from './Slider.styles';
 // import ReactPlayer from 'react-player'
 
 
 // const imgUrl ='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp';
+
 // const divStyle = {
 //   // color: 'blue',
 //   // backgroundImage: 'url(' + imgUrl + ')',
@@ -35,7 +37,8 @@ class Slider extends Component {
       fade_duration: scale_duration,
       fade_anim: null,
       slider: 0,
-      opcty: 'opacity: 0'
+      opcty: 'opacity: 0',
+      on: false
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -192,7 +195,7 @@ class Slider extends Component {
           // Targeting all the next elements that comes after the current
           while (next) {
             next.style.transform = `translateX(15vw)`
-            next.style.transition = '400ms'
+            next.style.transition = '300ms'
             next = next.nextElementSibling;
           }
         } else if(x > 1162){
@@ -201,23 +204,23 @@ class Slider extends Component {
         // Targeting all the previous elements that comes before the current        
           while (previous) {
             previous.style.transform =`translateX(-15vw)`
-            previous.style.transition = '400ms'
+            previous.style.transition = '300ms'
             previous = previous.previousElementSibling;
           }
         } else {
           while (previous) {
             previous.style.transform =`translateX(-7.5vw)`
-            previous.style.transition = '400ms'
+            previous.style.transition = '300ms'
             previous = previous.previousElementSibling;
           }
           while (next) {
             next.style.transform = `translateX(7.5vw)`
-            next.style.transition = '400ms'
+            next.style.transition = '300ms'
             next = next.nextElementSibling;
           }
         }
         current.style.transform = `scale(2)`
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
 
       } else if(this.state.width < 500) {
         // console.log(x)
@@ -226,7 +229,7 @@ class Slider extends Component {
             current.style.transition = '300ms'
             while (next) {
               next.style.transform = `translateX(44.9vw)`
-              next.style.transition = '400ms'
+              next.style.transition = '300ms'
               next = next.nextElementSibling;
             }
           } 
@@ -235,12 +238,12 @@ class Slider extends Component {
             current.style.transition = '300ms'
             while (previous) {
               previous.style.transform =`translateX(-44.9vw)`
-              previous.style.transition = '400ms'
+              previous.style.transition = '300ms'
               previous = previous.previousElementSibling;
             }
           }
         current.style.transform = `scale(2.003)`
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
       } else if(this.state.width < 400) {
       // console.log(x)
         if(x < 188){
@@ -257,7 +260,7 @@ class Slider extends Component {
           current.style.transition = '300ms'
           while (previous) {
             previous.style.transform =`translateX(-44.9vw)`
-            previous.style.transition = '400ms'
+            previous.style.transition = '300ms'
             previous = previous.previousElementSibling;
           }
         }
@@ -269,17 +272,17 @@ class Slider extends Component {
     let current = e.currentTarget
     // e.currentTarget.style.margin = '0'
     current.style.transform = `scale(1)`
-    current.style.transition = '400ms'
+    current.style.transition = '300ms'
     let previous = current.previousElementSibling;
     let next = current.nextElementSibling;
     while (previous) {
       previous.style.transform =`translateX(0px)`
-      previous.style.transition = '400ms'
+      previous.style.transition = '300ms'
       previous = previous.previousElementSibling;
     }
     while (next) {
       next.style.transform = `translateX(0px)`
-      next.style.transition = '400ms'
+      next.style.transition = '300ms'
       next = next.nextElementSibling;
     }
   }
@@ -343,12 +346,19 @@ class Slider extends Component {
   }
 
   trailerEnter = e => {
-    // const current_trailer = e.currentTarget
-console.log('enter')
+    const current_trailer = e.currentTarget
+    console.log(current_trailer)
+    this.setState({
+      on: !this.state.on
+    })
+    console.log('enter')
   }
   trailerLeave = e => {
+    this.setState({
+      on: false
+    })
     // const current_trailer = e.currentTarget
-    console.log('enter')
+    console.log('leave')
   }
 
   // ----------------------------------------------------------------------
@@ -404,17 +414,22 @@ console.log('enter')
                   onMouseLeave={this.boxLeave}
                   onMouseMove={this.mouseMove}
                   >
-                      {/* <ReactPlayer
-                      // ref={`trailer-${e.id}`}
-                      onMouseLeave={this.trailerLeave}
-                      onMouseEnter={this.trailerEnter}
-                      url={e.trailer}
-                      style={divStyle} 
-                      wrapper='div'
-                      playing
-                      height="100%"
-                      width="100%"
-                      /> */}
+                  {/* <PlayerWrapper
+                    onMouseLeave={this.trailerLeave}
+                    onMouseEnter={this.trailerEnter}
+                  >
+                    {this.state.on && (
+                        <ReactPlayer
+                        // ref={`trailer-${e.id}`}
+                        url={e.trailer}
+                        style={divStyle} 
+                        wrapper='div'
+                        playing
+                        height="100%"
+                        width="100%"
+                        />
+                    )}
+                      </PlayerWrapper> */}
                       <IMG src={e.poster}/>
                       <Summary
                           ref={`summary-${e.id}`}

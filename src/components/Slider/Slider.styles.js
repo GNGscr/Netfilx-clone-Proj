@@ -80,6 +80,12 @@ export const SliderMask = styled.div`
         }
     }
 `;
+export const PlayerWrapper = styled.div`
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+`;
 export const SliderItem = styled.div`
     transition: all 2s ease-in;
     display: inline-flex;
