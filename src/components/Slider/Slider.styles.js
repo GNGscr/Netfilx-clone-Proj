@@ -1,4 +1,5 @@
 
+
 // import styled from 'styled-components';
 import styled, { keyframes } from 'styled-components';
 
@@ -79,15 +80,6 @@ export const SliderMask = styled.div`
             cursor: pointer;
         }
     }
-`;
-export const PlayerWrapper = styled.div`
-    display: flex; 
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    /* background-color: red; */
-    /* transform: display .5s;
-    display: ${props => props.dsp}; */
 `;
 export const SliderItem = styled.div`
     transition: all 2s ease-in;
@@ -444,4 +436,15 @@ export const Box = styled.div`
         width: 15.2vw; 
         height: 9vw;  
     }
+`;
+
+export const TrailerWrapper = styled.div`
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* z-index: 15; */
+    /* background-color: red; */
+    /* transform: display .5s;
+    display: ${props => props.dsp}; */
 `;
