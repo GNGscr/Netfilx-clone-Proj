@@ -17,7 +17,13 @@ const divStyle = {
 class MovieItem extends Component {
   render () {
     return <ReactPlayer 
-              url='https://youtu.be/o2AsIXSh2xo' 
+              // fileConfig="./images/BirdBox.mp4"
+              // forceVideo="./images/BirdBox.mp4"
+              // url='https://youtu.be/o2AsIXSh2xo' 
+// src="./images/BirdBox.mp4"  
+              url={[
+                {src: './images/BirdBox.mp4', type: 'video/mp4'}
+              ]}
               style={divStyle} 
               height="60vw" 
               width="100vw" 
@@ -26,14 +32,21 @@ class MovieItem extends Component {
               wrapper='div'
               // suppressHydrationWarning={true}
               config={{
-                youtube: {
-                  playerVars: { showinfo: 1 }
-                }}}
-              // volume='0.3' 
-              // onEnded 
-
-            />
-  }
-}
-export default MovieItem;
-
+                  youtube: {
+                      playerVars: { showinfo: 1 }
+                    }}}
+                  // volume='0.3' 
+                  // onEnded 
+        
+                />
+      }
+    }
+    export default MovieItem;
+    
+    // <video
+    // autoplay
+    // type="video/webm"
+    // src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    // poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    // width="100vw"
+    // />

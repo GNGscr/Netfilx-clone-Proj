@@ -421,7 +421,10 @@ class Slider extends Component {
                     {this.state.on && (
                         <ReactPlayer
                         // ref={`trailer-${e.id}`}
-                        url={e.trailer}
+                        // url={e.trailer}
+                        url={[
+                          {src: './images/BirdBox.mp4', type: 'video/mp4'}
+                        ]}
                         style={divStyle} 
                         wrapper='div'
                         playing

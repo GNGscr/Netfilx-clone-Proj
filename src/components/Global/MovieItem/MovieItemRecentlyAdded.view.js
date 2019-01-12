@@ -18,7 +18,10 @@ const divStyle = {
 class MovieItemRecentlyAdded extends Component {
   render () {
     return <ReactPlayer 
-    url='https://youtu.be/nx3cgGfHiuk' 
+    // url='https://youtu.be/nx3cgGfHiuk' 
+    url={[
+      {src: './images/BirdBox.mp4', type: 'video/mp4'}
+    ]}
     // url='https://drive.google.com/open?id=1Lk3uu548oZs7vLX5GIrr8_sg2mBSMkPq' 
     
               // url='https://youtu.be/o2AsIXSh2xo' 
