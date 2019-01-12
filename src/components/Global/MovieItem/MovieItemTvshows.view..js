@@ -20,7 +20,7 @@ class MovieItemTvshows extends Component {
     return <ReactPlayer 
     // url='https://youtu.be/0vHziRrCYqA' 
     url={[
-      {src: './images/BirdBox.mp4', type: 'video/mp4'}
+      {src: './images/Ozark.mp4', type: 'video/mp4'}
     ]}
     // url='https://drive.google.com/open?id=1Lk3uu548oZs7vLX5GIrr8_sg2mBSMkPq' 
     
