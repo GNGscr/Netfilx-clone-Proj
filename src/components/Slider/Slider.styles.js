@@ -85,6 +85,9 @@ export const PlayerWrapper = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
+    /* background-color: red; */
+    /* transform: display .5s;
+    display: ${props => props.dsp}; */
 `;
 export const SliderItem = styled.div`
     transition: all 2s ease-in;

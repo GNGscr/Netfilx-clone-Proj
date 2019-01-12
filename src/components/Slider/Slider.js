@@ -7,22 +7,23 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox,
   Description,
-  //  PlayerWrapper
+   PlayerWrapper
 } from './Slider.styles';
-// import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player'
 
 
 // const imgUrl ='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp';
 
-// const divStyle = {
-//   // color: 'blue',
-//   // backgroundImage: 'url(' + imgUrl + ')',
-//   // backgroundRepeat: 'no-repeat',
-//   // width: '100vw'
-//   // display: null,
-//   position: 'absolute',
-//   left: 0
-// };
+const divStyle = {
+  // color: 'blue',
+  // backgroundImage: 'url(' + imgUrl + ')',
+  // backgroundRepeat: 'no-repeat',
+  // width: '100%',
+  // height: '100%',
+  // display: null,
+  position: 'absolute',
+  left: 0
+};
 
 class Slider extends Component {
 
@@ -38,7 +39,9 @@ class Slider extends Component {
       fade_anim: null,
       slider: 0,
       opcty: 'opacity: 0',
-      on: false
+      dspflx: 'none',
+      InputOn: false, 
+      // on: false
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -346,17 +349,18 @@ class Slider extends Component {
   }
 
   trailerEnter = e => {
-    const current_trailer = e.currentTarget
-    console.log(current_trailer)
-    this.setState({
-      on: !this.state.on
-    })
+    // const currentT = e.currentTarget
+    // console.log(currentT)
+    //  currentT.style.display = 'none'
+    // this.setState({
+    //   on: !this.state.on
+    // })
     console.log('enter')
   }
   trailerLeave = e => {
-    this.setState({
-      on: false
-    })
+    // this.setState({
+    //   on: false
+    // })
     // const current_trailer = e.currentTarget
     console.log('leave')
   }
@@ -414,16 +418,17 @@ class Slider extends Component {
                   onMouseLeave={this.boxLeave}
                   onMouseMove={this.mouseMove}
                   >
-                  {/* <PlayerWrapper
-                    onMouseLeave={this.trailerLeave}
+                  <PlayerWrapper
+                    dsp={this.state.dspflx}
                     onMouseEnter={this.trailerEnter}
-                  >
-                    {this.state.on && (
-                        <ReactPlayer
-                        // ref={`trailer-${e.id}`}
+                    onMouseLeave={this.trailerLeave}
+                    >
+                    {/* {this.state.on && (
+                      <ReactPlayer
+                      ref={`trailer-${e.id}`}
                         // url={e.trailer}
                         url={[
-                          {src: './images/BirdBox.mp4', type: 'video/mp4'}
+                          {src: './images/Ozark.mp4', type: 'video/mp4'}
                         ]}
                         style={divStyle} 
                         wrapper='div'
@@ -431,8 +436,8 @@ class Slider extends Component {
                         height="100%"
                         width="100%"
                         />
-                    )}
-                      </PlayerWrapper> */}
+                    )} */}
+                      </PlayerWrapper>
                       <IMG src={e.poster}/>
                       <Summary
                           ref={`summary-${e.id}`}
