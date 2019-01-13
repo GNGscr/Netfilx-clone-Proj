@@ -7,7 +7,7 @@ import {
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
   Description,
-  TrailerWrapper
+  // TrailerWrapper
 } from './Slider.styles';
 import ReactPlayer from 'react-player'
 
@@ -18,7 +18,9 @@ const divStyle = {
   // width: '100vw'
   position: 'absolute',
   left: 0,
-  // transform: 'display',
+  zIndex: '15'
+  // display: 'none',
+  // transform:`${props => props.dsp}`
   // display: `${props => props.dsp}`
 };
 
@@ -36,7 +38,8 @@ class Slider extends Component {
       fade_anim: null,
       slider: 0,
       opcty: 'opacity: 0',
-      on: false
+      on: false,
+      dsptrlr: 'none'
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -179,7 +182,9 @@ class Slider extends Component {
   mouseEnter = e => {
     let x = e.clientX
     // console.log(x)
+    let trailerItem = e.currentTarget.lastChild
     let current = e.currentTarget
+    console.log(trailerItem)
     let previous = current.previousElementSibling;
     let next = current.nextElementSibling
     if(this.state.width > 1400) {
@@ -261,6 +266,12 @@ class Slider extends Component {
       current.style.transform = `scale(2.003)`
       current.style.transition = '400ms'
     }
+    // setTimeout(() => {
+    //   this.setState({
+    //     on: !this.state.on,
+    //     dsptrlr: 'flex'
+    //   })
+    // }, 4000);
   }
   mouseLeave = e => {
     let current = e.currentTarget
@@ -278,6 +289,10 @@ class Slider extends Component {
       next.style.transition = '400ms'
       next = next.nextElementSibling;
     }
+    // this.setState({
+    //   on: false,
+    //   dsptrlr: 'none'
+    // })
   }
   mouseMove = e => {
     const enter = e.currentTarget.children[1]
@@ -308,9 +323,9 @@ class Slider extends Component {
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
     }, 3500); 
-    this.setState({
-      on: !this.state.on
-    })
+    // this.setState({
+    //   on: !this.state.on
+    // })
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -321,9 +336,9 @@ class Slider extends Component {
     circbx.style.opacity = '0'
     enter.style.transition = '500ms'
     circbx.style.transition = '500ms'
-    this.setState({
-      on: false
-    })
+    // this.setState({
+    //   on: false
+    // })
   }
 
 
@@ -371,23 +386,23 @@ class Slider extends Component {
                           <Circle><IMG src='./images/like16.png'/></Circle>
                           <Circle><IMG src='./images/plus.png'/></Circle>
                       </CirclesBox>
-                      <TrailerWrapper>
-                            {this.state.on && (
-                              <ReactPlayer
-                              ref={`trailer-${e.id}`}
-                              // url={e.trailer}
-                              url={[
-                                  {src: './images/Ozark.mp4', type: 'video/mp4'}
-                              ]}
-                              style={divStyle} 
-                              wrapper='div'
-                              playing
-                              height="100%"
-                              width="100%"
-                              />
-                            )}
-                     </TrailerWrapper>
                   </Box>
+                  {/* <TrailerWrapper> */}
+                        {this.state.on && (
+                          <ReactPlayer ref={`trailer-${e.id}`}
+                          dsp={this.state.dsptrlr}
+                          // url={e.trailer}
+                          url={[
+                              {src: './images/Ozark.mp4', type: 'video/mp4'}
+                          ]}
+                          style={divStyle} 
+                          wrapper='div'
+                          playing
+                          height="100%"
+                          width="100%"
+                          />
+                        )}
+                 {/* </TrailerWrapper> */}
                   </SliderItem>
                 )
               })
