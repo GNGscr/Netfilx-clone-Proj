@@ -1,6 +1,6 @@
 
 // import styled from 'styled-components';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 
 export const Wrapper = styled.div`
     display: flex;
