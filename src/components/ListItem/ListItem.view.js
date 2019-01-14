@@ -8,7 +8,9 @@ class ListItem extends Component {
 
     render() {
         return <Wrapper>
-                <Link to="/"><Back>Home</Back></Link>
+                <Link to="/">
+                <Back>Home</Back>
+                </Link>
                 <HeroWrapper><IMGHero src='http://image.tmdb.org/t/p/w500///rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg' alt=""/></HeroWrapper>
                 <DataWrapper>
                     <H1>Bird Box</H1>
