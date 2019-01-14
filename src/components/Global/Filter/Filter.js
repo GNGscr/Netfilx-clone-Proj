@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 import Filtering from './Filtering';
-import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret, Profile} from './Filter.styles'
-import '../Profile/Profile'; 
+import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
+// import '../Profile/Profile'; 
 
 
 export default class Filter extends Component {
@@ -110,7 +110,7 @@ export default class Filter extends Component {
                             </ContentBox>
                     {/* <FilterBox>
                     </FilterBox> */}
-                    <Profile {...this.state.profile_data} />
+                    {/* <Profile {...this.state.profile_data} /> */}
                </FilterClass>
     }
 }
