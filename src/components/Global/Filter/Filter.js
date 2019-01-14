@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 import Filtering from './Filtering';
-import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret} from './Filter.styles'
+import {FilterClass, FilterIcon, FilterInputMobile, Filtered, ContentBox, IMG, FilterHeader, Carret, Profile} from './Filter.styles'
+import '../Profile/Profile'; 
+
 
 export default class Filter extends Component {
 
@@ -13,13 +15,13 @@ export default class Filter extends Component {
         dspflx: 'none',
         data: [],
         original_list: [],
+        displayed_list: [],
+        profile_data: {}
         // list_data: [],
-        displayed_list: []
         // filtered_list: [],
 
         // original_list:data,
         // displayed_list: data,
-        // profile_data: data[0]
     }
 
     async componentDidMount() {
@@ -29,6 +31,7 @@ export default class Filter extends Component {
             data,
             original_list:data,
             displayed_list: data,
+            profile_data: data[0]
         })
         // console.log(data.length)
       }
@@ -73,6 +76,12 @@ export default class Filter extends Component {
             })
         }
     }
+    update_profile = item => {
+        console.log('update_profile: ', item)
+        this.setState({
+            profile_data: item
+        })
+    }
     render() {
         return <FilterClass>
                     {this.state.InputOn && (
@@ -81,7 +90,11 @@ export default class Filter extends Component {
                     <FilterIcon onClick={this.toggleInput} alt="" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
-                        <ContentBox dsp={this.state.dspflx}>
+                            
+                        <ContentBox
+                        dsp={this.state.dspflx}
+                        pick={(item)=> this.update_profile(item)}
+                        >
                             <FilterHeader>{this.state.displayed_list.length} Items found</FilterHeader>
                             <Carret>^</Carret>
                             {
@@ -97,6 +110,7 @@ export default class Filter extends Component {
                             </ContentBox>
                     {/* <FilterBox>
                     </FilterBox> */}
+                    <Profile {...this.state.profile_data} />
                </FilterClass>
     }
 }

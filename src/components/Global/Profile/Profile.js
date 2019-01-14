@@ -1,120 +1,136 @@
-// import React from 'react'
-import React, { Component } from 'react';
-import '../../styled/App.css';
+import React from 'react'
 import styled from 'styled-components'
 
-class ListItem extends Component {
+export default ({id, title, details, description, poster=""})=> {
+    poster = poster.replace(/80x80/,'300x300')
 
-    render() {
-        return <Wrapper>
-                <HeroWrapper><IMGHero src='http://image.tmdb.org/t/p/w500///rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg' alt=""/></HeroWrapper>
-                <DataWrapper>
-                    <H1>Bird Box</H1>
-                    <H3>Rating: 7.2</H3>
-                    <H5>Runtime: 124 minutes</H5>
-                    <H5>Release Date: 13/12/2018</H5>
-                    <H5>Overview: When a mysterious force decimates the world’s population, only one thing is certain: if you see it, you take your life. Facing the unknown, Malorie finds love, hope and a new beginning only for it to unravel. Now she must flee with her two children down a treacherous river to the one place left that may offer sanctuary. But to survive, they'll have to undertake the perilous two-day journey blindfolded.</H5>
-                    <H3>Cast:</H3>
-                    <CastWrapper>
-                        <IMG src='https://image.tmdb.org/t/p/w200/bsAy8f8UZKairXQzRukU5FP4XAQ.jpg' alt=""/>
-                        <IMG src='https://image.tmdb.org/t/p/w200/tCtiWZbKKRgHhLxFCIPfveYAsdc.jpg' alt=""/>
-                        <IMG src='https://image.tmdb.org/t/p/w200/jkhpv4oPNcMSvPPDUuCyPIFwYyS.jpg' alt=""/>
-                        <IMG src='https://image.tmdb.org/t/p/w200/w5mqvAJ4FQAO5iZbO5Q5vv0MJ5s.jpg' alt=""/>
-                    </CastWrapper>
-                </DataWrapper>
-            </Wrapper>
-    }
+    return (
+
+        <div className="profile-box">
+            <div className="profile-image-box " >
+                <img src={poster} alt="" />
+            </div>
+            <div className="profile-details-box">
+                <P>{title}</P>
+                <span/>
+                <P>id: {id}</P>
+                <P>country: {details}</P>
+                <P>email: {details}</P>
+                <P>{description}</P>
+            </div>
+        </div>
+    )
 }
-export default ListItem;
 
-// SandraBullock = 'https://image.tmdb.org/t/p/w200/bsAy8f8UZKairXQzRukU5FP4XAQ.jpg'
-// JohnMalkovich = 'https://image.tmdb.org/t/p/w200/tCtiWZbKKRgHhLxFCIPfveYAsdc.jpg'
-// SarahPoulson = 'https://image.tmdb.org/t/p/w200/jkhpv4oPNcMSvPPDUuCyPIFwYyS.jpg'
-// TrevanteRhodes = 'https://image.tmdb.org/t/p/w200/w5mqvAJ4FQAO5iZbO5Q5vv0MJ5s.jpg'
-
-const Wrapper = styled.div`
-    height: 100vh;
-    /* width: 100vw; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+export const P = styled.p`
     color: #fff;
-    /* border: 1px solid red; */
+    font-size: 14px;
 `;
-const HeroWrapper = styled.div`
-    width: 35vw;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid green; */
-`;
-const DataWrapper = styled.div`
-    width: 65vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid blue; */
-`;
-const H1 = styled.h1`
-    width: 54vw;
-    display: flex;
-    margin-top: -2vw;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: 1px solid white; */
-    `;
-const H3 = styled.h3`
-    width: 54vw;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: 1px solid purple; */
-    `;
-const IMGHero = styled.img`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1vw;
-    margin-top: -1vw;
-    margin-left: 7vw;
-    height: 44vw;
-    width: 34vw;
-    background-repeat: no-repeat;
-    `;
-const IMG = styled.img`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1vw;
-    height: 15vw;
-    width: 10.3vw;
-    background-repeat: no-repeat;
-    `;
-const CastWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
-// const H6 = styled.h6`
-//     width: 54vw;
+
+
+
+
+
+// import React, { Component } from 'react';
+// import '../../styled/App.css';
+// import styled from 'styled-components'
+
+// class ListItem extends Component {
+
+//     render() {
+//         return <Wrapper>
+//                 <HeroWrapper><IMG src='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp' alt=""/></HeroWrapper>
+//                 <DataWrapper>
+//                     <H1>Rating:</H1>
+//                     <H3>Runtime: </H3>
+//                     <H3>Release Date: </H3>
+//                     <H5>Overview: </H5>
+//                     <H6>Cast:</H6>
+//                     <CastWrapper>
+//                         <IMG src='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp' alt=""/>
+//                         <IMG src='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp' alt=""/>
+//                         <IMG src='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp' alt=""/>
+//                         <IMG src='https://occ-0-1390-2774.1.nflxso.net/art/47638/780b712076293b7e35f7778263f8282978647638.webp' alt=""/>
+//                     </CastWrapper>
+//                 </DataWrapper>
+//             </Wrapper>
+//     }
+// }
+// export default ListItem;
+
+
+
+// const Wrapper = styled.div`
+//     height: 100vh;
+//     /* width: 100vw; */
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     color: #fff;
+//     border: 1px solid red;
+// `;
+// const HeroWrapper = styled.div`
+//     width: 35vw;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid green;
+// `;
+// const DataWrapper = styled.div`
+//     width: 65vw;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid blue;
+// `;
+// const H1 = styled.h1`
+//     width:100%;
 //     display: flex;
 //     justify-content: flex-start;
 //     align-items: center;
-//     /* border: 1px solid yellow; */
+//     border: 1px solid white;
 //     `;
-const H5 = styled.h5`
-width: 54vw;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-/* border: 1px solid orange; */
-`;
+// const H3 = styled.h3`
+//     width:100%;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     border: 1px solid purple;
+//     `;
+// const IMG = styled.img`
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 1vw;
+//     height: 5vw;
+//     width: 10w;
+//     background-repeat: no-repeat;
+//     `;
+// const CastWrapper = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+// `;
+// const H6 = styled.h6`
+//     width:100%;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     border: 1px solid yellow;
+//     `;
+// const H5 = styled.h5`
+// width:100%;
+// display: flex;
+// justify-content: flex-start;
+// align-items: center;
+// border: 1px solid orange;
+// `;
 
 
 // {e.title}

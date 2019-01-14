@@ -173,3 +173,13 @@ export const Carret = styled.h3`
         margin-top: 1.5vw; 
     }
 `;
+export const Profile = styled.div`
+    display: none;
+    height: 30vw;
+    width: 100vw;
+    position: fixed;
+    top: 10vw;
+    left: 0;
+    background-color: rgb(20,20,20);
+    color: #fff; 
+`;

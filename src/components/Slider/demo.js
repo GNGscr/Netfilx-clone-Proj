@@ -1,3 +1,5 @@
+import { Description } from "../SliderMovies/SliderMovies.styles";
+
 // const items = [
 //     a,
 //     b,
@@ -421,12 +423,43 @@
 
 
 
+// wonderwomanposterhorizontal = 'https://res.cloudinary.com/christekh/image/upload/imekS7f1OuHyUP2LAiTEM0zBzUz_cculi1'
+// ThorRagnarokposterhorizontal = 'https://res.cloudinary.com/christekh/image/upload/rzRwTcFvttcN1ZpX2xv4j3tSdJu_lfwdxs'
+// Guadiansofthegalaxy2posterhorizontal = 'https://res.cloudinary.com/christekh/image/upload/y4MBh0EjBlMuOzv9axM4qJlmhzz_vhvcjt'
+// BlackPantherposterhorizontal = 'https://res.cloudinary.com/christekh/image/upload/uxzzxijgPIY7slzFvMotPv8wjKA_aie6qd'
+// AquamanBigposterhorizontal = 'http://image.tmdb.org/t/p/w500///5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg'
+// JasonMomoa = 'https://image.tmdb.org/t/p/w200/pG1Faei9M8ObR4bOD2ljiSVuaDm.jpg'
+// AmberHeard = 'https://image.tmdb.org/t/p/w200/ft4ACLVFBXaOotbicBLm1fODyZr.jpg'
+// WillemDafoe = 'https://image.tmdb.org/t/p/w200/dsrEiPDCcr31BPiGjrlSKb0DMsh.jpg'
+// PatrickWilson = 'https://image.tmdb.org/t/p/w200/6KbbwBcE69jssnuwDyhmyykaGFH.jpg'
+
+// BirdBoxBigPoster = 'http://image.tmdb.org/t/p/w500///rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg'
+// SandraBullock = 'https://image.tmdb.org/t/p/w200/bsAy8f8UZKairXQzRukU5FP4XAQ.jpg'
+// JohnMalkovich = 'https://image.tmdb.org/t/p/w200/tCtiWZbKKRgHhLxFCIPfveYAsdc.jpg'
+// SarahPoulson = 'https://image.tmdb.org/t/p/w200/jkhpv4oPNcMSvPPDUuCyPIFwYyS.jpg'
+// TrevanteRhodes = 'https://image.tmdb.org/t/p/w200/w5mqvAJ4FQAO5iZbO5Q5vv0MJ5s.jpg'
+// Description = 'When a mysterious force decimates the worlds population, only one thing is certain: if you see it, you take your life. Facing the unknown, Malorie finds love, hope and a new beginning only for it to unravel. Now she must flee with her two children down a treacherous river to the one place left that may offer sanctuary. But to survive, theyll have to undertake the perilous two-day journey blindfolded.'
+
+// BohemianRhapsody = 'http://image.tmdb.org/t/p/w500///lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg'
+// RamiMalek = 'https://image.tmdb.org/t/p/w200/zvBCjFmedqXRqa45jlLf6vBd9Nt.jpg'
+// GwilymLee = 'https://image.tmdb.org/t/p/w200/k6geayRL4wHLboFZpQYdkouQpvJ.jpg'
+// BenHardy = 'https://image.tmdb.org/t/p/w200/k6geayRL4wHLboFZpQYdkouQpvJ.jpg'
+// JosephMazzello = 'https://image.tmdb.org/t/p/w200/44gsv7TlXOOKDGg5aRtqxZjM9ae.jpg'
+
+// FightClub = 'http://image.tmdb.org/t/p/w500///adw6Lq9FiC9zjYEpOqfq03ituwp.jpg'
+// EdwardNorton = 'https://image.tmdb.org/t/p/w200/5XBzD5WuTyVQZeS4VI25z2moMeY.jpg'
+// BradPitt = 'https://image.tmdb.org/t/p/w200/kU3B75TyRiCgE270EyZnHjfivoq.jpg'
+// HelenaBonhamCarter = 'https://image.tmdb.org/t/p/w200/rHZMwkumoRvhKV5ZvwBONKENAhG.jpg'
+// MeatLoaf = 'https://image.tmdb.org/t/p/w200/43nyfW3TxD3PxDqYB8tyqaKpDBH.jpg'
+// Description = 'A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.'
 
 
-
-
-
-
+// PulpFiction = 'http://image.tmdb.org/t/p/w500///dM2w364MScsjFf8pfMbaWUcWrR.jpg'
+// JohnTravolta = 'https://image.tmdb.org/t/p/w200/JSt3skdZpGPJYJixCZqH599WdI.jpg'
+// SamuelLJackson = 'https://image.tmdb.org/t/p/w200/mXN4Gw9tZJVKrLJHde2IcUHmV3P.jpg'
+// UmaThurman = 'https://image.tmdb.org/t/p/w200/xuxgPXyv6KjUHIM8cZaxx4ry25L.jpg'
+// BruceWillis = 'https://image.tmdb.org/t/p/w200/kI1OluWhLJk3pnR19VjOfABpnTY.jpg'
+// Description = 'A burger-loving hit man, his philosophical partner, a drug-addled gangsters moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.'
 
 
 
