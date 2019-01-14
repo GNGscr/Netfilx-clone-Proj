@@ -20,7 +20,7 @@ const List = styled.div`
     align-items: center;
     justify-content: center;
     z-index: -100;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 `; 
 const ListHead = styled.div`
     display: flex;

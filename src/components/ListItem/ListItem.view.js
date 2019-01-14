@@ -1,12 +1,14 @@
 // import React from 'react'
 import React, { Component } from 'react';
 import '../../styled/App.css';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 class ListItem extends Component {
 
     render() {
         return <Wrapper>
+                <Link to="/"><Back>Home</Back></Link>
                 <HeroWrapper><IMGHero src='http://image.tmdb.org/t/p/w500///rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg' alt=""/></HeroWrapper>
                 <DataWrapper>
                     <H1>Bird Box</H1>
@@ -60,15 +62,15 @@ const DataWrapper = styled.div`
     /* border: 1px solid blue; */
 `;
 const H1 = styled.h1`
-    width: 54vw;
+    width: 47vw;
     display: flex;
-    margin-top: -2vw;
+    margin-top: 0vw;
     justify-content: flex-start;
     align-items: center;
     /* border: 1px solid white; */
     `;
 const H3 = styled.h3`
-    width: 54vw;
+    width: 47vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -79,10 +81,10 @@ const IMGHero = styled.img`
     justify-content: center;
     align-items: center;
     margin: 1vw;
-    margin-top: -1vw;
+    margin-top: 1vw;
     margin-left: 7vw;
     height: 44vw;
-    width: 34vw;
+    width: 32vw;
     background-repeat: no-repeat;
     `;
 const IMG = styled.img`
@@ -102,18 +104,33 @@ const CastWrapper = styled.div`
     align-items: center;
 `;
 // const H6 = styled.h6`
-//     width: 54vw;
+//     width: 47vw;
 //     display: flex;
 //     justify-content: flex-start;
 //     align-items: center;
 //     /* border: 1px solid yellow; */
 //     `;
 const H5 = styled.h5`
-width: 54vw;
+width: 47vw;
 display: flex;
 justify-content: flex-start;
 align-items: center;
 /* border: 1px solid orange; */
+`;
+const Back = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    position: fixed;
+    right: 1.5vw;
+    top: 1.5vw;
+    height: .9vw;
+    width: 3vw;
+    padding: 1vw;
+    border-radius: 5%;
+    background-color: red;
+    color: #fff;
 `;
 
 

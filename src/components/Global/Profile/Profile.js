@@ -1,32 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default ({id, title, details, description, poster=""})=> {
-    poster = poster.replace(/80x80/,'300x300')
+export default ({id, title, details, description, poster})=> {
+    // poster = poster.replace(/80x80/,'300x300')
 
     return (
 
-        <div className="profile-box">
-            <div className="profile-image-box " >
+        <ProfileBox>
+            <ProfileIMGBox>
                 <img src={poster} alt="" />
-            </div>
-            <div className="profile-details-box">
-                <P>{title}</P>
+            </ProfileIMGBox>
+            <Details>
+                <H2>{title}</H2>
                 <span/>
-                <P>id: {id}</P>
-                <P>country: {details}</P>
-                <P>email: {details}</P>
-                <P>{description}</P>
-            </div>
-        </div>
+                <H2>id: {id}</H2>
+                <H2>country: {details}</H2>
+                <H2>email: {details}</H2>
+                <H2>{description}</H2>
+            </Details>
+        </ProfileBox>
     )
 }
-
-export const P = styled.p`
+const Details = styled.div`
     color: #fff;
     font-size: 14px;
 `;
-
+const H2 = styled.h2`
+    color: #fff;
+    font-size: 14px;
+`;
+const ProfileBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+`;
+const ProfileIMGBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+`;
 
 
 

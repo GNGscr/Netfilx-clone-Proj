@@ -18,7 +18,7 @@ const divStyle = {
   // width: '100vw'
   position: 'absolute',
   left: 0,
-  zIndex: '15'
+  zIndex: '15',
   // display: 'none',
   // transform:`${props => props.dsp}`
   // display: `${props => props.dsp}`
@@ -180,17 +180,26 @@ class Slider extends Component {
 
 
   mouseEnter = e => {
+    const start = new Date().getTime();
+    setTimeout(() => {
+      const end = new Date().getTime();
+      // console.log('end', end)
+      const add = end - start
+      console.log('time passed from entering: ', add,'ms')
+    }, 4000);
     let x = e.clientX
     // console.log(x)
-    let trailerItem = e.currentTarget.lastChild
+    // let trailerItem = e.currentTarget.lastChild
+    // console.log(trailerItem)
+    // trailerItem.style.opacity = '1'
+    // trailerItem.style.transition = '5000ms'
     let current = e.currentTarget
-    console.log(trailerItem)
     let previous = current.previousElementSibling;
     let next = current.nextElementSibling
     if(this.state.width > 1400) {
       if(x < 278){
         current.style.transformOrigin = 'left' 
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
           // Targeting all the next elements that comes after the current
           while (next) {
             next.style.transform = `translateX(15vw)`
@@ -199,7 +208,7 @@ class Slider extends Component {
           }
         } else if(x > 1162){
         current.style.transformOrigin = 'right' 
-        current.style.transition = '400ms'
+        current.style.transition = '300ms'
         // Targeting all the previous elements that comes before the current        
           while (previous) {
             previous.style.transform =`translateX(-15vw)`
@@ -225,7 +234,7 @@ class Slider extends Component {
         // console.log(x)
           if(x < 188){
             current.style.transformOrigin = 'left' 
-            current.style.transition = '400ms'
+            current.style.transition = '300ms'
             while (next) {
               next.style.transform = `translateX(44.9vw)`
               next.style.transition = '400ms'
@@ -234,7 +243,7 @@ class Slider extends Component {
           } 
           else if(x > 188) {
             current.style.transformOrigin = 'right' 
-            current.style.transition = '400ms'
+            current.style.transition = '300ms'
             while (previous) {
               previous.style.transform =`translateX(-44.9vw)`
               previous.style.transition = '400ms'
@@ -247,7 +256,7 @@ class Slider extends Component {
       // console.log(x)
         if(x < 188){
           current.style.transformOrigin = 'left' 
-          current.style.transition = '400ms'
+          current.style.transition = '300ms'
           while (next) {
             next.style.transform = `translateX(44.9vw)`
             next.style.transition = '400ms'
@@ -256,7 +265,7 @@ class Slider extends Component {
         } 
         else if(x > 188) {
           current.style.transformOrigin = 'right' 
-          current.style.transition = '400ms'
+          current.style.transition = '300ms'
           while (previous) {
             previous.style.transform =`translateX(-44.9vw)`
             previous.style.transition = '400ms'
@@ -274,6 +283,10 @@ class Slider extends Component {
     // }, 4000);
   }
   mouseLeave = e => {
+    // let trailerItem = e.currentTarget.lastChild
+    // console.log(trailerItem)
+    // trailerItem.style.opacity = '0'
+    // trailerItem.style.transition = '5000ms'
     let current = e.currentTarget
     current.style.transform = `scale(1)`
     current.style.transition = '400ms'
@@ -398,7 +411,7 @@ class Slider extends Component {
                           style={divStyle} 
                           wrapper='div'
                           playing
-                          height="100%"
+                          height="105%"
                           width="100%"
                           />
                         )}

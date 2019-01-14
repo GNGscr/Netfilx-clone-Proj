@@ -152,9 +152,6 @@ export const LeftArrow = styled.div`
     @media all and (min-width: 1400px) {
         width: 4.1vw;
         height: 9vw;
-        /* &:hover {
-            opacity: 1;  
-        } */
     }
     `;
 export const RightArrow = styled.div`
@@ -196,7 +193,7 @@ export const LeftArrowIMG = styled.img`
     background-position: center;
     opacity: .05;
     transition-duration: .3s;
-    /* color: white; */
+    /* background-color: white; */
     margin-top: 10vw;
     margin-left: 1px;
     /* z-index:30; */
@@ -214,10 +211,12 @@ export const LeftArrowIMG = styled.img`
         width: calc(100% -10px);
     }
     @media all and (min-width: 1400px) {
-        width: 130%;
+        width: 110%;
         height: 60%;
         margin-top: 0vw;
         margin-right: .5vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
         &:hover {
             opacity: .9;
         }
@@ -246,10 +245,12 @@ export const RightArrowIMG = styled.img`
         margin-top: 3.3vw;
     }
     @media all and (min-width: 1400px) {
-        width: 130%;
+        width: 110%;
         height: 60%;
         margin-top: 0vw;
         margin-left: .5vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
         &:hover {
             opacity: .9;
         }
