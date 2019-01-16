@@ -268,6 +268,7 @@ export const AccountDropdownButton = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
+    cursor: pointer;
     @media all and (min-width: 477px) {
         
     }
@@ -382,9 +383,10 @@ export const Item = styled.div`
     padding-left: 1vw;
     border: 1px solid gray;
     box-shadow: 0 .2rem .8rem DimGrey;
+    color: #fff;
 `;
 export const H3 = styled.div`
-    color: #777;
+    color: #fff;
     font-size: 1.2rem;
     margin: 2vw 0;
 `;

@@ -174,15 +174,8 @@ export const Carret = styled.h3`
     }
 `;
 export const Profile = styled.div`
-    display: none;
-    height: 30vw;
-    width: 80vw;
-    margin-left: 10vw;
-    position: fixed;
-    top: 10vw;
-    left: 0;
+    display: flex;
     /* background-color: rgb(20,20,20); */
-    background-color: white;
     color: #fff; 
 `;
 export const H2 = styled.h2`
