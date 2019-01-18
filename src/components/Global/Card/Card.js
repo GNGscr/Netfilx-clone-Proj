@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-
-export default ( {title,poster} ) => {
+export const Card = ( {title,poster} ) => {
 //	console.log('first_name:',first_name)
 //	console.log('props:',props)
     return (
@@ -11,6 +11,23 @@ export default ( {title,poster} ) => {
         </Card>
     )
 }
+export const IMG = styled.img`
+    height: 5vw;
+    width: 9vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    @media all and (min-width: 1400px) {
+    height: 2.3vw;
+    width: 3.8vw;
+    margin-left: .5vw;
+    margin-right: .5vw; 
+    }
+`;
+export const Card = styled.div`
+    display: flex;
+
+`;
+
 // export default ( {title,poster} ) => {
 // //	console.log('first_name:',first_name)
 // //	console.log('props:',props)

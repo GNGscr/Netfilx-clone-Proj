@@ -487,3 +487,31 @@ import { Description } from "../SliderMovies/SliderMovies.styles";
 //  TweenLite.to(element,.25,{scale:2})
 //   console.log('current: '+e.currentTarget)
 //   console.log('current id: '+e.currentTarget.dataset.id)
+
+// {/* <a href="https://www.facebook.com/daniel.ehrlich.98" class="fa fa-facebook"></a>
+// <a href="https://www.linkedin.com/in/daniel-ehrlich-36a389136/" class="fa fa-linkedin"></a>
+// <a href="mailto:ehrlichdaniel1@gmail.com" class="fa fa-google"></a> */}
+
+
+// {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */}
+
+// .header .aboutme #media .fa-facebook {
+//   background: #3B5998;
+//   color: white;
+//   margin: 10%;
+//   width: 4%;
+// }
+
+// .header .aboutme #media .fa-linkedin {
+//   background: #55ACEE;
+//   color: white;
+//   margin: 11%;
+//   width: 4%;
+// }
+
+// .header .aboutme #media .fa-google {
+//   background: rgb(146, 11, 11);
+//   color: white;
+//   margin: 9%;
+//   width: 4%;
+// }

@@ -21,5 +21,5 @@ app.get('*',  (req, res) => {
 })
 
 app.listen(3030,  ()=> {
-    p.magenta(`server is alive  ✨ ⚡ http://${host}:${port} ✨ ⚡`)
+    console.log(`server is alive  ✨ ⚡ http://${host}:${port} ✨ ⚡`)
 });

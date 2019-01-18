@@ -102,6 +102,10 @@ class Slider extends Component {
       slider.style.transform = `translateX(${this.state.width -114}px)`
     } else if (this.state.width > 765) {
       slider.style.transform = `translateX(${this.state.width -54}px)`
+    } else if (this.state.width > 735) {
+      slider.style.transform = `translateX(${this.state.width -51.2}px)`
+    } else if (this.state.width > 665) {
+      slider.style.transform = `translateX(${this.state.width -46.6}px)`
     } else if (this.state.width > 500) {
       slider.style.transform = `translateX(${this.state.width -49}px)`
     } else if (this.state.width > 412) {
@@ -145,6 +149,10 @@ class Slider extends Component {
       slider.style.transform = `translateX(-${this.state.width -114}px)`
     } else if (this.state.width > 765) {
       slider.style.transform = `translateX(-${this.state.width -54}px)`
+    } else if (this.state.width > 735) {
+      slider.style.transform = `translateX(-${this.state.width -51.2}px)`
+    } else if (this.state.width > 665) {
+      slider.style.transform = `translateX(-${this.state.width -46.6}px)`
     } else if (this.state.width > 500) {
       slider.style.transform = `translateX(-${this.state.width -49}px)`
     } else if (this.state.width > 412) {
@@ -180,19 +188,21 @@ class Slider extends Component {
 
 
   mouseEnter = e => {
-    const start = new Date().getTime();
-    setTimeout(() => {
-      const end = new Date().getTime();
-      // console.log('end', end)
-      const add = end - start
-      console.log('time passed from entering: ', add,'ms')
-    }, 4000);
+    // const start = new Date().getTime();
+    // setTimeout(() => {
+    //   const end = new Date().getTime();
+    //   // console.log('end', end)
+    //   const add = end - start
+    //   console.log('time passed from entering: ', add,'ms')
+    // }, 4000);
     let x = e.clientX
     // console.log(x)
     // let trailerItem = e.currentTarget.lastChild
     // console.log(trailerItem)
     // trailerItem.style.opacity = '1'
     // trailerItem.style.transition = '5000ms'
+    // const trailer = this.refs.trailer
+    // trailer.style.transform = 'display'
     let current = e.currentTarget
     let previous = current.previousElementSibling;
     let next = current.nextElementSibling
@@ -230,7 +240,81 @@ class Slider extends Component {
         current.style.transform = `scale(2)`
         current.style.transition = '400ms'
 
-      }else if(this.state.width < 500) {
+      } else if(this.state.width < 740) {
+        // console.log(x)
+          if(x < 250){
+            current.style.transformOrigin = 'left' 
+            current.style.transition = '300ms'
+            while (next) {
+              next.style.transform = `translateX(31vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          } 
+          else if(x > 455) {
+            current.style.transformOrigin = 'right' 
+            current.style.transition = '300ms'
+            while (previous) {
+              previous.style.transform =`translateX(-31vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          }
+          else {
+            current.style.transformOrigin = 'center' 
+            current.style.transition = '300ms'
+            
+          while (previous) {
+              previous.style.transform =`translateX(-15.5vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          while (next) {
+              next.style.transform = `translateX(15vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
+      } else if(this.state.width < 670) {
+        // console.log(x)
+        if(x < 220){
+          current.style.transformOrigin = 'left' 
+          current.style.transition = '300ms'
+          while (next) {
+            next.style.transform = `translateX(31vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
+          }
+        } 
+        else if(x > 450) {
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
+          while (previous) {
+            previous.style.transform =`translateX(-31vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        }
+        else {
+          current.style.transformOrigin = 'center' 
+          current.style.transition = '300ms'
+          
+        while (previous) {
+            previous.style.transform =`translateX(-15.5vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        while (next) {
+            next.style.transform = `translateX(15vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
+          }
+        }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
+      } else if(this.state.width < 500) {
         // console.log(x)
           if(x < 188){
             current.style.transformOrigin = 'left' 
@@ -848,3 +932,4 @@ export default Slider;
 //   }
 // }
 // export default Slider;
+
