@@ -6,8 +6,9 @@ import {
   IMG, LeftArrow, RightArrow, P, Circle, Play, Box,
   RightArrowIMG, LeftArrowIMG, scale_duration,
   Title, Details, Summary, CirclesBox, 
-  Description
+  Description,
 } from './SliderComedy.styles';
+import ReactPlayer from 'react-player'
 
 
 class SliderComedy extends Component {
@@ -20,10 +21,14 @@ class SliderComedy extends Component {
       showItems: 1,
       width: window.innerWidth,
       data: [],
+      styles:[],
+      playingArr:[],
       fade_duration: scale_duration,
       fade_anim: null,
       slider: 0,
-      opcty: 'opacity: 0'
+      opcty: 'opacity: 0',
+      on: false,
+      dsptrlr: 'none'
       };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -31,8 +36,23 @@ class SliderComedy extends Component {
   async componentDidMount() {
     const res = await fetch('./MOCK_DATAcomedy.json')
     const data = await res.json();
+
+    const styles = data.map(item=>{
+      return {
+        id:item.id,
+        position: 'absolute',
+        paddingLeft: 1,
+        zIndex: '25',
+        display: 'none',
+        backgroundColor: 'rgb(20,20,20)'
+      }
+    })
+    const playingArr = data.map(item=>false);
+
     this.setState({ 
-      data 
+      data ,
+      styles,
+      playingArr
     })
   }
 
@@ -86,6 +106,10 @@ class SliderComedy extends Component {
       slider.style.transform = `translateX(${this.state.width -114}px)`
     } else if (this.state.width > 765) {
       slider.style.transform = `translateX(${this.state.width -54}px)`
+    } else if (this.state.width > 735) {
+      slider.style.transform = `translateX(${this.state.width -51.2}px)`
+    } else if (this.state.width > 665) {
+      slider.style.transform = `translateX(${this.state.width -46.6}px)`
     } else if (this.state.width > 500) {
       slider.style.transform = `translateX(${this.state.width -49}px)`
     } else if (this.state.width > 412) {
@@ -129,6 +153,10 @@ class SliderComedy extends Component {
       slider.style.transform = `translateX(-${this.state.width -114}px)`
     } else if (this.state.width > 765) {
       slider.style.transform = `translateX(-${this.state.width -54}px)`
+    } else if (this.state.width > 735) {
+      slider.style.transform = `translateX(-${this.state.width -51.2}px)`
+    } else if (this.state.width > 665) {
+      slider.style.transform = `translateX(-${this.state.width -46.6}px)`
     } else if (this.state.width > 500) {
       slider.style.transform = `translateX(-${this.state.width -49}px)`
     } else if (this.state.width > 412) {
@@ -165,10 +193,26 @@ class SliderComedy extends Component {
 
   mouseEnter = e => {
     let x = e.clientX
+    // const start = new Date().getTime();
+    // setTimeout(() => {
+    //   const end = new Date().getTime();
+    //   // console.log('end', end)
+    //   const add = end - start
+    //   console.log('time passed from entering: ', add,'ms')
+    // }, 4000);
     // console.log(x)
-    let current = e.currentTarget
+    // let trailerItem = e.currentTarget.lastChild
+    // console.log(trailerItem)
+    // trailerItem.style.opacity = '1'
+    // trailerItem.style.transition = '5000ms'
+    // const trailer = this.refs.trailer
+    // trailer.style.transform = 'display'
+    let current = e.currentTarget;
+    current.style.transition = '400ms';
     let previous = current.previousElementSibling;
-    let next = current.nextElementSibling
+    previous.style.transition = '400ms'
+    let next = current.nextElementSibling;
+    next.style.transition = '400ms';
     if(this.state.width > 1400) {
       if(x < 278){
         current.style.transformOrigin = 'left' 
@@ -203,7 +247,81 @@ class SliderComedy extends Component {
         current.style.transform = `scale(2)`
         current.style.transition = '400ms'
 
-      }else if(this.state.width < 500) {
+      } else if(this.state.width < 740) {
+        // console.log(x)
+          if(x < 250){
+            current.style.transformOrigin = 'left' 
+            current.style.transition = '300ms'
+            while (next) {
+              next.style.transform = `translateX(31vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          } 
+          else if(x > 455) {
+            current.style.transformOrigin = 'right' 
+            current.style.transition = '300ms'
+            while (previous) {
+              previous.style.transform =`translateX(-31vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          }
+          else {
+            current.style.transformOrigin = 'center' 
+            current.style.transition = '300ms'
+            
+          while (previous) {
+              previous.style.transform =`translateX(-15.5vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          while (next) {
+              next.style.transform = `translateX(15vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
+      } else if(this.state.width < 670) {
+        // console.log(x)
+        if(x < 220){
+          current.style.transformOrigin = 'left' 
+          current.style.transition = '300ms'
+          while (next) {
+            next.style.transform = `translateX(31vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
+          }
+        } 
+        else if(x > 450) {
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
+          while (previous) {
+            previous.style.transform =`translateX(-31vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        }
+        else {
+          current.style.transformOrigin = 'center' 
+          current.style.transition = '300ms'
+          
+        while (previous) {
+            previous.style.transform =`translateX(-15.5vw)`
+            previous.style.transition = '400ms'
+            previous = previous.previousElementSibling;
+          }
+        while (next) {
+            next.style.transform = `translateX(15vw)`
+            next.style.transition = '400ms'
+            next = next.nextElementSibling;
+          }
+        }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
+      } else if(this.state.width < 500) {
         // console.log(x)
           if(x < 188){
             current.style.transformOrigin = 'left' 
@@ -248,8 +366,41 @@ class SliderComedy extends Component {
       current.style.transform = `scale(2.003)`
       current.style.transition = '400ms'
     }
+    const id = e.currentTarget.dataset.id;
+    const video_player = this.refs['trailer-'+e.currentTarget.dataset.id]
+    // console.log('slide id: ',e.currentTarget.dataset.id)
+    // console.log('video_player.style: ',video_player.props.style);
+    video_player.playing = true;
+
+    setTimeout(() => {
+      const currentStyle = { ...this.state.styles[id-1] };
+      currentStyle.display = 'block';
+      const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
+      const playingArr = [...this.state.playingArr.slice(0,id-1), true, ...this.state.playingArr.slice(id)];
+      this.setState({
+        styles,
+        playingArr
+      })
+    }, 4000);
   }
   mouseLeave = e => {
+    const id = e.currentTarget.dataset.id;
+    const currentStyle = { ...this.state.styles[id-1] };
+    currentStyle.display = 'none';
+    const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
+    const playingArr = [...this.state.playingArr.slice(0,id-1), false, ...this.state.playingArr.slice(id)];  
+    this.setState({
+      styles,
+      playingArr
+    })
+    // const video_player = this.refs['trailer-'+e.currentTarget.dataset.id]
+    // video_player.props.style.display = 'none';
+    // video_player.playing = false;
+
+    // let trailerItem = e.currentTarget.lastChild
+    // console.log(trailerItem)
+    // trailerItem.style.opacity = '0'
+    // trailerItem.style.transition = '5000ms'
     let current = e.currentTarget
     current.style.transform = `scale(1)`
     current.style.transition = '400ms'
@@ -278,7 +429,7 @@ class SliderComedy extends Component {
         circbx.style.opacity = '0'
         enter.style.transition = '6000ms'
         circbx.style.transition = '6000ms'
-      }, 3500);
+      }, 500);
   }
   boxEnter = e => {
     const enter = e.currentTarget.children[1]
@@ -294,7 +445,7 @@ class SliderComedy extends Component {
       circbx.style.opacity = '0'
       enter.style.transition = '6000ms'
       circbx.style.transition = '6000ms'
-    }, 3500); 
+    }, 500);
   }
   boxLeave = e => {
     const enter = e.currentTarget.children[1]
@@ -307,7 +458,6 @@ class SliderComedy extends Component {
     circbx.style.transition = '500ms'
   }
 
-  
   render() {
     // console.log(this.state.data)
     if(this.state.data === []) {
@@ -330,28 +480,40 @@ class SliderComedy extends Component {
                   onMouseLeave={this.mouseLeave}
                   data-id={e.id}
                   >
-                  <Box
-                  onMouseEnter={this.boxEnter}
-                  onMouseLeave={this.boxLeave}
-                  onMouseMove={this.mouseMove}
-                  >
-                      <IMG src={e.poster}/>
-                      <Summary
-                          ref={`summary-${e.id}`}
-                          opc={this.state.opcty}
-                          >
-                            <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
-                            <Title>{e.title}</Title>
-                            <Details>{e.details}</Details>
-                            <Description>{e.description}</Description>
-                      </Summary>
-                      <CirclesBox>
-                          <Circle><IMG src='./images/volume16.png'/></Circle>
-                          <Circle><IMG src='./images/dislike16.png'/></Circle>
-                          <Circle><IMG src='./images/like16.png'/></Circle>
-                          <Circle><IMG src='./images/plus.png'/></Circle>
-                      </CirclesBox>
-                  </Box>
+                    <Box
+                    onMouseEnter={this.boxEnter}
+                    onMouseLeave={this.boxLeave}
+                    onMouseMove={this.mouseMove}
+                    >
+                        <IMG src={e.poster}/>
+                        <Summary
+                            ref={`summary-${e.id}`}
+                            opc={this.state.opcty}
+                            >
+                              <Play><IMG src='https://img.icons8.com/color/50/000000/play.png'/></Play>
+                              <Title>{e.title}</Title>
+                              <Details>{e.details}</Details>
+                              <Description>{e.description}</Description>
+                        </Summary>
+                        <CirclesBox>
+                            <Circle><IMG src='./images/volume16.png'/></Circle>
+                            <Circle><IMG src='./images/dislike16.png'/></Circle>
+                            <Circle><IMG src='./images/like16.png'/></Circle>
+                            <Circle><IMG src='./images/plus.png'/></Circle>
+                        </CirclesBox>
+                    </Box>                        
+                    <ReactPlayer ref={`trailer-${e.id}`}
+                      // dsp={this.state.dsptrlr}
+                      // url={e.trailer}
+                      url={[
+                          {src: './images/IronFist.mp4', type: 'video/mp4'}
+                      ]}
+                      style={this.state.styles[e.id-1]} 
+                      playing={this.state.playingArr[e.id-1]} 
+                      wrapper='div'
+                      height="100%"
+                      width="99%"
+                    />
                   </SliderItem>
                 )
               })

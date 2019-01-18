@@ -175,6 +175,8 @@ export default class Filter extends Component {
     // }
 
     toggleInput = (e) => {
+        const cntntbX = this.refs.cntntbX
+        // const fltr = this.refs.fltr
         // const filterToggle = e.currentTarget.nextElementSibling
         // console.log(filterToggle)
         if (this.state.InputOn) {
@@ -183,12 +185,16 @@ export default class Filter extends Component {
             // filterToggle.style.transformOrigin = 'right'
             // filterToggle.style.transition = '600ms'
             // console.log('works')
-            this.setState({
-                // navbgclr: 0,
-                // cntctbox: 0,
-                dspflx: 'none',
-                InputOn: false
-            })
+            cntntbX.style.opacity = '0'
+            cntntbX.style.transition = '700ms'
+            setTimeout(() => {
+                        this.setState({
+                            // navbgclr: 0,
+                            // cntctbox: 0,
+                            dspflx: 'none',
+                            InputOn: false
+                        })               
+            }, 700);
         } else {
             // console.log('doesnt work')
             // filterToggle.style.transition =`translateX(550px)`
@@ -199,24 +205,31 @@ export default class Filter extends Component {
                 dspflx: 'flex',
                 InputOn: true
             })
+            setTimeout(() => {
+                cntntbX.style.opacity = '1'
+                cntntbX.style.transition = '700ms'
+                
+            }, 700);
         }
     }
-    update_profile = item => {
-        console.log('update_profile: ', item)
+    update_profile = i => {
+        console.log('update_profile: ', i)
         this.setState({
-            profile_data: item
+            profile_data: i
         })
     }
     render() {
         return <FilterClass>
                     {this.state.InputOn && (
-                        <Filtering list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                        <Filtering ref="fltr" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     )}
                     <FilterIcon onClick={this.toggleInput} alt="" />
-                    <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
+                    <FilterInputMobile ref="fltrM" type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
                             
                         <ContentBox
+                        ref='cntntbX'
+                        // ref={`cntntbX-${e.id}`}
                         dsp={this.state.dspflx}
                         >
                             <FilterHeader>{this.state.displayed_list.length} Items found</FilterHeader>
@@ -227,7 +240,7 @@ export default class Filter extends Component {
                             {
                                 this.state.displayed_list.map((e, i) => {
                                     return (
-                                       <Filtered key={i} pick={(item)=> this.update_profile(item)}>
+                                       <Filtered key={i} pick={(i)=> this.update_profile(i)}>
                                         <IMG src={e.poster} alt="" />
                                             {e.title}
                                        </Filtered>

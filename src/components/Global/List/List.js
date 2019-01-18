@@ -4,17 +4,20 @@ import styled from 'styled-components';
 
 const List = ( {displayed_list,pick} ) => {
     return (
-      	<div>
-				{
-                displayed_list.map((e, item) => {
-                    return (
-                        <Filtered key={item} onClick={()=>pick(item)}>
-                        <Card {...item}/>
-                        </Filtered>
-                    )
-                })
-				}
-		</div>
+        <div className="cards-list">
+        <ul>
+        {
+        displayed_list.map((e, i) => {
+            return (
+                <Filtered key={i} onClick={()=>pick(i)}>
+                <Card {...i}/>
+                </Filtered>
+            )
+        })
+        }
+        </ul>
+    </div>
+
     )
 }
 export default List

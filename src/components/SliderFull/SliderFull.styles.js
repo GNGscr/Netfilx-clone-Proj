@@ -1,4 +1,5 @@
 
+
 // import styled from 'styled-components';
 import styled, { keyframes } from 'styled-components';
 
@@ -151,9 +152,6 @@ export const LeftArrow = styled.div`
     @media all and (min-width: 1400px) {
         width: 4.1vw;
         height: 9vw;
-        /* &:hover {
-            opacity: 1;  
-        } */
     }
     `;
 export const RightArrow = styled.div`
@@ -292,6 +290,7 @@ export const Title = styled.div`
     width: 60px;
     height: 12px;
     margin-top: -2vw;
+    z-index:17;
     @media all and (min-width: 1400px) {
         margin-top: -.25vw;
     }
@@ -307,6 +306,7 @@ export const Details = styled.div`
     margin-top: 1vw;
     width: 120px;
     height: 8px;
+    z-index:17;
     @media all and (min-width: 1400px) {
        top: 2.7vw;   
     }
@@ -322,6 +322,7 @@ export const Description = styled.div`
     color: white;
     margin-top: 5vw;
     font-size: 6px;
+    z-index:17;
     width: 115px;
     /* min-height: 15px; */
     @media all and (min-width: 1400px) {
@@ -342,6 +343,7 @@ export const Summary = styled.div`
     opacity: 0;
     transition: opacity 1s ease-in-out;
     opacity: ${props => props.opc};
+    z-index:16;
     /* overflow: hidden; */
     /* opacity: 0; */
     flex-direction: column;
@@ -439,4 +441,15 @@ export const Box = styled.div`
         width: 15.2vw; 
         height: 9vw;  
     }
+`;
+
+export const TrailerWrapper = styled.div`
+    display: none; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 15;
+    /* background-color: red; */
+    /* transform: display .5s;
+    display: ${props => props.dsp}; */
 `;

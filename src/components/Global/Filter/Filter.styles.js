@@ -98,7 +98,7 @@ export const FilterInputMobile = styled.input`
 export const ContentBox = styled.div`
     position: absolute;
     display: none;
-    /* opacity: 0; */
+    opacity: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;

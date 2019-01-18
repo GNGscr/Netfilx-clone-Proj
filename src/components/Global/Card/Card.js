@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Card = ( {title,poster} ) => {
+const Card = ( {title,poster} ) => {
 //	console.log('first_name:',first_name)
 //	console.log('props:',props)
     return (
@@ -23,10 +23,11 @@ export const IMG = styled.img`
     margin-right: .5vw; 
     }
 `;
-export const Card = styled.div`
-    display: flex;
+export default  Card;
+// export const Card = styled.div`
+//     display: flex;
 
-`;
+// `;
 
 // export default ( {title,poster} ) => {
 // //	console.log('first_name:',first_name)
