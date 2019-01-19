@@ -12,7 +12,6 @@ import ReactPlayer from 'react-player'
 
 
 class Slider extends Component {
-
   constructor(props) {
     super(props);
     this.handleOnLeftArrowClick = this.leftArrowClick.bind(this);

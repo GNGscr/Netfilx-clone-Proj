@@ -46,7 +46,7 @@ export const FilterIcon = styled.div`
 export const Inputer = styled.input`
     display: flex;  
     height: 22px; 
-    width: 130px;  
+    width: 0px;  
     /* opacity: 0; */
     background-color: rgb(20, 20, 20);
     border: #ccc 1px solid;
