@@ -393,6 +393,16 @@ class SliderMovies extends Component {
       styles,
       playingArr
     })
+    setTimeout(() => {
+      const currentStyle = { ...this.state.styles[id-1] };
+      currentStyle.display = 'none';
+      const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
+      const playingArr = [...this.state.playingArr.slice(0,id-1), false, ...this.state.playingArr.slice(id)];  
+      this.setState({
+        styles,
+        playingArr
+      })
+    }, 4000);
     // const video_player = this.refs['trailer-'+e.currentTarget.dataset.id]
     // video_player.props.style.display = 'none';
     // video_player.playing = false;
@@ -506,7 +516,7 @@ class SliderMovies extends Component {
                       // dsp={this.state.dsptrlr}
                       // url={e.trailer}
                       url={[
-                          {src: './images/IronFist.mp4', type: 'video/mp4'}
+                          {src: './images/22JULY.mp4', type: 'video/mp4'}
                       ]}
                       style={this.state.styles[e.id-1]} 
                       playing={this.state.playingArr[e.id-1]} 

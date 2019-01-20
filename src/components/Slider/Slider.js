@@ -197,7 +197,9 @@ class Slider extends Component {
       const end = new Date().getTime();
       // console.log('end', end)
       const add = end - start
+      const count = add;
       console.log('time passed from entering: ', add,'ms')
+      console.log('count passed from entering: ', count,'ms')
     }, 4000);
     // console.log(x)
     // let trailerItem = e.currentTarget.lastChild
@@ -376,12 +378,11 @@ class Slider extends Component {
       currentStyle.display = 'block';
       const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
       const playingArr = [...this.state.playingArr.slice(0,id-1), true, ...this.state.playingArr.slice(id)];
-      // if (this.add >= 4000) {
+      // if (this.count > 3500) {
         this.setState({
           styles,
           playingArr
         })      
-      // }
     }, 4200);
   }
   mouseLeave = e => {
@@ -394,6 +395,16 @@ class Slider extends Component {
       styles,
       playingArr
     })
+    setTimeout(() => {
+      const currentStyle = { ...this.state.styles[id-1] };
+      currentStyle.display = 'none';
+      const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
+      const playingArr = [...this.state.playingArr.slice(0,id-1), false, ...this.state.playingArr.slice(id)];  
+      this.setState({
+        styles,
+        playingArr
+      })
+    }, 4000);
     // const video_player = this.refs['trailer-'+e.currentTarget.dataset.id]
     // video_player.props.style.display = 'none';
     // video_player.playing = false;
@@ -507,7 +518,7 @@ class Slider extends Component {
                       // dsp={this.state.dsptrlr}
                       // url={e.trailer}
                       url={[
-                          {src: './images/IronFist.mp4', type: 'video/mp4'}
+                          {src: './images/GameOfThrones.mp4', type: 'video/mp4'}
                       ]}
                       style={this.state.styles[e.id-1]} 
                       playing={this.state.playingArr[e.id-1]} 

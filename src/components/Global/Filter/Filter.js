@@ -16,11 +16,6 @@ export default class Filter extends Component {
         original_list: [],
         displayed_list: [],
         profile_data: {}
-        // list_data: [],
-        // filtered_list: [],
-        
-        // original_list:data,
-        // displayed_list: data,
     }
     
     async componentDidMount() {
