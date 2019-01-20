@@ -36,7 +36,7 @@ class Slider extends Component {
     const res = await fetch('./MOCK_DATA.json')
     const data = await res.json();
 
-    const styles = data.map(item=>{
+    const styles = data.map(item => {
       return {
         id:item.id,
         position: 'absolute',
@@ -46,7 +46,7 @@ class Slider extends Component {
         backgroundColor: 'rgb(20,20,20)'
       }
     })
-    const playingArr = data.map(item=>false);
+    const playingArr = data.map(item => false);
 
     this.setState({ 
       data ,
@@ -192,13 +192,13 @@ class Slider extends Component {
 
   mouseEnter = e => {
     let x = e.clientX
-    // const start = new Date().getTime();
-    // setTimeout(() => {
-    //   const end = new Date().getTime();
-    //   // console.log('end', end)
-    //   const add = end - start
-    //   console.log('time passed from entering: ', add,'ms')
-    // }, 4000);
+    const start = new Date().getTime();
+    setTimeout(() => {
+      const end = new Date().getTime();
+      // console.log('end', end)
+      const add = end - start
+      console.log('time passed from entering: ', add,'ms')
+    }, 4000);
     // console.log(x)
     // let trailerItem = e.currentTarget.lastChild
     // console.log(trailerItem)
@@ -376,11 +376,13 @@ class Slider extends Component {
       currentStyle.display = 'block';
       const styles = [...this.state.styles.slice(0,id-1),currentStyle,...this.state.styles.slice(id)];
       const playingArr = [...this.state.playingArr.slice(0,id-1), true, ...this.state.playingArr.slice(id)];
-      this.setState({
-        styles,
-        playingArr
-      })
-    }, 4000);
+      // if (this.add >= 4000) {
+        this.setState({
+          styles,
+          playingArr
+        })      
+      // }
+    }, 4200);
   }
   mouseLeave = e => {
     const id = e.currentTarget.dataset.id;
