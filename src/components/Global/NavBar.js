@@ -49,16 +49,25 @@ export default class MainHeader extends React.Component {
         }
     }
     toggle_notifications = () => {
+        const ntfctnmnu = this.refs.ntfctnmnu
         if(this.state.dspcntnOn) {
-            this.setState({
-                dspcntnOnPlay: 'none',
-                dspcntnOn: false
-            })
+            ntfctnmnu.style.opacity = '0'
+            ntfctnmnu.style.transition = '700ms'
+            setTimeout(() => {
+                this.setState({
+                    dspcntnOnPlay: 'none',
+                    dspcntnOn: false
+                })                
+            }, 700);
         } else if(this.state.dspcntnOn === false) {
            this.setState({
                dspcntnOnPlay: 'flex',
                dspcntnOn: true
            }) 
+           setTimeout(() => {
+               ntfctnmnu.style.opacity = '1'
+               ntfctnmnu.style.transition = '700ms'               
+           }, 50);
         }
     }
     
@@ -82,9 +91,9 @@ export default class MainHeader extends React.Component {
                 </LeftNavBar>
                 <RightNavBar>
                     <Filter />
-                    <AccountDropdownButton onClick={this.toggle_notifications} alt=""/>
+                    <AccountDropdownButton onClick={this.toggle_notifications} alt="notification-icon"/>
                     <Profiles><Link to="/Profiles"><IMG src="https://occ-0-1390-2774.1.nflxso.net/art/326d2/7f22331395c9669f63f6e97b9b3fcb0a9cc326d2.png" alt="User's-icon" /></Link></Profiles>
-                    <NotificationWin dspcntn={this.state.dspcntnOnPlay}>
+                    <NotificationWin ref="ntfctnmnu" dspcntn={this.state.dspcntnOnPlay}>
                     <H3>New Releases</H3>
                     <Item>Vikings - New Episodes</Item>
                     <Item>Iron Fist - New Episodes</Item>

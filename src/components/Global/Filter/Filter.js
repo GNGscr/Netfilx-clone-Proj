@@ -98,7 +98,7 @@ export default class Filter extends Component {
                     {this.state.InputOn && (
                         <Filtering list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                     )}
-                    <FilterIcon onClick={this.toggleInput} alt="" />
+                    <FilterIcon onClick={this.toggleInput} alt="search-icon" />
                     <FilterInputMobile type="text" placeholder="Search" list_data={this.state.original_list} on_filter={(fl)=>this.update_list_state(fl)}/>
                
                             
@@ -116,7 +116,7 @@ export default class Filter extends Component {
                                 this.state.displayed_list.map((e, i) => {
                                     return (
                                         <Filtered key={i} pick={(i)=> this.update_profile(i)}>
-                                        <IMG src={e.poster} alt="" />
+                                        <IMG src={e.poster} alt="item-poster" />
                                             {e.title}
                                        </Filtered>
                                     )

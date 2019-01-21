@@ -361,6 +361,7 @@ export const NotificationWin = styled.div`
     width: 25vw;
     top: 5vw;
     right: 3vw;
+    opacity: 0;
     position: absolute;
     display: none;
     flex-direction: column;

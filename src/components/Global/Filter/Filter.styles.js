@@ -106,6 +106,7 @@ export const ContentBox = styled.div`
     width: 50vw;
     margin-left: -.5vw;
     margin-top: 11vw;
+    padding-bottom: 3vw;
     background-color: rgb(20,20,20);
     color: #ccc;
     overflow-x: hidden;
@@ -113,6 +114,9 @@ export const ContentBox = styled.div`
     transform: display .5s;
     display: ${props => props.dsp};
     z-index: 15;
+    @media all and (min-width: 500px) { width: 45vw; }
+    @media all and (min-width: 800px) { width: 40vw; }
+    @media all and (min-width: 1100px) { width: 35vw; }
     @media all and (min-width: 1400px) {
         margin-top: 3.6vw;
         height: 30vw;
