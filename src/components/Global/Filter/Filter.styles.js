@@ -15,8 +15,8 @@ export const FilterIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     margin-left: 1.5vw;
     margin-right: 1vw;
     background-image: url('./images/searchIcon.png');
@@ -26,7 +26,10 @@ export const FilterIcon = styled.div`
 
     margin-right: 2vw;
     @media all and (min-width: 477px) {}
-    @media all and (min-width: 477px) {}
+    @media all and (min-width: 500px) {
+        height: 35px;
+        width: 35px;
+    }
     @media all and (min-width: 765px) {
         width: 100%;
         margin-left: 1vw;    
@@ -46,7 +49,7 @@ export const FilterIcon = styled.div`
 export const Inputer = styled.input`
     display: flex;  
     height: 22px; 
-    width: 0px;  
+    width: 150px;  
     /* opacity: 0; */
     background-color: rgb(20, 20, 20);
     border: #ccc 1px solid;
@@ -58,8 +61,40 @@ export const Inputer = styled.input`
     &:focus {
         outline:-webkit-focus-ring-color auto 5px
     }
-    @media all and (min-width: 477px) {}
-    @media all and (min-width: 900px) {
+    @media all and (min-width: 500px) {
+        height: 25px;
+        width: 170px;
+        margin-right: 1.9vw;
+        outline: none;
+        font-size: 16px;
+        border-radius: 0px;
+        padding: 4px 12px;
+    }
+    @media all and (min-width: 800px) {
+        height: 25px;
+        width: 170px;
+        margin-right: 1.5vw;
+        outline: none;
+        font-size: 11px;
+        border-radius: 0px;
+        padding: 4px 12px;
+        &:focus {
+        outline: none;
+        }
+    }
+    @media all and (min-width: 1100px) {
+        height: 25px;
+        width: 150px;
+        margin-right: 1.7vw;
+        outline: none;
+        font-size: 15px;
+        border-radius: 0px;
+        padding: 4px 12px;
+        &:focus {
+        outline: none;
+        }
+    }
+    @media all and (min-width: 1400px) {
         height: 25px;
         width: 170px;
         margin-right: .9vw;
@@ -114,9 +149,18 @@ export const ContentBox = styled.div`
     transform: display .5s;
     display: ${props => props.dsp};
     z-index: 15;
-    @media all and (min-width: 500px) { width: 45vw; }
-    @media all and (min-width: 800px) { width: 40vw; }
-    @media all and (min-width: 1100px) { width: 35vw; }
+    @media all and (min-width: 500px) { 
+        width: 35vw; 
+        margin-top: 6.5vw;
+        height: 30vw;
+        }
+    @media all and (min-width: 800px) {
+        width: 35vw; 
+        }
+    @media all and (min-width: 1100px) {
+        width: 30vw; 
+        height: 30vw;
+        }
     @media all and (min-width: 1400px) {
         margin-top: 3.6vw;
         height: 30vw;
@@ -138,6 +182,21 @@ export const Filtered = styled.div`
     border: 1px solid rgba(128, 128, 128, 0.8);
     width: 90%;
     cursor: pointer;
+    @media all and (min-width: 500px) {
+        padding: 3.2vw 0;
+        font-size: 15px;
+        top: -2.5vw; 
+        }
+    @media all and (min-width: 800px) {
+        padding: 3.4vw 0;
+        font-size: 15px;
+        top: -2.5vw; 
+        }
+    @media all and (min-width: 1100px) {
+        padding: 3.7vw 0;
+        font-size: 15px;
+        top: -1vw; 
+        }
     @media all and (min-width: 1400px) {
         padding: 2vw 0;
         font-size: 18px;
