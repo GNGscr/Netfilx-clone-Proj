@@ -21,10 +21,12 @@ const List = styled.div`
     justify-content: center;
     z-index: -100;
     /* border: 1px solid red; */
+    width: 100%;
 `; 
 const ListHead = styled.div`
+    width: 100%;
     display: flex;
-    margin: 4vw;
+    margin: 2vw;
     align-items: center;
     justify-content: center;
     font-size: 14px;

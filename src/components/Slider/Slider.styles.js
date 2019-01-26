@@ -291,6 +291,9 @@ export const Title = styled.div`
     height: 12px;
     margin-top: -2vw;
     z-index:17;
+    @media all and (min-width: 500px) {}
+    @media all and (min-width: 800px) {}
+    @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
         margin-top: -.25vw;
     }
@@ -307,6 +310,9 @@ export const Details = styled.div`
     width: 120px;
     height: 8px;
     z-index:17;
+    @media all and (min-width: 500px) {}
+    @media all and (min-width: 800px) {}
+    @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
        top: 2.7vw;   
     }
@@ -325,6 +331,9 @@ export const Description = styled.div`
     z-index:17;
     width: 115px;
     /* min-height: 15px; */
+    @media all and (min-width: 500px) {}
+    @media all and (min-width: 800px) {}
+    @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
        margin-top: 2.3vw;
        width: 150px;
@@ -348,6 +357,30 @@ export const Summary = styled.div`
     /* opacity: 0; */
     flex-direction: column;
     justify-content: space-around;
+    @media all and (min-width: 500px) {
+    right: 2vw;
+    bottom: .25rem;
+    margin-right: 20px;
+    margin-left: 10px;
+    height: 10vw;
+    width: 4vw;
+    }
+    @media all and (min-width: 800px) {
+    right: 2vw;
+    bottom: .25rem;
+    margin-right: 20px;
+    margin-left: 10px;
+    height: 8vw;
+    width: 6vw;
+    }
+    @media all and (min-width: 1100px) {
+    right: 2vw;
+    bottom: 2rem;
+    margin-right: 20px;
+    margin-left: 10px;
+    height: 2vw;
+    width: 12.8vw;
+    }
     @media all and (min-width: 1400px) {
     right: 1.2rem;
     bottom: .25rem;
@@ -373,6 +406,9 @@ export const CirclesBox = styled.div`
     transition: opacity 1s ease-in-out;
     opacity: ${props => props.opc};
     /* animation: ${p => p.anim} ${p => p.duration} forwards; */
+    @media all and (min-width: 500px) {}
+    @media all and (min-width: 800px) {}
+    @media all and (min-width: 1100px) {}
     @media all and (min-width: 1400px) {
     right: 1.2rem;
     margin-top: 1.5vw;

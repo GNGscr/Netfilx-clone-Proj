@@ -65,8 +65,8 @@ class Slider extends Component {
   updateDimensions() {
     this.setState({
       width: window.innerWidth
-      // console.log(this.state.width);
     });
+    console.log(this.state.width)
   }
 
   // Updates the amount of shows to display according to the window's width
@@ -192,16 +192,16 @@ class Slider extends Component {
 
   mouseEnter = e => {
     let x = e.clientX
-    const start = new Date().getTime();
-    setTimeout(() => {
-      const end = new Date().getTime();
-      // console.log('end', end)
-      const add = end - start
-      const count = add;
-      console.log('time passed from entering: ', add,'ms')
-      console.log('count passed from entering: ', count,'ms')
-    }, 4000);
-    // console.log(x)
+    // const start = new Date().getTime();
+    // setTimeout(() => {
+    //   const end = new Date().getTime();
+    //   // console.log('end', end)
+    //   const add = end - start
+    //   const count = add;
+    //   console.log('time passed from entering: ', add,'ms')
+    //   console.log('count passed from entering: ', count,'ms')
+    // }, 4000);
+    console.log(x)
     // let trailerItem = e.currentTarget.lastChild
     // console.log(trailerItem)
     // trailerItem.style.opacity = '1'
@@ -214,78 +214,55 @@ class Slider extends Component {
     previous.style.transition = '400ms'
     let next = current.nextElementSibling;
     next.style.transition = '400ms';
-    if(this.state.width > 1400) {
-      if(x < 278){
-        current.style.transformOrigin = 'left' 
-        current.style.transition = '300ms'
-          // Targeting all the next elements that comes after the current
+
+    
+    if (this.state.width < 400) {
+      // console.log(x)
+        if(x < 188){
+          current.style.transformOrigin = 'left' 
+          current.style.transition = '300ms'
           while (next) {
-            next.style.transform = `translateX(15vw)`
+            next.style.transform = `translateX(44.9vw)`
             next.style.transition = '400ms'
             next = next.nextElementSibling;
           }
-        } else if(x > 1162){
-        current.style.transformOrigin = 'right' 
-        current.style.transition = '300ms'
-        // Targeting all the previous elements that comes before the current        
+        } 
+        else if(x > 188) {
+          current.style.transformOrigin = 'right' 
+          current.style.transition = '300ms'
           while (previous) {
-            previous.style.transform =`translateX(-15vw)`
+            previous.style.transform =`translateX(-44.9vw)`
             previous.style.transition = '400ms'
             previous = previous.previousElementSibling;
-          }
-        } else {
-          while (previous) {
-            previous.style.transform =`translateX(-7.5vw)`
-            previous.style.transition = '400ms'
-            previous = previous.previousElementSibling;
-          }
-          while (next) {
-            next.style.transform = `translateX(7.5vw)`
-            next.style.transition = '400ms'
-            next = next.nextElementSibling;
           }
         }
-        current.style.transform = `scale(2)`
-        current.style.transition = '400ms'
-
-      } else if(this.state.width < 740) {
+      current.style.transform = `scale(2.003)`
+      current.style.transition = '400ms'
+    }
+      else if (this.state.width < 500) {
         // console.log(x)
-          if(x < 250){
+          if(x < 205){
             current.style.transformOrigin = 'left' 
             current.style.transition = '300ms'
             while (next) {
-              next.style.transform = `translateX(31vw)`
+              next.style.transform = `translateX(44.9vw)`
               next.style.transition = '400ms'
               next = next.nextElementSibling;
             }
           } 
-          else if(x > 455) {
+          else if(x > 205) {
             current.style.transformOrigin = 'right' 
             current.style.transition = '300ms'
             while (previous) {
-              previous.style.transform =`translateX(-31vw)`
+              previous.style.transform =`translateX(-44.9vw)`
               previous.style.transition = '400ms'
               previous = previous.previousElementSibling;
-            }
-          }
-          else {
-            current.style.transformOrigin = 'center' 
-            current.style.transition = '300ms'
-            
-          while (previous) {
-              previous.style.transform =`translateX(-15.5vw)`
-              previous.style.transition = '400ms'
-              previous = previous.previousElementSibling;
-            }
-          while (next) {
-              next.style.transform = `translateX(15vw)`
-              next.style.transition = '400ms'
-              next = next.nextElementSibling;
             }
           }
         current.style.transform = `scale(2.003)`
         current.style.transition = '400ms'
-      } else if(this.state.width < 670) {
+      } 
+      else if(this.state.width < 670) {
         // console.log(x)
         if(x < 220){
           current.style.transformOrigin = 'left' 
@@ -322,51 +299,119 @@ class Slider extends Component {
         }
         current.style.transform = `scale(2.003)`
         current.style.transition = '400ms'
-      } else if(this.state.width < 500) {
+      } 
+       else if(this.state.width < 800) {
         // console.log(x)
-          if(x < 188){
+          if(x < 250){
             current.style.transformOrigin = 'left' 
             current.style.transition = '300ms'
             while (next) {
-              next.style.transform = `translateX(44.9vw)`
+              next.style.transform = `translateX(31vw)`
               next.style.transition = '400ms'
               next = next.nextElementSibling;
             }
           } 
-          else if(x > 188) {
+          else if(x > 455) {
             current.style.transformOrigin = 'right' 
             current.style.transition = '300ms'
             while (previous) {
-              previous.style.transform =`translateX(-44.9vw)`
+              previous.style.transform =`translateX(-31vw)`
               previous.style.transition = '400ms'
               previous = previous.previousElementSibling;
             }
           }
+          else {
+            current.style.transformOrigin = 'center' 
+            current.style.transition = '300ms'
+            
+          while (previous) {
+              previous.style.transform =`translateX(-15.5vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          while (next) {
+              next.style.transform = `translateX(15vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          }
         current.style.transform = `scale(2.003)`
         current.style.transition = '400ms'
-      } else if(this.state.width < 400) {
-      // console.log(x)
-        if(x < 188){
+      } 
+
+      else if (this.state.width < 1399) {
+        // console.log(x)
+          if(x < 280){
+            current.style.transformOrigin = 'left' 
+            current.style.transition = '300ms'
+            while (next) {
+              next.style.transform = `translateX(18vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          } 
+          else if(x > 935) {
+            current.style.transformOrigin = 'right' 
+            current.style.transition = '300ms'
+            while (previous) {
+              previous.style.transform =`translateX(-18vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          }
+          else {
+            current.style.transformOrigin = 'center' 
+            current.style.transition = '300ms'
+            
+          while (previous) {
+              previous.style.transform =`translateX(-9vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          while (next) {
+              next.style.transform = `translateX(9vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          }
+        current.style.transform = `scale(2.003)`
+        current.style.transition = '400ms'
+      }
+      else if (this.state.width > 1400) {
+        if(x < 278){
           current.style.transformOrigin = 'left' 
           current.style.transition = '300ms'
-          while (next) {
-            next.style.transform = `translateX(44.9vw)`
-            next.style.transition = '400ms'
-            next = next.nextElementSibling;
-          }
-        } 
-        else if(x > 188) {
+            // Targeting all the next elements that comes after the current
+            while (next) {
+              next.style.transform = `translateX(15vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
+          } else if(x > 1162){
           current.style.transformOrigin = 'right' 
           current.style.transition = '300ms'
-          while (previous) {
-            previous.style.transform =`translateX(-44.9vw)`
-            previous.style.transition = '400ms'
-            previous = previous.previousElementSibling;
+          // Targeting all the previous elements that comes before the current        
+            while (previous) {
+              previous.style.transform =`translateX(-15vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+          } else {
+            while (previous) {
+              previous.style.transform =`translateX(-7.5vw)`
+              previous.style.transition = '400ms'
+              previous = previous.previousElementSibling;
+            }
+            while (next) {
+              next.style.transform = `translateX(7.5vw)`
+              next.style.transition = '400ms'
+              next = next.nextElementSibling;
+            }
           }
-        }
-      current.style.transform = `scale(2.003)`
-      current.style.transition = '400ms'
-    }
+          current.style.transform = `scale(2)`
+          current.style.transition = '400ms'
+  
+        } 
     const id = e.currentTarget.dataset.id;
     const video_player = this.refs['trailer-'+e.currentTarget.dataset.id]
     // console.log('slide id: ',e.currentTarget.dataset.id)
